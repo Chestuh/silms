@@ -1,0 +1,25 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table('fees', function (Blueprint $table) {
+            $table->enum('payment_method', ['gcash', 'cash', 'bank_transfer'])->nullable()->after('status');
+            $table->string('payment_reference', 255)->nullable()->after('payment_method');
+            $table->string('payment_proof_path', 500)->nullable()->after('payment_reference');
+            $table->enum('payment_status', ['pending', 'verified', 'rejected'])->nullable()->after('payment_proof_path');
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('fees', function (Blueprint $table) {
+            $table->dropColumn(['payment_method', 'payment_reference', 'payment_proof_path', 'payment_status']);
+        });
+    }
+};
