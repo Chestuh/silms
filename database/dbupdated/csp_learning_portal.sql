@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2026 at 08:42 AM
+-- Generation Time: Apr 12, 2026 at 10:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -130,6 +130,7 @@ CREATE TABLE `courses` (
   `title` varchar(255) NOT NULL,
   `units` int(11) NOT NULL DEFAULT 3,
   `grade_level` enum('7','8','9','10','11','12') DEFAULT NULL,
+  `semester` enum('1st Semester','2nd Semester') DEFAULT NULL,
   `instructor_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -139,17 +140,72 @@ CREATE TABLE `courses` (
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`id`, `code`, `title`, `units`, `grade_level`, `instructor_id`, `created_at`, `updated_at`) VALUES
-(8, 'G7-MATH-201', 'G7 Mathematics - Algebra', 3, '7', 6, '2026-03-18 23:25:42', '2026-03-22 23:13:35'),
-(9, 'G7-SCI-201', 'G7 Science - General', 3, '7', 6, '2026-03-18 23:25:42', '2026-03-22 23:13:35'),
-(10, 'G7-MATH-101', 'Grade 7 Mathematics', 3, '7', 6, '2026-03-22 23:06:52', '2026-03-22 23:13:35'),
-(11, 'G7-ENG-101', 'Grade 7 English Language', 3, '7', 6, '2026-03-22 23:06:52', '2026-03-22 23:13:35'),
-(12, 'G7-SCI-101', 'Grade 7 Science', 3, '7', 6, '2026-03-22 23:06:52', '2026-03-22 23:13:35'),
-(13, 'G7-SST-101', 'Grade 7 Social Studies', 3, '7', 6, '2026-03-22 23:06:52', '2026-03-22 23:13:35'),
-(14, 'G7-FIL-101', 'Filipino', 2, '7', 6, '2026-03-22 23:06:52', '2026-03-22 23:13:35'),
-(15, 'G7-PE-101', 'Physical Education', 2, '7', 6, '2026-03-22 23:06:52', '2026-03-22 23:13:35'),
-(16, 'G7-ART-101', 'Arts', 2, '7', 6, '2026-03-22 23:06:52', '2026-03-22 23:13:35'),
-(17, 'G7-MUS-101', 'Music', 2, '7', 6, '2026-03-22 23:06:52', '2026-03-22 23:13:35');
+INSERT INTO `courses` (`id`, `code`, `title`, `units`, `grade_level`, `semester`, `instructor_id`, `created_at`, `updated_at`) VALUES
+(20, 'G11ABM - OC', 'ABM - Oral Comm 11', 3, '11', '1st Semester', NULL, '2026-04-12 10:36:17', '2026-04-12 11:08:32'),
+(21, 'ENG7', 'English 7', 3, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(22, 'FIL7', 'Filipino 7', 2, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(23, 'MATH7', 'Mathematics 7', 3, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(24, 'SCI7', 'Science 7', 3, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(25, 'AP7', 'Araling Panlipunan 7', 3, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(26, 'ESP7', 'Edukasyon sa Pagpapakatao 7', 2, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(27, 'MAPEH7', 'MAPEH 7 (Music, Arts, PE, Health)', 2, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(28, 'TLE7', 'Technology and Livelihood Education 7', 2, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(29, 'ENG8', 'English 8', 3, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(30, 'FIL8', 'Filipino 8', 2, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(31, 'MATH8', 'Mathematics 8 (Algebra)', 3, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(32, 'SCI8', 'Science 8 (Biology)', 3, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(33, 'AP8', 'Araling Panlipunan 8 (Asian Studies)', 3, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(34, 'ESP8', 'Edukasyon sa Pagpapakatao 8', 2, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(35, 'MAPEH8', 'MAPEH 8 (Music, Arts, PE, Health)', 2, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(36, 'TLE8', 'Technology and Livelihood Education 8', 2, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(37, 'ENG9', 'English 9', 3, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(38, 'FIL9', 'Filipino 9', 2, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(39, 'MATH9', 'Mathematics 9 (Geometry)', 3, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(40, 'SCI9', 'Science 9 (Chemistry)', 3, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(41, 'AP9', 'Araling Panlipunan 9 (Economics)', 3, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(42, 'ESP9', 'Edukasyon sa Pagpapakatao 9', 2, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(43, 'MAPEH9', 'MAPEH 9 (Music, Arts, PE, Health)', 2, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(44, 'TLE9', 'Technology and Livelihood Education 9', 2, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(45, 'ENG10', 'English 10', 3, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(46, 'FIL10', 'Filipino 10', 2, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(47, 'MATH10', 'Mathematics 10 (Statistics & Probability / Advanced Algebra)', 3, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(48, 'SCI10', 'Science 10 (Physics)', 3, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(49, 'AP10', 'Araling Panlipunan 10 (Contemporary Issues)', 3, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(50, 'ESP10', 'Edukasyon sa Pagpapakatao 10', 2, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(51, 'MAPEH10', 'MAPEH 10 (Music, Arts, PE, Health)', 2, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(52, 'TLE10', 'Technology and Livelihood Education 10', 2, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(55, 'G7 - ENG', 'English 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(56, 'G7 - FIL', 'Filipino 7', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(57, 'G7 - MATH', 'Mathematics 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(58, 'G7 - SCI', 'Science 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(59, 'G7 - AP', 'Araling Panlipunan 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(60, 'G7 - ESP', 'Edukasyon sa Pagpapakatao 7', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(61, 'G7 - MAPEH', 'MAPEH 7 (Music, Arts, PE, Health)', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(62, 'G7 - TLE', 'Technology and Livelihood Education 7', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(63, 'G8 - ENG', 'English 8', 3, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(64, 'G8 - FIL', 'Filipino 8', 2, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(65, 'G8 - MATH', 'Mathematics 8 (Algebra)', 3, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(66, 'G8 - SCI', 'Science 8 (Biology)', 3, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(67, 'G8 - AP', 'Araling Panlipunan 8 (Asian Studies)', 3, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(68, 'G8 - ESP', 'Edukasyon sa Pagpapakatao 8', 2, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(69, 'G8 - MAPEH', 'MAPEH 8 (Music, Arts, PE, Health)', 2, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(70, 'G8 - TLE', 'Technology and Livelihood Education 8', 2, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(71, 'G9 - ENG', 'English 9', 3, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(72, 'G9 - FIL', 'Filipino 9', 2, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(73, 'G9 - MATH', 'Mathematics 9 (Geometry)', 3, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(74, 'G9 - SCI', 'Science 9 (Chemistry)', 3, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(75, 'G9 - AP', 'Araling Panlipunan 9 (Economics)', 3, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(76, 'G9 - ESP', 'Edukasyon sa Pagpapakatao 9', 2, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(77, 'G9 - MAPEH', 'MAPEH 9 (Music, Arts, PE, Health)', 2, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(78, 'G9 - TLE', 'Technology and Livelihood Education 9', 2, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(79, 'G10 - ENG', 'English 10', 3, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(80, 'G10 - FIL', 'Filipino 10', 2, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(81, 'G10 - MATH', 'Mathematics 10 (Statistics & Probability / Advanced Algebra)', 3, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(82, 'G10 - SCI', 'Science 10 (Physics)', 3, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(83, 'G10 - AP', 'Araling Panlipunan 10 (Contemporary Issues)', 3, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(84, 'G10 - ESP', 'Edukasyon sa Pagpapakatao 10', 2, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(85, 'G10 - MAPEH', 'MAPEH 10 (Music, Arts, PE, Health)', 2, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(86, 'G10 - TLE', 'Technology and Livelihood Education 10', 2, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14');
 
 -- --------------------------------------------------------
 
@@ -240,21 +296,6 @@ CREATE TABLE `enrollments` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `enrollments`
---
-
-INSERT INTO `enrollments` (`id`, `student_id`, `course_id`, `semester`, `school_year`, `status`, `attachments`, `created_at`, `updated_at`) VALUES
-(1, 1, 8, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
-(2, 1, 9, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
-(3, 1, 10, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
-(4, 1, 11, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
-(5, 1, 12, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
-(6, 1, 13, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
-(7, 1, 14, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
-(8, 1, 15, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
-(9, 1, 16, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19');
-
 -- --------------------------------------------------------
 
 --
@@ -306,7 +347,8 @@ CREATE TABLE `grades` (
   `final_grade` decimal(5,2) DEFAULT NULL,
   `gwa_contribution` decimal(6,4) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `rubric_id` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -328,7 +370,8 @@ CREATE TABLE `instructors` (
 --
 
 INSERT INTO `instructors` (`id`, `user_id`, `department`, `created_at`, `updated_at`) VALUES
-(6, 10, '7', '2026-03-22 22:51:07', '2026-03-22 22:51:07');
+(6, 10, '7', '2026-03-22 22:51:07', '2026-03-22 22:51:07'),
+(8, 20, 'Computer Science', '2026-04-12 09:54:01', '2026-04-12 09:54:01');
 
 -- --------------------------------------------------------
 
@@ -416,6 +459,22 @@ CREATE TABLE `learning_materials` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `learning_materials`
+--
+
+INSERT INTO `learning_materials` (`id`, `course_id`, `title`, `description`, `format`, `file_path`, `url`, `release_date`, `difficulty_level`, `order_index`, `archived`, `approval_status`, `admin_comment`, `created_at`, `updated_at`) VALUES
+(1, 18, 'Welcome and Syllabus', 'Course overview and requirements', 'document', NULL, NULL, NULL, 'easy', 1, 0, 'approved', NULL, '2026-04-11 05:00:20', '2026-04-11 05:31:23'),
+(2, 18, 'Variables and Data Types', 'Video lesson on basics', 'video', NULL, NULL, NULL, 'easy', 2, 0, 'rejected', 'a', '2026-04-11 05:00:20', '2026-04-11 05:27:01'),
+(3, 19, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 1, 'pending', NULL, '2026-04-11 05:00:20', '2026-04-11 05:35:26'),
+(4, 16, 'asr', 'asr', 'document', '1775921240_69da6858cf78e.docx', NULL, NULL, 'easy', 1, 0, 'pending', NULL, '2026-04-11 07:27:20', '2026-04-11 07:27:20'),
+(5, 53, 'Welcome and Syllabus', 'Course overview and requirements', 'document', NULL, NULL, NULL, 'easy', 1, 0, 'pending', NULL, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(6, 53, 'Variables and Data Types', 'Video lesson on basics', 'video', NULL, NULL, NULL, 'easy', 2, 0, 'pending', NULL, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
+(7, 54, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 0, 'pending', NULL, '2026-04-12 11:26:48', '2026-04-12 11:26:48'),
+(8, 87, 'Welcome and Syllabus', 'Course overview and requirements', 'document', NULL, NULL, NULL, 'easy', 1, 0, 'pending', NULL, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(9, 87, 'Variables and Data Types', 'Video lesson on basics', 'video', NULL, NULL, NULL, 'easy', 2, 0, 'pending', NULL, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
+(10, 88, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 0, 'pending', NULL, '2026-04-12 11:31:14', '2026-04-12 11:31:14');
 
 -- --------------------------------------------------------
 
@@ -573,7 +632,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (66, '2026_03_19_000008_create_learning_aid_interactions_table', 3),
 (67, '2026_03_22_000001_add_release_date_to_learning_materials', 4),
 (70, '2026_03_22_000001_create_auto_generated_learning_aids_table', 5),
-(71, '2025_02_16_100002_create_user_dashboard_preferences_table', 6);
+(71, '2025_02_16_100002_create_user_dashboard_preferences_table', 6),
+(72, '2026_04_11_000001_add_theme_and_display_columns_to_user_dashboard_preferences_table', 7),
+(73, '2026_04_11_000001_add_rubric_id_to_grades_table', 8),
+(74, '2026_04_13_000001_add_semester_to_courses_table', 9);
 
 -- --------------------------------------------------------
 
@@ -725,6 +787,9 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`key`, `value`) VALUES
+('allow_student_personalization', '1'),
+('default_dashboard_layout', 'balanced'),
+('default_learning_focus', 'academic_progress'),
 ('max_units_per_semester', '46'),
 ('test_key', 'test_value');
 
@@ -753,7 +818,8 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `school_id`, `user_id`, `student_number`, `program`, `year_level`, `admission_date`, `status`, `academic_status`, `created_at`, `updated_at`) VALUES
-(1, '2027-00001', 15, '2027-00001', NULL, 1, '2026-04-09', 'active', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19');
+(1, '2027-00001', 15, '2027-00001', NULL, 1, '2026-04-09', 'active', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
+(3, NULL, 19, '2024-001', 'BS Computer Science', 1, '2026-04-12', 'active', NULL, '2026-04-12 09:54:01', '2026-04-12 09:54:01');
 
 -- --------------------------------------------------------
 
@@ -843,7 +909,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Principal', 'admin@csp.edu', NULL, '$2y$12$QqvTA2ymEzJ7FfQKIvaW1e0g8e3TDdT0q0QC4m01fmrZoX0ES/Xk.', 'admin', NULL, '2026-02-15 20:57:28', '2026-03-27 09:53:31'),
 (10, 'Chester John Flores', 'cheezyflrs@csp.edu', NULL, '$2y$12$PUxEzBzB7Yg7xJCOYZ9xpupBEC2AwnBI/lY7Ip8rImyDJfEhRLDqC', 'instructor', NULL, '2026-03-22 22:51:07', '2026-03-22 22:51:07'),
-(15, 'Chester John Duran Flores', 'chizuu@csp.edu', '2026-04-09 11:25:19', '$2y$12$nQZWkkr/CxBTyh0ZZmXcEuA.T.SnT3.Y3HVBuCWn9xfmC542DWyU.', 'student', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19');
+(15, 'Chester John Duran Flores', 'chizuu@csp.edu', '2026-04-09 11:25:19', '$2y$12$nQZWkkr/CxBTyh0ZZmXcEuA.T.SnT3.Y3HVBuCWn9xfmC542DWyU.', 'student', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
+(17, 'Portal Cashier', 'cashier@csp.edu', NULL, '$2y$12$wteLvkpd0z3EJxluG7QF2.WVn./5pBjGVx5z2zw1dTjDqtR8DJD/6', 'cashier', NULL, '2026-04-11 05:00:19', '2026-04-11 05:00:19'),
+(19, 'John Students', 'student@csp.edu', NULL, '$2y$12$1XzMbmCuNYyDqtWWZgQRGOx/TFAg4DROixvL.muijfHacFMpmwz8W', 'student', NULL, '2026-04-11 05:00:20', '2026-04-12 12:01:24'),
+(20, 'Jane Instructor', 'instructor@csp.edu', NULL, '$2y$12$61SmDznweKZreamWZewTSuJ.xUw.sjYfIipwUp6Phu/miYMsBH4JW', 'instructor', NULL, '2026-04-12 09:54:01', '2026-04-12 09:54:01');
 
 -- --------------------------------------------------------
 
@@ -857,9 +926,19 @@ CREATE TABLE `user_dashboard_preferences` (
   `layout` varchar(50) NOT NULL DEFAULT 'default' COMMENT 'default, compact, focus',
   `widgets` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT 'enabled widget keys or order' CHECK (json_valid(`widgets`)),
   `learning_focus` varchar(255) DEFAULT NULL COMMENT 'e.g. course code or goal',
+  `theme_color` varchar(7) NOT NULL DEFAULT '#0d6efd',
+  `show_quick_links` tinyint(1) NOT NULL DEFAULT 1,
+  `show_my_info` tinyint(1) NOT NULL DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_dashboard_preferences`
+--
+
+INSERT INTO `user_dashboard_preferences` (`id`, `user_id`, `layout`, `widgets`, `learning_focus`, `theme_color`, `show_quick_links`, `show_my_info`, `created_at`, `updated_at`) VALUES
+(1, 15, 'default', '{\"enrolled_courses\":{\"enabled\":true,\"order\":1},\"materials_completed\":{\"enabled\":true,\"order\":2},\"materials_started\":{\"enabled\":true,\"order\":3},\"average_grade\":{\"enabled\":false,\"order\":4},\"gwa\":{\"enabled\":true,\"order\":5},\"pending_fees\":{\"enabled\":false,\"order\":6},\"study_time_minutes\":{\"enabled\":false,\"order\":7},\"credentials_pending\":{\"enabled\":false,\"order\":8},\"unread_messages\":{\"enabled\":true,\"order\":9}}', NULL, '#1eff00', 1, 1, '2026-04-11 05:04:03', '2026-04-11 05:04:35');
 
 --
 -- Indexes for dumped tables
@@ -969,7 +1048,8 @@ ALTER TABLE `fees`
 --
 ALTER TABLE `grades`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `grades_enrollment_id_foreign` (`enrollment_id`);
+  ADD KEY `grades_enrollment_id_foreign` (`enrollment_id`),
+  ADD KEY `grades_rubric_id_foreign` (`rubric_id`);
 
 --
 -- Indexes for table `instructors`
@@ -1187,7 +1267,7 @@ ALTER TABLE `auto_learning_aids`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT for table `course_curriculum_alignments`
@@ -1217,7 +1297,7 @@ ALTER TABLE `disciplinary_records`
 -- AUTO_INCREMENT for table `enrollments`
 --
 ALTER TABLE `enrollments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1235,13 +1315,13 @@ ALTER TABLE `fees`
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `instructors`
 --
 ALTER TABLE `instructors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `job_aids`
@@ -1265,7 +1345,7 @@ ALTER TABLE `learning_aid_interactions`
 -- AUTO_INCREMENT for table `learning_materials`
 --
 ALTER TABLE `learning_materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `learning_outcomes`
@@ -1277,7 +1357,7 @@ ALTER TABLE `learning_outcomes`
 -- AUTO_INCREMENT for table `learning_path_rules`
 --
 ALTER TABLE `learning_path_rules`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `learning_progress`
@@ -1301,7 +1381,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1331,7 +1411,7 @@ ALTER TABLE `self_assessments`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `student_progress_analytics`
@@ -1355,13 +1435,13 @@ ALTER TABLE `transfer_requests`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `user_dashboard_preferences`
 --
 ALTER TABLE `user_dashboard_preferences`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -1439,7 +1519,8 @@ ALTER TABLE `fees`
 -- Constraints for table `grades`
 --
 ALTER TABLE `grades`
-  ADD CONSTRAINT `grades_enrollment_id_foreign` FOREIGN KEY (`enrollment_id`) REFERENCES `enrollments` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `grades_enrollment_id_foreign` FOREIGN KEY (`enrollment_id`) REFERENCES `enrollments` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `grades_rubric_id_foreign` FOREIGN KEY (`rubric_id`) REFERENCES `rubrics` (`id`) ON DELETE SET NULL;
 
 --
 -- Constraints for table `instructors`
