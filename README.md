@@ -24,7 +24,21 @@ Next, is downloading the files, updated database is in database/dbupdated
 
 Lastly, test the system
 - Open VSCode
-- File > Open Folder > silmportal (incase you missed it, you should put the silmportal folder into htdocs)
+- File > Open Folder > silms (incase you missed it, you should put the silms folder into htdocs)
+- Press Ctrl + Shift + X ; then search "Laravel"; install this extensions
+-> Laravel Extra Intellisense
+-> Laravel goto view
+-> Laravel Create view
+-> Laravel Blade Wrapper
+-> Laravel (Official VSCode for Laravel)
+-> Laravel-goto-components
+-> Laravel Blade Snippets
+-> Laravel Extension Pack
+-> Laravel Snippets
+-> Laravel-jump-controller
+-> Laravel Artisan
+-> Laravel Blade Formatter
+- After installing;
 - Open Terminal in VSCode
 - Run php artisan migrate
 - next, php artisan db:seed
@@ -32,7 +46,7 @@ Lastly, test the system
 
 Import Github file
 
-- git pull origin main - pulls file in github
+- git pull origin master - pulls file from github
 
 That's All! :>
 
@@ -40,4 +54,4 @@ If you commit changes, use git commands, example;
 
 "git add ." - selects changes files
 "git commit -m "describe your changes" - saves updated version
-"git push origin main" - uploads to github
+"git push origin master" - uploads to github
