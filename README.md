@@ -32,7 +32,7 @@ Lastly, test the system
 
 Import Github file
 
-- git pull origin main - pulls file in github
+- git pull origin master - pulls file from github
 
 That's All! :>
 
@@ -40,4 +40,4 @@ If you commit changes, use git commands, example;
 
 "git add ." - selects changes files
 "git commit -m "describe your changes" - saves updated version
-"git push origin main" - uploads to github
+"git push origin master" - uploads to github
