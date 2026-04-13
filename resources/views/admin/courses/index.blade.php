@@ -7,6 +7,17 @@
     <h2 class="mb-0"><i class="bi bi-journal-richtext me-2"></i>Courses</h2>
     <a href="{{ route('admin.courses.create') }}" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i>Add course</a>
 </div>
+<form method="GET" class="row gx-2 gy-2 align-items-center mb-3">
+    <div class="col-auto">
+        <label for="grade_level" class="form-label visually-hidden">Grade</label>
+        <select name="grade_level" id="grade_level" class="form-select" onchange="this.form.submit()">
+            <option value=""{{ request('grade_level') ? '' : ' selected' }}>All</option>
+            @foreach($gradeLevels as $grade)
+                <option value="{{ $grade }}" @selected(request('grade_level') == $grade)>Grade {{ $grade }}</option>
+            @endforeach
+        </select>
+    </div>
+</form>
 <div class="card border-0 shadow-sm">
     <div class="card-body p-0">
         <div class="table-responsive">
@@ -57,9 +68,9 @@
             </table>
         </div>
     </div>
-    @if($courses->hasPages())
+    {{-- @if($courses->hasPages())
         <div class="card-footer">{{ $courses->links() }}</div>
-    @endif
+    @endif --}}
 </div>
 <p class="small text-muted mt-2 mb-0"><a href="{{ route('admin.dashboard') }}">&larr; Back to dashboard</a></p>
 @endsection

@@ -24,6 +24,7 @@ use App\Http\Controllers\Student\ProgressController;
 use App\Http\Controllers\Student\RateMaterialController;
 use App\Http\Controllers\Student\RemindersController;
 use App\Http\Controllers\Student\SelfAssessmentController;
+use App\Http\Controllers\Student\TransferRequestsController as StudentTransferRequestsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,9 @@ Route::middleware(['auth', 'role:student'])->prefix('student')->name('student.')
     Route::get('gwa', [GwaController::class, 'index'])->name('gwa');
     Route::get('academic-status', [AcademicStatusController::class, 'index'])->name('academic-status');
     Route::get('admission', [AdmissionController::class, 'index'])->name('admission');
+    Route::get('transfer-requests', [StudentTransferRequestsController::class, 'index'])->name('transfer-requests.index');
+    Route::get('transfer-requests/create', [StudentTransferRequestsController::class, 'create'])->name('transfer-requests.create');
+    Route::post('transfer-requests', [StudentTransferRequestsController::class, 'store'])->name('transfer-requests.store');
     Route::get('disciplinary', [DisciplinaryController::class, 'index'])->name('disciplinary');
     Route::get('honors', [HonorsController::class, 'index'])->name('honors');
     Route::get('fees', [FeesController::class, 'index'])->name('fees');

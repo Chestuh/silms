@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-
+    
     <div class="row g-3 mb-4">
         <div class="col-sm-6 col-xl-2">
             <div class="card border-0 shadow-sm rounded-4 kpi-card h-100 p-3">
@@ -129,7 +129,7 @@
             </div>
         </div>
     </div>
-
+    
     <div class="row g-3 mb-4">
         <div class="col-xl-4">
             <div class="card border-0 shadow-sm rounded-4 h-100">
@@ -174,7 +174,7 @@
             </div>
         </div>
     </div>
-
+    
     <div class="row g-3 mb-4">
         <div class="col-xl-6">
             <div class="card border-0 shadow-sm rounded-4 h-100">
@@ -199,6 +199,11 @@
                             <div>
                                 <div class="fw-semibold">{{ $recentApplications->count() }} new student applications</div>
                                 <div class="small text-muted">Pending review and approval.</div>
+                            </div>
+                            <div class="ms-auto align-self-start">
+                                <a href="{{ route('admin.pre-registrations.index', ['status' => 'pending']) }}" class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-eye"></i> View Applications
+                                </a>
                             </div>
                         </li>
                         <li class="list-group-item px-0 py-3 d-flex gap-3 align-items-start">
@@ -249,7 +254,7 @@
             </div>
         </div>
     </div>
-
+    
     <div class="modal fade" id="dashboardRejectModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -297,7 +302,7 @@
         const rejectButtons = document.querySelectorAll('[data-bs-target="#dashboardRejectModal"]');
         const rejectForm = document.getElementById('dashboardRejectForm');
         const applicantText = document.getElementById('dashboardRejectApplicant');
-
+        
         rejectButtons.forEach(button => {
             button.addEventListener('click', function () {
                 const id = this.getAttribute('data-id');
@@ -306,11 +311,11 @@
                 applicantText.textContent = `Reject application from ${name}?`;
             });
         });
-
+        
         const trendBadge = document.getElementById('enrollmentTrendBadge');
         const enrollmentTrendCtx = document.getElementById('enrollmentTrendChart');
         let enrollmentTrendChart;
-
+        
         const createEnrollmentTrendChart = (labels, data) => {
             enrollmentTrendChart = new Chart(enrollmentTrendCtx, {
                 type: 'line',
@@ -343,13 +348,13 @@
                 }
             });
         };
-
+        
         const refreshEnrollmentTrend = async () => {
             try {
                 const response = await fetch('{{ route('admin.dashboard.enrollment-data') }}');
                 if (!response.ok) throw new Error('Failed to fetch enrollment data');
                 const payload = await response.json();
-
+                
                 if (!enrollmentTrendChart) {
                     createEnrollmentTrendChart(payload.labels, payload.data);
                 } else {
@@ -357,7 +362,7 @@
                     enrollmentTrendChart.data.datasets[0].data = payload.data;
                     enrollmentTrendChart.update();
                 }
-
+                
                 if (trendBadge) {
                     trendBadge.textContent = `Live • ${new Date(payload.lastUpdated).toLocaleTimeString()}`;
                 }
@@ -368,25 +373,25 @@
                 }
             }
         };
-
+        
         if (enrollmentTrendCtx) {
             refreshEnrollmentTrend();
             setInterval(refreshEnrollmentTrend, 60000);
         }
-
+        
         const passRateValue = document.getElementById('kpi-pass-rate-value');
         const completionRateValue = document.getElementById('kpi-completion-rate-value');
         const avgEngagementValue = document.getElementById('kpi-avg-engagement-value');
         const passRateBadge = document.getElementById('kpi-pass-rate-badge');
         const completionRateBadge = document.getElementById('kpi-completion-rate-badge');
         const engagementBadge = document.getElementById('kpi-engagement-badge');
-
+        
         const refreshKpiMetrics = async () => {
             try {
                 const response = await fetch('{{ route('admin.dashboard.kpi-metrics') }}');
                 if (!response.ok) throw new Error('Failed to fetch KPI metrics');
                 const payload = await response.json();
-
+                
                 if (passRateValue) {
                     passRateValue.textContent = `${payload.passRate}%`;
                 }
@@ -396,7 +401,7 @@
                 if (avgEngagementValue) {
                     avgEngagementValue.innerHTML = `${payload.avgEngagement}<span class="fs-6">m</span>`;
                 }
-
+                
                 if (passRateBadge) {
                     passRateBadge.textContent = 'Live';
                 }
@@ -419,16 +424,16 @@
                 }
             }
         };
-
+        
         if (passRateValue || completionRateValue || avgEngagementValue) {
             refreshKpiMetrics();
             setInterval(refreshKpiMetrics, 60000);
         }
-
+        
         const materialsUsageCtx = document.getElementById('materialsUsageChart');
         const materialsUsageBadge = document.getElementById('materialsUsageBadge');
         let materialsUsageChart;
-
+        
         const createMaterialsUsageChart = (labels, data) => {
             materialsUsageChart = new Chart(materialsUsageCtx, {
                 type: 'bar',
@@ -460,13 +465,13 @@
                 }
             });
         };
-
+        
         const refreshMaterialsUsage = async () => {
             try {
                 const response = await fetch('{{ route('admin.dashboard.materials-usage-data') }}');
                 if (!response.ok) throw new Error('Failed to fetch materials usage data');
                 const payload = await response.json();
-
+                
                 if (!materialsUsageChart) {
                     createMaterialsUsageChart(payload.labels, payload.data);
                 } else {
@@ -474,7 +479,7 @@
                     materialsUsageChart.data.datasets[0].data = payload.data;
                     materialsUsageChart.update();
                 }
-
+                
                 if (materialsUsageBadge) {
                     materialsUsageBadge.textContent = `Top subject: ${payload.topSubject}`;
                 }
@@ -485,16 +490,16 @@
                 }
             }
         };
-
+        
         if (materialsUsageCtx) {
             refreshMaterialsUsage();
             setInterval(refreshMaterialsUsage, 60000);
         }
-
+        
         const gradeDistributionCtx = document.getElementById('gradeDistributionChart');
         const gradeDistributionBadge = document.getElementById('gradeDistributionBadge');
         let gradeDistributionChart;
-
+        
         const createGradeDistributionChart = (labels, data) => {
             gradeDistributionChart = new Chart(gradeDistributionCtx, {
                 type: 'doughnut',
@@ -515,13 +520,13 @@
                 }
             });
         };
-
+        
         const refreshGradeDistribution = async () => {
             try {
                 const response = await fetch('{{ route('admin.dashboard.grade-distribution-data') }}');
                 if (!response.ok) throw new Error('Failed to fetch grade distribution data');
                 const payload = await response.json();
-
+                
                 if (!gradeDistributionChart) {
                     createGradeDistributionChart(payload.labels, payload.data);
                 } else {
@@ -529,7 +534,7 @@
                     gradeDistributionChart.data.datasets[0].data = payload.data;
                     gradeDistributionChart.update();
                 }
-
+                
                 if (gradeDistributionBadge) {
                     gradeDistributionBadge.textContent = `Pass Rate ${payload.passRate}%`;
                 }
@@ -540,7 +545,7 @@
                 }
             }
         };
-
+        
         if (gradeDistributionCtx) {
             refreshGradeDistribution();
             setInterval(refreshGradeDistribution, 60000);

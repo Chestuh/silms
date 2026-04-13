@@ -53,7 +53,7 @@ class AuthController extends Controller
         $data = $request->validate([
             'username' => ['required', 'string', 'max:64', 'regex:/^[A-Za-z0-9._%+-]+$/'],
             'password' => ['required', 'confirmed', Password::min(8)->mixedCase()->symbols()],
-            'applicant_category' => ['required', 'in:grade7,grade11,grade12,transferee,returnee'],
+            'applicant_category' => ['required', 'in:grade7,grade8,grade9,grade10,grade11,grade12,transferee,returnee'],
             'preferred_program' => ['nullable', 'in:ABM,GAS,STEM,TVL-Automotive,TVL-ICT,TVL-Cookery,TVL-HomeEc,TVL-IndustrialArts,TVL-AgriFishery'],
             'transferee_grade' => ['nullable', 'in:7,8,9,10,11,12'],
             'last_name' => ['required', 'string', 'max:255'],
@@ -174,6 +174,12 @@ class AuthController extends Controller
         $yearLevel = 0;
         if ($data['applicant_category'] === 'grade7') {
             $yearLevel = 7;
+        } elseif ($data['applicant_category'] === 'grade8') {
+            $yearLevel = 8;
+        } elseif ($data['applicant_category'] === 'grade9') {
+            $yearLevel = 9;
+        } elseif ($data['applicant_category'] === 'grade10') {
+            $yearLevel = 10;
         } elseif ($data['applicant_category'] === 'grade11') {
             $yearLevel = 11;
         } elseif ($data['applicant_category'] === 'grade12') {

@@ -23,7 +23,7 @@ CREATE TABLE pre_registrations (
     full_name VARCHAR(255) NOT NULL,
     program VARCHAR(255),
     year_level INT DEFAULT 1,
-    applicant_category ENUM('grade7', 'grade11', 'grade12', 'transferee', 'returnee') DEFAULT 'grade7',
+    applicant_category ENUM('grade7', 'grade8', 'grade9', 'grade10', 'grade11', 'grade12', 'transferee', 'returnee') DEFAULT 'grade7',
     status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
     rejection_reason TEXT,
     approved_at TIMESTAMP NULL,

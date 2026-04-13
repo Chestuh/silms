@@ -45,6 +45,9 @@
                                 <select name="applicant_category" class="form-select" id="applicantCategory" required>
                                     <option value="">-- Select Category --</option>
                                     <option value="grade7" {{ old('applicant_category') == 'grade7' ? 'selected' : '' }}>New Grade 7 Student</option>
+                                    <option value="grade8" {{ old('applicant_category') == 'grade8' ? 'selected' : '' }}>New Grade 8 Student</option>
+                                    <option value="grade9" {{ old('applicant_category') == 'grade9' ? 'selected' : '' }}>New Grade 9 Student</option>
+                                    <option value="grade10" {{ old('applicant_category') == 'grade10' ? 'selected' : '' }}>New Grade 10 Student</option>
                                     <option value="grade11" {{ old('applicant_category') == 'grade11' ? 'selected' : '' }}>New Grade 11 Student</option>
                                     <option value="grade12" {{ old('applicant_category') == 'grade12' ? 'selected' : '' }}>Grade 12 Student</option>
                                     <option value="transferee" {{ old('applicant_category') == 'transferee' ? 'selected' : '' }}>Transferee</option>

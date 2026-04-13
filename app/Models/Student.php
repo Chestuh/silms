@@ -74,6 +74,11 @@ class Student extends Model
         return $this->hasMany(CredentialRequest::class);
     }
 
+    public function transferRequests(): HasMany
+    {
+        return $this->hasMany(\App\Models\TransferRequest::class);
+    }
+
     public function selfAssessments(): HasMany
     {
         return $this->hasMany(SelfAssessment::class);

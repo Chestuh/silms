@@ -4,7 +4,10 @@
 
 @section('content')
 <h2 class="mb-4"><i class="bi bi-file-earmark-text me-2"></i>Admission Records</h2>
-<p class="text-muted">Transfer and re-admission handling records.</p>
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <p class="text-muted mb-0">Transfer and re-admission handling records.</p>
+    <a href="{{ route('student.transfer-requests.create') }}" class="btn btn-primary btn-sm">Request Transfer</a>
+</div>
 <div class="card">
     <div class="table-responsive">
         <table class="table table-hover mb-0">

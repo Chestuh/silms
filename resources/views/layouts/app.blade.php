@@ -7,6 +7,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <style>
+        .badge-contrast {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #212529;
+            border: 1px solid rgba(33, 37, 41, 0.12);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .btn-group .badge-contrast {
+            min-width: 1.7rem;
+            text-align: center;
+        }
+    </style>
     <link rel="icon" href="{{ asset('assets/icons/logo.png') }}" type="image/x-icon">
     @if(request()->routeIs('home'))
     <style>

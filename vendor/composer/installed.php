@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/csp-learning-portal',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '5982434464c9f05283646a9677c656eb895e626d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -353,9 +353,9 @@
             ),
         ),
         'laravel/csp-learning-portal' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '5982434464c9f05283646a9677c656eb895e626d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

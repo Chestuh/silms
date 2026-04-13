@@ -10,13 +10,20 @@ class CoursesController extends Controller
 {
     public function index(Request $request)
     {
-        $courses = Course::with('instructor.user')
+        $gradeLevels = ['7', '8', '9', '10', '11', '12'];
+
+        $coursesQuery = Course::with('instructor.user')
             ->withCount(['learningMaterials', 'enrollments'])
             ->orderBy('grade_level')
-            ->orderBy('code')
-            ->paginate(15);
+            ->orderBy('code');
 
-        return view('admin.courses.index', compact('courses'));
+        if ($request->filled('grade_level') && in_array($request->grade_level, $gradeLevels, true)) {
+            $coursesQuery->where('grade_level', $request->grade_level);
+        }
+
+        $courses = $coursesQuery->paginate(15)->withQueryString();
+
+        return view('admin.courses.index', compact('courses', 'gradeLevels'));
     }
 
     public function create()
