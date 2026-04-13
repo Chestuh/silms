@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2026 at 10:19 PM
+-- Generation Time: Apr 13, 2026 at 11:45 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -69,6 +69,14 @@ CREATE TABLE `admission_records` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admission_records`
+--
+
+INSERT INTO `admission_records` (`id`, `student_id`, `record_type`, `date_processed`, `notes`, `created_at`, `updated_at`) VALUES
+(1, 1, 'transfer', '2026-04-13', NULL, '2026-04-13 01:02:40', '2026-04-13 01:02:40'),
+(2, 1, 'readmission', '2026-04-13', NULL, '2026-04-13 01:11:26', '2026-04-13 01:11:26');
 
 -- --------------------------------------------------------
 
@@ -141,71 +149,39 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `code`, `title`, `units`, `grade_level`, `semester`, `instructor_id`, `created_at`, `updated_at`) VALUES
-(20, 'G11ABM - OC', 'ABM - Oral Comm 11', 3, '11', '1st Semester', NULL, '2026-04-12 10:36:17', '2026-04-12 11:08:32'),
-(21, 'ENG7', 'English 7', 3, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(22, 'FIL7', 'Filipino 7', 2, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(23, 'MATH7', 'Mathematics 7', 3, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(24, 'SCI7', 'Science 7', 3, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(25, 'AP7', 'Araling Panlipunan 7', 3, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(26, 'ESP7', 'Edukasyon sa Pagpapakatao 7', 2, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(27, 'MAPEH7', 'MAPEH 7 (Music, Arts, PE, Health)', 2, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(28, 'TLE7', 'Technology and Livelihood Education 7', 2, '7', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(29, 'ENG8', 'English 8', 3, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(30, 'FIL8', 'Filipino 8', 2, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(31, 'MATH8', 'Mathematics 8 (Algebra)', 3, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(32, 'SCI8', 'Science 8 (Biology)', 3, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(33, 'AP8', 'Araling Panlipunan 8 (Asian Studies)', 3, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(34, 'ESP8', 'Edukasyon sa Pagpapakatao 8', 2, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(35, 'MAPEH8', 'MAPEH 8 (Music, Arts, PE, Health)', 2, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(36, 'TLE8', 'Technology and Livelihood Education 8', 2, '8', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(37, 'ENG9', 'English 9', 3, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(38, 'FIL9', 'Filipino 9', 2, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(39, 'MATH9', 'Mathematics 9 (Geometry)', 3, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(40, 'SCI9', 'Science 9 (Chemistry)', 3, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(41, 'AP9', 'Araling Panlipunan 9 (Economics)', 3, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(42, 'ESP9', 'Edukasyon sa Pagpapakatao 9', 2, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(43, 'MAPEH9', 'MAPEH 9 (Music, Arts, PE, Health)', 2, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(44, 'TLE9', 'Technology and Livelihood Education 9', 2, '9', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(45, 'ENG10', 'English 10', 3, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(46, 'FIL10', 'Filipino 10', 2, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(47, 'MATH10', 'Mathematics 10 (Statistics & Probability / Advanced Algebra)', 3, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(48, 'SCI10', 'Science 10 (Physics)', 3, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(49, 'AP10', 'Araling Panlipunan 10 (Contemporary Issues)', 3, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(50, 'ESP10', 'Edukasyon sa Pagpapakatao 10', 2, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(51, 'MAPEH10', 'MAPEH 10 (Music, Arts, PE, Health)', 2, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(52, 'TLE10', 'Technology and Livelihood Education 10', 2, '10', NULL, 6, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(55, 'G7 - ENG', 'English 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(56, 'G7 - FIL', 'Filipino 7', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(57, 'G7 - MATH', 'Mathematics 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(58, 'G7 - SCI', 'Science 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(59, 'G7 - AP', 'Araling Panlipunan 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(60, 'G7 - ESP', 'Edukasyon sa Pagpapakatao 7', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(61, 'G7 - MAPEH', 'MAPEH 7 (Music, Arts, PE, Health)', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(62, 'G7 - TLE', 'Technology and Livelihood Education 7', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(63, 'G8 - ENG', 'English 8', 3, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(64, 'G8 - FIL', 'Filipino 8', 2, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(65, 'G8 - MATH', 'Mathematics 8 (Algebra)', 3, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(66, 'G8 - SCI', 'Science 8 (Biology)', 3, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(67, 'G8 - AP', 'Araling Panlipunan 8 (Asian Studies)', 3, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(68, 'G8 - ESP', 'Edukasyon sa Pagpapakatao 8', 2, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(69, 'G8 - MAPEH', 'MAPEH 8 (Music, Arts, PE, Health)', 2, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(70, 'G8 - TLE', 'Technology and Livelihood Education 8', 2, '8', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(71, 'G9 - ENG', 'English 9', 3, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(72, 'G9 - FIL', 'Filipino 9', 2, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(73, 'G9 - MATH', 'Mathematics 9 (Geometry)', 3, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(74, 'G9 - SCI', 'Science 9 (Chemistry)', 3, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(75, 'G9 - AP', 'Araling Panlipunan 9 (Economics)', 3, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(76, 'G9 - ESP', 'Edukasyon sa Pagpapakatao 9', 2, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(77, 'G9 - MAPEH', 'MAPEH 9 (Music, Arts, PE, Health)', 2, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(78, 'G9 - TLE', 'Technology and Livelihood Education 9', 2, '9', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(79, 'G10 - ENG', 'English 10', 3, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(80, 'G10 - FIL', 'Filipino 10', 2, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(81, 'G10 - MATH', 'Mathematics 10 (Statistics & Probability / Advanced Algebra)', 3, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(82, 'G10 - SCI', 'Science 10 (Physics)', 3, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(83, 'G10 - AP', 'Araling Panlipunan 10 (Contemporary Issues)', 3, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(84, 'G10 - ESP', 'Edukasyon sa Pagpapakatao 10', 2, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(85, 'G10 - MAPEH', 'MAPEH 10 (Music, Arts, PE, Health)', 2, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(86, 'G10 - TLE', 'Technology and Livelihood Education 10', 2, '10', NULL, 6, '2026-04-12 11:31:14', '2026-04-12 11:31:14');
+(20, 'G11 - ABM - OC', 'ABM - Oral Comm 11', 3, '11', '1st Semester', NULL, '2026-04-12 10:36:17', '2026-04-13 01:15:20'),
+(55, 'G7 - ENG', 'English 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(56, 'G7 - FIL', 'Filipino 7', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(57, 'G7 - MATH', 'Mathematics 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(58, 'G7 - SCI', 'Science 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(59, 'G7 - AP', 'Araling Panlipunan 7', 3, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(60, 'G7 - ESP', 'Edukasyon sa Pagpapakatao 7', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(61, 'G7 - MAPEH', 'MAPEH 7 (Music, Arts, PE, Health)', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(62, 'G7 - TLE', 'Technology and Livelihood Education 7', 2, '7', NULL, 6, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(63, 'G8 - ENG', 'English 8', 3, '8', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(64, 'G8 - FIL', 'Filipino 8', 2, '8', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(65, 'G8 - MATH', 'Mathematics 8 (Algebra)', 3, '8', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(66, 'G8 - SCI', 'Science 8 (Biology)', 3, '8', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(67, 'G8 - AP', 'Araling Panlipunan 8 (Asian Studies)', 3, '8', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(68, 'G8 - ESP', 'Edukasyon sa Pagpapakatao 8', 2, '8', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(69, 'G8 - MAPEH', 'MAPEH 8 (Music, Arts, PE, Health)', 2, '8', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(70, 'G8 - TLE', 'Technology and Livelihood Education 8', 2, '8', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(71, 'G9 - ENG', 'English 9', 3, '9', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(72, 'G9 - FIL', 'Filipino 9', 2, '9', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(73, 'G9 - MATH', 'Mathematics 9 (Geometry)', 3, '9', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(74, 'G9 - SCI', 'Science 9 (Chemistry)', 3, '9', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(75, 'G9 - AP', 'Araling Panlipunan 9 (Economics)', 3, '9', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(76, 'G9 - ESP', 'Edukasyon sa Pagpapakatao 9', 2, '9', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(77, 'G9 - MAPEH', 'MAPEH 9 (Music, Arts, PE, Health)', 2, '9', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(78, 'G9 - TLE', 'Technology and Livelihood Education 9', 2, '9', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(79, 'G10 - ENG', 'English 10', 3, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(80, 'G10 - FIL', 'Filipino 10', 2, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(81, 'G10 - MATH', 'Mathematics 10 (Statistics & Probability / Advanced Algebra)', 3, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(82, 'G10 - SCI', 'Science 10 (Physics)', 3, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(83, 'G10 - AP', 'Araling Panlipunan 10 (Contemporary Issues)', 3, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(84, 'G10 - ESP', 'Edukasyon sa Pagpapakatao 10', 2, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(85, 'G10 - MAPEH', 'MAPEH 10 (Music, Arts, PE, Health)', 2, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(86, 'G10 - TLE', 'Technology and Livelihood Education 10', 2, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14');
 
 -- --------------------------------------------------------
 
@@ -371,7 +347,7 @@ CREATE TABLE `instructors` (
 
 INSERT INTO `instructors` (`id`, `user_id`, `department`, `created_at`, `updated_at`) VALUES
 (6, 10, '7', '2026-03-22 22:51:07', '2026-03-22 22:51:07'),
-(8, 20, 'Computer Science', '2026-04-12 09:54:01', '2026-04-12 09:54:01');
+(9, 21, 'Computer Science', '2026-04-13 01:31:18', '2026-04-13 01:31:18');
 
 -- --------------------------------------------------------
 
@@ -468,13 +444,16 @@ INSERT INTO `learning_materials` (`id`, `course_id`, `title`, `description`, `fo
 (1, 18, 'Welcome and Syllabus', 'Course overview and requirements', 'document', NULL, NULL, NULL, 'easy', 1, 0, 'approved', NULL, '2026-04-11 05:00:20', '2026-04-11 05:31:23'),
 (2, 18, 'Variables and Data Types', 'Video lesson on basics', 'video', NULL, NULL, NULL, 'easy', 2, 0, 'rejected', 'a', '2026-04-11 05:00:20', '2026-04-11 05:27:01'),
 (3, 19, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 1, 'pending', NULL, '2026-04-11 05:00:20', '2026-04-11 05:35:26'),
-(4, 16, 'asr', 'asr', 'document', '1775921240_69da6858cf78e.docx', NULL, NULL, 'easy', 1, 0, 'pending', NULL, '2026-04-11 07:27:20', '2026-04-11 07:27:20'),
-(5, 53, 'Welcome and Syllabus', 'Course overview and requirements', 'document', NULL, NULL, NULL, 'easy', 1, 0, 'pending', NULL, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(6, 53, 'Variables and Data Types', 'Video lesson on basics', 'video', NULL, NULL, NULL, 'easy', 2, 0, 'pending', NULL, '2026-04-12 11:26:47', '2026-04-12 11:26:47'),
-(7, 54, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 0, 'pending', NULL, '2026-04-12 11:26:48', '2026-04-12 11:26:48'),
-(8, 87, 'Welcome and Syllabus', 'Course overview and requirements', 'document', NULL, NULL, NULL, 'easy', 1, 0, 'pending', NULL, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(9, 87, 'Variables and Data Types', 'Video lesson on basics', 'video', NULL, NULL, NULL, 'easy', 2, 0, 'pending', NULL, '2026-04-12 11:31:14', '2026-04-12 11:31:14'),
-(10, 88, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 0, 'pending', NULL, '2026-04-12 11:31:14', '2026-04-12 11:31:14');
+(4, 16, 'asr', 'asr', 'document', '1775921240_69da6858cf78e.docx', NULL, NULL, 'easy', 1, 0, 'rejected', 'a', '2026-04-11 07:27:20', '2026-04-13 01:15:40'),
+(5, 53, 'Welcome and Syllabus', 'Course overview and requirements', 'document', NULL, NULL, NULL, 'easy', 1, 1, 'pending', NULL, '2026-04-12 11:26:47', '2026-04-13 01:15:33'),
+(6, 53, 'Variables and Data Types', 'Video lesson on basics', 'video', NULL, NULL, NULL, 'easy', 2, 1, 'pending', NULL, '2026-04-12 11:26:47', '2026-04-13 01:15:33'),
+(7, 54, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 1, 'pending', NULL, '2026-04-12 11:26:48', '2026-04-13 01:15:33'),
+(8, 87, 'Welcome and Syllabus', 'Course overview and requirements', 'document', NULL, NULL, NULL, 'easy', 1, 1, 'pending', NULL, '2026-04-12 11:31:14', '2026-04-13 01:15:31'),
+(9, 87, 'Variables and Data Types', 'Video lesson on basics', 'video', NULL, NULL, NULL, 'easy', 2, 1, 'pending', NULL, '2026-04-12 11:31:14', '2026-04-13 01:15:32'),
+(10, 88, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 1, 'pending', NULL, '2026-04-12 11:31:14', '2026-04-13 01:15:32'),
+(11, 89, 'Welcome and Syllabus', 'Course overview and requirements', 'document', NULL, NULL, NULL, 'easy', 1, 1, 'pending', NULL, '2026-04-13 01:31:18', '2026-04-13 01:33:32'),
+(12, 89, 'Variables and Data Types', 'Video lesson on basics', 'video', NULL, NULL, NULL, 'easy', 2, 1, 'pending', NULL, '2026-04-13 01:31:18', '2026-04-13 01:33:33'),
+(13, 90, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 1, 'pending', NULL, '2026-04-13 01:31:18', '2026-04-13 01:33:33');
 
 -- --------------------------------------------------------
 
@@ -513,6 +492,13 @@ CREATE TABLE `learning_path_rules` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `learning_path_rules`
+--
+
+INSERT INTO `learning_path_rules` (`id`, `type`, `name`, `source_course_id`, `target_course_id`, `source_material_id`, `target_material_id`, `sort_order`, `is_active`, `created_at`, `updated_at`) VALUES
+(2, 'material_prerequisite', 'Downy', NULL, NULL, 1, 2, 1, 1, '2026-04-13 01:32:27', '2026-04-13 01:32:27');
 
 -- --------------------------------------------------------
 
@@ -635,7 +621,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (71, '2025_02_16_100002_create_user_dashboard_preferences_table', 6),
 (72, '2026_04_11_000001_add_theme_and_display_columns_to_user_dashboard_preferences_table', 7),
 (73, '2026_04_11_000001_add_rubric_id_to_grades_table', 8),
-(74, '2026_04_13_000001_add_semester_to_courses_table', 9);
+(74, '2026_04_13_000001_add_semester_to_courses_table', 9),
+(75, '2026_04_13_000002_update_applicant_category_enum', 10);
 
 -- --------------------------------------------------------
 
@@ -680,7 +667,7 @@ CREATE TABLE `pre_registrations` (
   `full_name` varchar(255) NOT NULL,
   `program` varchar(255) NOT NULL,
   `year_level` int(11) NOT NULL DEFAULT 1,
-  `applicant_category` enum('grade7','grade11','grade12','transferee','returnee') DEFAULT NULL,
+  `applicant_category` enum('grade7','grade8','grade9','grade10','grade11','grade12','transferee','returnee') DEFAULT NULL,
   `transferee_grade` varchar(255) DEFAULT NULL,
   `preferred_program` enum('ABM','GAS','STEM','TVL-Automotive','TVL-ICT','TVL-Cookery','TVL-HomeEc','TVL-IndustrialArts','TVL-AgriFishery') DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
@@ -721,7 +708,8 @@ CREATE TABLE `pre_registrations` (
 --
 
 INSERT INTO `pre_registrations` (`id`, `email`, `password_hash`, `full_name`, `program`, `year_level`, `applicant_category`, `transferee_grade`, `preferred_program`, `last_name`, `first_name`, `middle_name`, `has_no_middle_name`, `extension_name`, `sex`, `date_of_birth`, `place_of_birth`, `civil_status`, `telephone_number`, `mobile_number`, `permanent_address`, `current_address`, `citizenship`, `citizenship_other`, `family_members_indicator`, `family_information`, `elementary_graduation_year`, `junior_high_graduation_year`, `high_school_graduation_year`, `emergency_contact_name`, `emergency_contact_address`, `emergency_contact_number`, `emergency_contact_relationship`, `emergency_contact_email`, `status`, `rejection_reason`, `approved_at`, `rejected_at`, `created_at`, `updated_at`) VALUES
-(1, 'chizuu@csp.edu', '$2y$12$nQZWkkr/CxBTyh0ZZmXcEuA.T.SnT3.Y3HVBuCWn9xfmC542DWyU.', 'Chester John Duran Flores', 'Grade 7', 1, 'grade7', NULL, NULL, 'Flores', 'Chester John', 'Duran', 0, NULL, 'Male', '2002-03-28', 'Polomolok, South Cotabato', 'Single', 'N/A', '09632637862', 'Polomolok, South Cotabato', 'Polomolok, South Cotabato', 'Filipino', NULL, 'father,mother,spouse', '{\"father\":{\"last_name\":\"Flores\",\"first_name\":\"Adrian\",\"middle_name\":\"Lolo\",\"telephone\":\"N\\/A\",\"mobile\":\"09123854231\",\"occupation\":\"DOLE\",\"deceased\":false},\"mother\":{\"last_name\":\"Duran\",\"first_name\":\"Roleen Joy\",\"middle_name\":\"Samiana\",\"telephone\":\"N\\/A\",\"mobile\":\"09283746147\",\"occupation\":\"OFW\",\"deceased\":false},\"spouse\":{\"last_name\":\"Ya\\u00f1ez\",\"first_name\":\"Janha Jone\",\"middle_name\":\"Ampong\",\"telephone\":\"N\\/A\",\"mobile\":\"09283746123\",\"occupation\":\"Housewife\"}}', '2015-2016', NULL, NULL, 'Joselyn Duran', 'Polomolok, South Cotabato', '09709887251', 'Guardian', 'joselynduran@gmail.com', 'rejected', 'a', NULL, '2026-04-09 19:27:33', '2026-04-09 10:56:14', '2026-04-09 11:27:33');
+(1, 'chizuu@csp.edu', '$2y$12$nQZWkkr/CxBTyh0ZZmXcEuA.T.SnT3.Y3HVBuCWn9xfmC542DWyU.', 'Chester John Duran Flores', 'Grade 7', 1, 'grade7', NULL, NULL, 'Flores', 'Chester John', 'Duran', 0, NULL, 'Male', '2002-03-28', 'Polomolok, South Cotabato', 'Single', 'N/A', '09632637862', 'Polomolok, South Cotabato', 'Polomolok, South Cotabato', 'Filipino', NULL, 'father,mother,spouse', '{\"father\":{\"last_name\":\"Flores\",\"first_name\":\"Adrian\",\"middle_name\":\"Lolo\",\"telephone\":\"N\\/A\",\"mobile\":\"09123854231\",\"occupation\":\"DOLE\",\"deceased\":false},\"mother\":{\"last_name\":\"Duran\",\"first_name\":\"Roleen Joy\",\"middle_name\":\"Samiana\",\"telephone\":\"N\\/A\",\"mobile\":\"09283746147\",\"occupation\":\"OFW\",\"deceased\":false},\"spouse\":{\"last_name\":\"Ya\\u00f1ez\",\"first_name\":\"Janha Jone\",\"middle_name\":\"Ampong\",\"telephone\":\"N\\/A\",\"mobile\":\"09283746123\",\"occupation\":\"Housewife\"}}', '2015-2016', NULL, NULL, 'Joselyn Duran', 'Polomolok, South Cotabato', '09709887251', 'Guardian', 'joselynduran@gmail.com', 'rejected', 'a', NULL, '2026-04-09 19:27:33', '2026-04-09 10:56:14', '2026-04-09 11:27:33'),
+(2, 'joshwow@csp.edu', '$2y$12$kT/xTHEo.EX3Seax1/Ds9uViSE4tlWPb6xPx7qV26h6Y8ye0tbUcu', 'Joshua Lunas Esnardo', 'N/A', 8, 'grade8', NULL, NULL, 'Esnardo', 'Joshua', 'Lunas', 0, NULL, 'Male', '2003-12-25', 'Polomolok', 'Single', 'N/A', '09283417232', 'Polomolok, South Cotabato', 'Polomolok, South Cotabato', 'Filipino', NULL, 'mother', '{\"mother\":{\"last_name\":\"Esnardo\",\"first_name\":\"Verly\",\"middle_name\":\"Lunas\",\"telephone\":\"N\\/A\",\"mobile\":\"09283746123\",\"occupation\":\"Housewife\",\"deceased\":false}}', '2015-2016', NULL, NULL, 'Verly Esnardo', 'Polomolok, South Cotabato', '09283767182', 'Parent', 'verlyesnardo@gmail.com', 'pending', NULL, NULL, NULL, '2026-04-13 01:31:48', '2026-04-13 01:31:48');
 
 -- --------------------------------------------------------
 
@@ -819,7 +807,7 @@ CREATE TABLE `students` (
 
 INSERT INTO `students` (`id`, `school_id`, `user_id`, `student_number`, `program`, `year_level`, `admission_date`, `status`, `academic_status`, `created_at`, `updated_at`) VALUES
 (1, '2027-00001', 15, '2027-00001', NULL, 1, '2026-04-09', 'active', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
-(3, NULL, 19, '2024-001', 'BS Computer Science', 1, '2026-04-12', 'active', NULL, '2026-04-12 09:54:01', '2026-04-12 09:54:01');
+(4, NULL, 19, '2024-001', 'BS Computer Science', 1, '2026-04-13', 'active', NULL, '2026-04-13 01:31:18', '2026-04-13 01:31:18');
 
 -- --------------------------------------------------------
 
@@ -912,7 +900,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ro
 (15, 'Chester John Duran Flores', 'chizuu@csp.edu', '2026-04-09 11:25:19', '$2y$12$nQZWkkr/CxBTyh0ZZmXcEuA.T.SnT3.Y3HVBuCWn9xfmC542DWyU.', 'student', NULL, '2026-04-09 11:25:19', '2026-04-09 11:25:19'),
 (17, 'Portal Cashier', 'cashier@csp.edu', NULL, '$2y$12$wteLvkpd0z3EJxluG7QF2.WVn./5pBjGVx5z2zw1dTjDqtR8DJD/6', 'cashier', NULL, '2026-04-11 05:00:19', '2026-04-11 05:00:19'),
 (19, 'John Students', 'student@csp.edu', NULL, '$2y$12$1XzMbmCuNYyDqtWWZgQRGOx/TFAg4DROixvL.muijfHacFMpmwz8W', 'student', NULL, '2026-04-11 05:00:20', '2026-04-12 12:01:24'),
-(20, 'Jane Instructor', 'instructor@csp.edu', NULL, '$2y$12$61SmDznweKZreamWZewTSuJ.xUw.sjYfIipwUp6Phu/miYMsBH4JW', 'instructor', NULL, '2026-04-12 09:54:01', '2026-04-12 09:54:01');
+(21, 'Jane Instructor', 'instructor@csp.edu', NULL, '$2y$12$uvYiWSJhw73GuNwOvHqDIu6jNcbXy../qdin1Y03QippQJAd3zRx6', 'instructor', NULL, '2026-04-13 01:31:18', '2026-04-13 01:31:18');
 
 -- --------------------------------------------------------
 
@@ -1249,7 +1237,7 @@ ALTER TABLE `activity_log`
 -- AUTO_INCREMENT for table `admission_records`
 --
 ALTER TABLE `admission_records`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `assessment_templates`
@@ -1267,7 +1255,7 @@ ALTER TABLE `auto_learning_aids`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `course_curriculum_alignments`
@@ -1297,7 +1285,7 @@ ALTER TABLE `disciplinary_records`
 -- AUTO_INCREMENT for table `enrollments`
 --
 ALTER TABLE `enrollments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1315,13 +1303,13 @@ ALTER TABLE `fees`
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `instructors`
 --
 ALTER TABLE `instructors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `job_aids`
@@ -1345,7 +1333,7 @@ ALTER TABLE `learning_aid_interactions`
 -- AUTO_INCREMENT for table `learning_materials`
 --
 ALTER TABLE `learning_materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `learning_outcomes`
@@ -1357,7 +1345,7 @@ ALTER TABLE `learning_outcomes`
 -- AUTO_INCREMENT for table `learning_path_rules`
 --
 ALTER TABLE `learning_path_rules`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `learning_progress`
@@ -1381,7 +1369,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1393,7 +1381,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `pre_registrations`
 --
 ALTER TABLE `pre_registrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `rubrics`
@@ -1411,7 +1399,7 @@ ALTER TABLE `self_assessments`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `student_progress_analytics`
@@ -1435,7 +1423,7 @@ ALTER TABLE `transfer_requests`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `user_dashboard_preferences`
