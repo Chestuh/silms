@@ -17264,7 +17264,43 @@ Stack trace:
 #56 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
 #57 {main}
 "} 
+<<<<<<< HEAD
 [2026-04-14 15:45:32] local.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:67)
+=======
+[2026-04-14 15:30:48] local.ERROR: The "C:\xampp\htdocs\silms\storage\framework/sessions" directory does not exist. {"exception":"[object] (Symfony\\Component\\Finder\\Exception\\DirectoryNotFoundException(code: 0): The \"C:\\xampp\\htdocs\\silms\\storage\\framework/sessions\" directory does not exist. at C:/xampp/htdocs/silms/vendor/symfony/finder/Finder.php:651)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/FileSessionHandler.php(115): Symfony/Component/Finder/Finder->in('C://xampp//htdocs...')
+#1 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(178): Illuminate/Session/FileSessionHandler->gc(7200)
+#2 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(119): Illuminate/Session/Middleware/StartSession->collectGarbage(Object(Illuminate/Session/Store))
+#3 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#7 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#12 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#13 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#14 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#15 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->{closure:Illuminate/Foundation/Http/Kernel::dispatchToRouter():197}(Object(Illuminate/Http/Request))
+#16 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#18 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#19 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#20 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#21 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#22 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#23 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#24 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#25 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#26 C:/xampp/htdocs/silms/public/index.php(18): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#27 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
+#28 {main}
+"} 
+[2026-04-14 15:30:54] local.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:67)
+>>>>>>> da62894c4ae15969e840b75bd7f47e4b13d40e4c
 [stacktrace]
 #0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(97): Illuminate/View/Compilers/Compiler->__construct(Object(Illuminate/Filesystem/Filesystem), false, '', true, 'php')
 #1 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(908): Illuminate/View/ViewServiceProvider->{closure:Illuminate/View/ViewServiceProvider::registerBladeCompiler():96}(Object(Illuminate/Foundation/Application), Array)
@@ -17320,13 +17356,21 @@ Stack trace:
 #51 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
 #52 {main}
 "} 
+<<<<<<< HEAD
 [2026-04-14 15:45:40] local.ERROR: file_put_contents(C:\xampp\htdocs\silms\storage\framework/sessions/5JEg7ktnKS2UFyH3X6u9ast54BeqSocotlXU6p3r): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): file_put_contents(C:\\xampp\\htdocs\\silms\\storage\\framework/sessions/5JEg7ktnKS2UFyH3X6u9ast54BeqSocotlXU6p3r): Failed to open stream: No such file or directory at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:204)
+=======
+[2026-04-14 15:30:55] local.ERROR: file_put_contents(C:\xampp\htdocs\silms\storage\framework/sessions/QWCQgfRMSG8aynyNZwzksElJmg2eemyF2aA20BjM): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): file_put_contents(C:\\xampp\\htdocs\\silms\\storage\\framework/sessions/QWCQgfRMSG8aynyNZwzksElJmg2eemyF2aA20BjM): Failed to open stream: No such file or directory at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:204)
+>>>>>>> da62894c4ae15969e840b75bd7f47e4b13d40e4c
 [stacktrace]
 #0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError(2, 'file_put_conten...', 'C://xampp//htdocs...', 204)
 #1 [internal function]: Illuminate/Foundation/Bootstrap/HandleExceptions->{closure:Illuminate/Foundation/Bootstrap/HandleExceptions::forwardsTo():254}(2, 'file_put_conten...', 'C://xampp//htdocs...', 204)
 #2 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(204): file_put_contents('C://xampp//htdocs...', 'a:3:{s:6:\"_toke...', 2)
 #3 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/FileSessionHandler.php(90): Illuminate/Filesystem/Filesystem->put('C://xampp//htdocs...', 'a:3:{s:6:\"_toke...', true)
+<<<<<<< HEAD
 #4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Store.php(172): Illuminate/Session/FileSessionHandler->write('5JEg7ktnKS2UFyH...', 'a:3:{s:6:\"_toke...')
+=======
+#4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Store.php(172): Illuminate/Session/FileSessionHandler->write('QWCQgfRMSG8ayny...', 'a:3:{s:6:\"_toke...')
+>>>>>>> da62894c4ae15969e840b75bd7f47e4b13d40e4c
 #5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(245): Illuminate/Session/Store->save()
 #6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(130): Illuminate/Session/Middleware/StartSession->saveSession(Object(Illuminate/Http/Request))
 #7 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
@@ -17356,7 +17400,11 @@ Stack trace:
 #31 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
 #32 {main}
 "} 
+<<<<<<< HEAD
 [2026-04-14 15:45:42] local.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:67)
+=======
+[2026-04-14 15:30:55] local.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:67)
+>>>>>>> da62894c4ae15969e840b75bd7f47e4b13d40e4c
 [stacktrace]
 #0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(97): Illuminate/View/Compilers/Compiler->__construct(Object(Illuminate/Filesystem/Filesystem), false, '', true, 'php')
 #1 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(908): Illuminate/View/ViewServiceProvider->{closure:Illuminate/View/ViewServiceProvider::registerBladeCompiler():96}(Object(Illuminate/Foundation/Application), Array)
@@ -17391,3 +17439,137 @@ Stack trace:
 #30 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
 #31 {main}
 "} 
+<<<<<<< HEAD
+=======
+[2026-04-14 18:14:07] local.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:67)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(97): Illuminate/View/Compilers/Compiler->__construct(Object(Illuminate/Filesystem/Filesystem), false, '', true, 'php')
+#1 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(908): Illuminate/View/ViewServiceProvider->{closure:Illuminate/View/ViewServiceProvider::registerBladeCompiler():96}(Object(Illuminate/Foundation/Application), Array)
+#2 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate/Container/Container->build(Object(Closure))
+#3 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(986): Illuminate/Container/Container->resolve('blade.compiler', Array, true)
+#4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate/Foundation/Application->resolve('blade.compiler', Array)
+#5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(971): Illuminate/Container/Container->make('blade.compiler', Array)
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(168): Illuminate/Foundation/Application->make('blade.compiler')
+#7 [internal function]: Illuminate/View/ViewServiceProvider->{closure:Illuminate/View/ViewServiceProvider::registerBladeEngine():164}()
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Engines/EngineResolver.php(55): call_user_func(Object(Closure))
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Factory.php(310): Illuminate/View/Engines/EngineResolver->resolve('blade')
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Factory.php(274): Illuminate/View/Factory->getEngineFromPath('C://xampp//htdocs...')
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Factory.php(146): Illuminate/View/Factory->viewInstance('home', 'C://xampp//htdocs...', Array)
+#12 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(1020): Illuminate/View/Factory->make('home', Array, Array)
+#13 C:/xampp/htdocs/silms/app/Http/Controllers/HomeController.php(26): view('home')
+#14 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App/Http/Controllers/HomeController->index(Object(Illuminate/Http/Request))
+#15 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate/Routing/Controller->callAction('index', Array)
+#16 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Route.php(259): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(App/Http/Controllers/HomeController), 'index')
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate/Routing/Route->runController()
+#18 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate/Routing/Route->run()
+#19 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->{closure:Illuminate/Routing/Router::runRouteWithinStack():805}(Object(Illuminate/Http/Request))
+#20 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#21 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#22 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#23 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#24 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#25 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#26 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#27 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#28 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#29 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#30 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#31 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#32 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#33 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#34 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#35 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#36 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#37 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#38 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#39 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->{closure:Illuminate/Foundation/Http/Kernel::dispatchToRouter():197}(Object(Illuminate/Http/Request))
+#40 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#41 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#43 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#44 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#45 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#46 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#47 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#48 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#49 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#50 C:/xampp/htdocs/silms/public/index.php(18): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#51 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
+#52 {main}
+"} 
+[2026-04-14 18:14:11] local.ERROR: file_put_contents(C:\xampp\htdocs\silms\storage\framework/sessions/L1RaUxTZS3yGanriZPrZwG5U05TpJRQlbDZTT1n9): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): file_put_contents(C:\\xampp\\htdocs\\silms\\storage\\framework/sessions/L1RaUxTZS3yGanriZPrZwG5U05TpJRQlbDZTT1n9): Failed to open stream: No such file or directory at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:204)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError(2, 'file_put_conten...', 'C://xampp//htdocs...', 204)
+#1 [internal function]: Illuminate/Foundation/Bootstrap/HandleExceptions->{closure:Illuminate/Foundation/Bootstrap/HandleExceptions::forwardsTo():254}(2, 'file_put_conten...', 'C://xampp//htdocs...', 204)
+#2 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(204): file_put_contents('C://xampp//htdocs...', 'a:3:{s:6:\"_toke...', 2)
+#3 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/FileSessionHandler.php(90): Illuminate/Filesystem/Filesystem->put('C://xampp//htdocs...', 'a:3:{s:6:\"_toke...', true)
+#4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Store.php(172): Illuminate/Session/FileSessionHandler->write('L1RaUxTZS3yGanr...', 'a:3:{s:6:\"_toke...')
+#5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(245): Illuminate/Session/Store->save()
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(130): Illuminate/Session/Middleware/StartSession->saveSession(Object(Illuminate/Http/Request))
+#7 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#12 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#13 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#14 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#15 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#16 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#18 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#19 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->{closure:Illuminate/Foundation/Http/Kernel::dispatchToRouter():197}(Object(Illuminate/Http/Request))
+#20 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#21 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#22 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#23 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#24 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#25 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#26 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#27 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#28 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#29 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#30 C:/xampp/htdocs/silms/public/index.php(18): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#31 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
+#32 {main}
+"} 
+[2026-04-14 18:14:12] local.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:67)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(97): Illuminate/View/Compilers/Compiler->__construct(Object(Illuminate/Filesystem/Filesystem), false, '', true, 'php')
+#1 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(908): Illuminate/View/ViewServiceProvider->{closure:Illuminate/View/ViewServiceProvider::registerBladeCompiler():96}(Object(Illuminate/Foundation/Application), Array)
+#2 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate/Container/Container->build(Object(Closure))
+#3 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(986): Illuminate/Container/Container->resolve('blade.compiler', Array, true)
+#4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate/Foundation/Application->resolve('blade.compiler', Array)
+#5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(971): Illuminate/Container/Container->make('blade.compiler', Array)
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(168): Illuminate/Foundation/Application->make('blade.compiler')
+#7 [internal function]: Illuminate/View/ViewServiceProvider->{closure:Illuminate/View/ViewServiceProvider::registerBladeEngine():164}()
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Engines/EngineResolver.php(55): call_user_func(Object(Closure))
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Factory.php(310): Illuminate/View/Engines/EngineResolver->resolve('blade')
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Factory.php(274): Illuminate/View/Factory->getEngineFromPath('C://xampp//htdocs...')
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Factory.php(146): Illuminate/View/Factory->viewInstance('errors::404', 'C://xampp//htdocs...', Array)
+#12 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/ResponseFactory.php(88): Illuminate/View/Factory->make('errors::404', Array)
+#13 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(723): Illuminate/Routing/ResponseFactory->view('errors::404', Array, 404, Array)
+#14 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate/Foundation/Exceptions/Handler->renderHttpException(Object(Symfony/Component/HttpKernel/Exception/NotFoundHttpException))
+#15 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate/Foundation/Exceptions/Handler->prepareResponse(Object(Illuminate/Http/Request), Object(Symfony/Component/HttpKernel/Exception/NotFoundHttpException))
+#16 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate/Foundation/Exceptions/Handler->renderExceptionResponse(Object(Illuminate/Http/Request), Object(Symfony/Component/HttpKernel/Exception/NotFoundHttpException))
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(51): Illuminate/Foundation/Exceptions/Handler->render(Object(Illuminate/Http/Request), Object(Symfony/Component/HttpKernel/Exception/NotFoundHttpException))
+#18 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(146): Illuminate/Routing/Pipeline->handleException(Object(Illuminate/Http/Request), Object(Symfony/Component/HttpKernel/Exception/NotFoundHttpException))
+#19 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#20 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#21 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#22 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#23 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#24 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#25 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#26 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#27 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#28 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#29 C:/xampp/htdocs/silms/public/index.php(18): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#30 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
+#31 {main}
+"} 
+[2026-04-14 19:00:26] local.ERROR: Maximum execution time of 30 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 30 seconds exceeded at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:86)
+[stacktrace]
+#0 {main}
+"} 
+>>>>>>> da62894c4ae15969e840b75bd7f47e4b13d40e4c
