@@ -37,6 +37,15 @@ CREATE TABLE `academic_honors` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `academic_honors`
+--
+
+INSERT INTO `academic_honors` (`id`, `student_id`, `honor_type`, `semester`, `school_year`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Summa Cum Laude', '1st Semester', '2025-2026', '2026-04-13 02:00:00', '2026-04-13 02:00:00'),
+(2, 1, 'Best in Mathematics', '1st Semester', '2025-2026', '2026-04-13 02:05:00', '2026-04-13 02:05:00'),
+(3, 4, 'Dean''s List', '1st Semester', '2025-2026', '2026-04-13 02:10:00', '2026-04-13 02:10:00');
+
 -- --------------------------------------------------------
 
 --
@@ -53,6 +62,17 @@ CREATE TABLE `activity_log` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `activity_log`
+--
+
+INSERT INTO `activity_log` (`id`, `user_id`, `action`, `entity_type`, `entity_id`, `details`, `created_at`, `updated_at`) VALUES
+(1, 15, 'enrolled', 'course', 55, '{\"course_title\":\"English 7\",\"enrollment_id\":1}', '2026-04-10 08:00:00', '2026-04-10 08:00:00'),
+(2, 15, 'viewed_material', 'learning_material', 1, '{\"material_title\":\"Welcome and Syllabus\",\"time_spent\":15}', '2026-04-10 09:30:00', '2026-04-10 09:30:00'),
+(3, 19, 'submitted_assignment', 'assessment', 1, '{\"assessment_title\":\"Math Quiz 1\",\"score\":85}', '2026-04-11 10:15:00', '2026-04-11 10:15:00'),
+(4, 1, 'approved_material', 'learning_material', 2, '{\"approver\":\"Principal\",\"action\":\"approved\"}', '2026-04-11 11:00:00', '2026-04-11 11:00:00'),
+(5, 21, 'created_assessment', 'assessment_template', 1, '{\"template_title\":\"Unit 1 Quiz\",\"questions\":10}', '2026-04-12 13:20:00', '2026-04-12 13:20:00');
 
 -- --------------------------------------------------------
 
@@ -106,6 +126,15 @@ CREATE TABLE `assessment_templates` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `assessment_templates`
+--
+
+INSERT INTO `assessment_templates` (`id`, `course_id`, `learning_material_id`, `instructor_id`, `title`, `description`, `assessment_type`, `number_of_questions`, `passing_score`, `time_limit_minutes`, `questions_json`, `status`, `instructor_feedback`, `approved_at`, `reviewed_at`, `generation_metadata`, `ai_generated`, `created_at`, `updated_at`) VALUES
+(1, 55, 1, 6, 'English 7 - Unit 1 Quiz', 'Quiz covering basic English concepts', 'quiz', 10, 70.00, 30, '[{\"id\":1,\"question\":\"What is a noun?\",\"options\":[\"A person, place or thing\",\"A describing word\",\"An action word\",\"A connecting word\"],\"correct_answer\":0},{\"id\":2,\"question\":\"Identify the verb in: She runs quickly\",\"options\":[\"She\",\"runs\",\"quickly\",\"in\"],\"correct_answer\":1}]', 'published', 'Good quality quiz', '2026-04-12 10:00:00', '2026-04-12 09:00:00', '{\"model\":\"gpt-4\",\"tokens\":250}', 1, '2026-04-12 09:00:00', '2026-04-12 10:00:00'),
+(2, 57, 2, 6, 'Math 7 - Basic Operations', 'Assessment on addition, subtraction, multiplication and division', 'quiz', 15, 75.00, 45, '[{\"id\":1,\"question\":\"What is 25 + 15?\",\"options\":[\"30\",\"40\",\"50\",\"60\"],\"correct_answer\":1},{\"id\":2,\"question\":\"What is 100 - 35?\",\"options\":[\"45\",\"65\",\"75\",\"85\"],\"correct_answer\":2}]', 'published', 'Comprehensive quiz', '2026-04-13 09:30:00', '2026-04-13 08:00:00', '{\"model\":\"gpt-4\",\"tokens\":320}', 1, '2026-04-13 08:00:00', '2026-04-13 09:30:00'),
+(3, 58, 3, 6, 'Science 7 - Introduction to Life Cycles', 'Quiz on biological life cycles', 'quiz', 8, 70.00, 25, '[{\"id\":1,\"question\":\"How many stages does a butterfly have in its life cycle?\",\"options\":[\"2\",\"3\",\"4\",\"5\"],\"correct_answer\":2}]', 'approved', NULL, '2026-04-11 11:00:00', '2026-04-11 10:00:00', NULL, 0, '2026-04-11 10:00:00', '2026-04-11 11:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -125,6 +154,15 @@ CREATE TABLE `auto_learning_aids` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `auto_learning_aids`
+--
+
+INSERT INTO `auto_learning_aids` (`id`, `material_id`, `instructor_id`, `course_id`, `title`, `description`, `file_path`, `release_at`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 6, 55, 'English 7 Study Guide', 'AI-generated study guide for English basics', '/uploads/study_guides/eng7_guide_auto.pdf', '2026-04-10 00:00:00', 'available', '2026-04-10 08:30:00', '2026-04-10 08:30:00'),
+(2, 2, 6, 57, 'Math 7 Tutorial', 'Interactive tutorial on basic mathematics', '/uploads/tutorials/math7_tutorial_auto.pdf', '2026-04-11 00:00:00', 'available', '2026-04-11 09:00:00', '2026-04-11 09:00:00'),
+(3, 3, 6, 58, 'Science Summary Notes', 'Auto-generated summary of biology concepts', '/uploads/summaries/sci7_summary_auto.pdf', '2026-04-12 00:00:00', 'scheduled', '2026-04-12 10:00:00', '2026-04-12 10:00:00');
 
 -- --------------------------------------------------------
 
@@ -202,6 +240,15 @@ CREATE TABLE `course_curriculum_alignments` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `course_curriculum_alignments`
+--
+
+INSERT INTO `course_curriculum_alignments` (`id`, `course_id`, `learning_material_id`, `learning_outcome_id`, `curriculum_standard_id`, `competency`, `alignment_strength`, `alignment_notes`, `created_at`, `updated_at`) VALUES
+(1, 55, 1, NULL, 1, 'Communication Skills', 5, 'Strong alignment with grade 7 communication standards', '2026-04-10 09:00:00', '2026-04-10 09:00:00'),
+(2, 57, 2, NULL, 2, 'Mathematical Reasoning', 5, 'Covers basic arithmetic operations', '2026-04-11 10:00:00', '2026-04-11 10:00:00'),
+(3, 58, 3, NULL, 3, 'Scientific Understanding', 4, 'Good coverage of life sciences', '2026-04-12 10:00:00', '2026-04-12 10:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -218,6 +265,15 @@ CREATE TABLE `credential_requests` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `credential_requests`
+--
+
+INSERT INTO `credential_requests` (`id`, `student_id`, `credential_type`, `status`, `letter_path`, `payment_cleared_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Transcript of Records', 'released', '/uploads/credentials/student_1_tor_001.pdf', '2026-04-12 09:00:00', '2026-04-11 08:00:00', '2026-04-12 14:00:00'),
+(2, 1, 'Diploma Application', 'processing', '/uploads/credentials/student_1_diploma_001.pdf', '2026-04-13 10:00:00', '2026-04-13 08:00:00', '2026-04-13 10:30:00'),
+(3, 4, 'Certificate of Enrollment', 'pending', NULL, NULL, '2026-04-13 11:00:00', '2026-04-13 11:00:00');
 
 -- --------------------------------------------------------
 
@@ -237,6 +293,15 @@ CREATE TABLE `curriculum_standards` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `curriculum_standards`
+--
+
+INSERT INTO `curriculum_standards` (`id`, `code`, `title`, `description`, `subject_area`, `grade_level`, `competencies`, `created_at`, `updated_at`) VALUES
+(1, 'EN7-I-1', 'Understanding Communication', 'Students will understand the elements of communication and their roles in effective message transmission', 'English Language Arts', '7', 'Speaking,Listening,Reading,Writing', '2026-04-10 09:00:00', '2026-04-10 09:00:00'),
+(2, 'MATH7-I-1', 'Number Sense and Operations', 'Students will demonstrate understanding of rational numbers and perform operations with proficiency', 'Mathematics', '7', 'Addition,Subtraction,Multiplication,Division,Fractions,Decimals', '2026-04-11 09:00:00', '2026-04-11 09:00:00'),
+(3, 'SCI7-I-1', 'Life Processes and Organization', 'Students will understand the structure and function of living organisms and their life cycles', 'Science', '7', 'Biology,Ecology,Life Cycles,Taxonomy', '2026-04-12 09:00:00', '2026-04-12 09:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -253,6 +318,14 @@ CREATE TABLE `disciplinary_records` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `disciplinary_records`
+--
+
+INSERT INTO `disciplinary_records` (`id`, `student_id`, `incident_date`, `description`, `sanction`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, '2026-04-05', 'Late submission of assignment', 'Warning', 'resolved', '2026-04-05 14:00:00', '2026-04-06 10:00:00'),
+(2, 4, '2026-04-08', 'Absence without permission', '5-day suspension', 'pending', '2026-04-08 15:00:00', '2026-04-08 15:00:00');
 
 -- --------------------------------------------------------
 
@@ -271,6 +344,18 @@ CREATE TABLE `enrollments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `enrollments`
+--
+
+INSERT INTO `enrollments` (`id`, `student_id`, `course_id`, `semester`, `school_year`, `status`, `attachments`, `created_at`, `updated_at`) VALUES
+(1, 1, 55, '1st Semester', '2025-2026', 'completed', NULL, '2026-04-09 11:30:00', '2026-04-09 11:30:00'),
+(2, 1, 57, '1st Semester', '2025-2026', 'completed', NULL, '2026-04-09 11:35:00', '2026-04-09 11:35:00'),
+(3, 1, 58, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-09 11:40:00', '2026-04-09 11:40:00'),
+(4, 4, 55, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-13 01:32:00', '2026-04-13 01:32:00'),
+(5, 4, 57, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-13 01:33:00', '2026-04-13 01:33:00'),
+(6, 4, 59, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-13 01:34:00', '2026-04-13 01:34:00');
 
 -- --------------------------------------------------------
 
@@ -310,6 +395,16 @@ CREATE TABLE `fees` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `fees`
+--
+
+INSERT INTO `fees` (`id`, `student_id`, `fee_type`, `amount`, `due_date`, `status`, `payment_method`, `payment_reference`, `payment_proof_path`, `payment_status`, `paid_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Tuition', 25000.00, '2026-04-30', 'paid', 'gcash', 'GC123456789', '/uploads/proofs/student_1_fee_001.jpg', 'verified', '2026-04-10 10:30:00', '2026-04-09 08:00:00', '2026-04-10 15:00:00'),
+(2, 1, 'Miscellaneous', 5000.00, '2026-04-30', 'paid', 'bank_transfer', 'BT987654321', '/uploads/proofs/student_1_fee_002.jpg', 'verified', '2026-04-11 14:00:00', '2026-04-09 08:10:00', '2026-04-11 15:00:00'),
+(3, 4, 'Tuition', 25000.00, '2026-05-15', 'pending', NULL, NULL, NULL, 'pending', NULL, '2026-04-13 01:32:00', '2026-04-13 01:32:00'),
+(4, 4, 'Laboratory Fee', 3000.00, '2026-05-15', 'paid', 'gcash', 'GC456789123', '/uploads/proofs/student_4_fee_001.jpg', 'verified', '2026-04-13 09:00:00', '2026-04-13 01:33:00', '2026-04-13 10:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -326,6 +421,18 @@ CREATE TABLE `grades` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `rubric_id` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `grades`
+--
+
+INSERT INTO `grades` (`id`, `enrollment_id`, `midterm_grade`, `final_grade`, `gwa_contribution`, `created_at`, `updated_at`, `rubric_id`) VALUES
+(1, 1, 88.50, 91.00, 3.6820, '2026-04-09 11:45:00', '2026-04-10 09:00:00', NULL),
+(2, 2, 85.00, 87.50, 3.5000, '2026-04-09 11:50:00', '2026-04-10 09:15:00', NULL),
+(3, 3, 90.00, 92.50, 3.7000, '2026-04-09 11:55:00', '2026-04-10 09:30:00', NULL),
+(4, 4, 82.00, 85.75, 3.3020, '2026-04-13 02:00:00', '2026-04-13 10:00:00', NULL),
+(5, 5, 88.50, 89.25, 3.5700, '2026-04-13 02:05:00', '2026-04-13 10:15:00', NULL),
+(6, 6, 91.00, 93.50, 3.7400, '2026-04-13 02:10:00', '2026-04-13 10:30:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -374,6 +481,15 @@ CREATE TABLE `job_aids` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `job_aids`
+--
+
+INSERT INTO `job_aids` (`id`, `student_id`, `course_id`, `title`, `description`, `aid_type`, `content`, `metadata`, `topic_focus`, `career_connections`, `relevance_score`, `views`, `useful_count`, `last_viewed_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 57, 'Mathematics Career Pathways', 'Explore careers that use advanced mathematics', 'career_guidance', 'Mathematics is fundamental in engineering, finance, data science, and research. Strong math skills open doors to high-paying careers in technology and science fields.', '{\"created_by\":\"system\",\"ai_generated\":true}', 'Career Opportunities in Math', 'Engineer,Actuary,Data Scientist,Financial Analyst', 4.50, 12, 8, '2026-04-12 10:30:00', '2026-04-10 08:00:00', '2026-04-12 14:00:00'),
+(2, 1, 55, 'Effective Communication Skills', 'Guide to developing strong communication abilities', 'skill_guide', 'Effective communication involves clear expression, active listening, and adaptability. These skills are crucial for success in any field and are highly valued by employers.', '{\"created_by\":\"instructor\",\"ai_generated\":false}', 'Communication Competencies', 'Public Relations,Journalism,Management,Customer Service', 4.75, 15, 12, '2026-04-11 14:00:00', '2026-04-10 09:00:00', '2026-04-11 16:00:00'),
+(3, 4, 58, 'Science in Everyday Life', 'Understanding scientific concepts in daily applications', 'tutorial', 'Science is everywhere - from cooking chemistry to biological processes in our bodies. This guide helps you recognize and understand scientific principles in your daily life.', '{\"created_by\":\"system\",\"ai_generated\":true}', 'Applied Science Concepts', 'Medicine,Environmental Science,Food Science,Biotechnology', 4.25, 8, 6, '2026-04-12 16:00:00', '2026-04-11 08:00:00', '2026-04-12 17:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -394,6 +510,15 @@ CREATE TABLE `learning_aids` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `learning_aids`
+--
+
+INSERT INTO `learning_aids` (`id`, `material_id`, `course_id`, `aid_type`, `content`, `metadata`, `generation_tokens_used`, `generated_at`, `last_updated_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 55, 'summary', 'This lesson covers the fundamentals of communication including sender, message, channel, and receiver. Key concepts include encoding, decoding, and feedback loops in the communication process.', '{\"pages_summarized\":5,\"key_points\":4}', 150, '2026-04-10 08:30:00', '2026-04-10 08:30:00', '2026-04-10 08:30:00', '2026-04-10 08:30:00'),
+(2, 2, 57, 'flashcard', '{\"cards\":[{\"front\":\"What is 15+25?\",\"back\":\"40\"},{\"front\":\"What is 50-15?\",\"back\":\"35\"},{\"front\":\"What is 6×8?\",\"back\":\"48\"}]}', '{\"card_count\":3}', 200, '2026-04-11 09:00:00', '2026-04-11 09:00:00', '2026-04-11 09:00:00', '2026-04-11 09:00:00'),
+(3, 3, 58, 'reviewer', 'Key concepts reviewed: Life cycles (egg, larva, pupa, adult), Metamorphosis, Adaptation, Habitats, Food chains, and Ecosystem roles. Important vocabulary: Chrysalis, Instars, Metamorphosis types.', '{\"review_type\":\"comprehensive\"}', 250, '2026-04-12 10:00:00', '2026-04-12 10:00:00', '2026-04-12 10:00:00', '2026-04-12 10:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -411,6 +536,17 @@ CREATE TABLE `learning_aid_interactions` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `learning_aid_interactions`
+--
+
+INSERT INTO `learning_aid_interactions` (`id`, `student_id`, `learning_aid_id`, `interaction_type`, `time_spent_seconds`, `quiz_score`, `notes`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'view', 420, NULL, 'Helpful summary for understanding communication basics', '2026-04-10 09:00:00', '2026-04-10 09:00:00'),
+(2, 1, 2, 'view', 600, 95, 'Great flashcard set, made me really understand arithmetic operations', '2026-04-11 10:30:00', '2026-04-11 10:30:00'),
+(3, 1, 2, 'bookmark', 0, NULL, 'Bookmarked for later review', '2026-04-11 11:00:00', '2026-04-11 11:00:00'),
+(4, 4, 3, 'view', 480, NULL, 'Excellent reviewer for science exam prep', '2026-04-12 15:00:00', '2026-04-12 15:00:00'),
+(5, 4, 1, 'flag_difficult', 300, NULL, 'Found some concepts confusing, need more explanation', '2026-04-13 09:00:00', '2026-04-13 09:00:00');
 
 -- --------------------------------------------------------
 
@@ -473,6 +609,15 @@ CREATE TABLE `learning_outcomes` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `learning_outcomes`
+--
+
+INSERT INTO `learning_outcomes` (`id`, `course_id`, `code`, `title`, `description`, `bloom_level`, `assessment_criteria`, `created_at`, `updated_at`) VALUES
+(1, 55, 'EN7-LO1', 'Understanding Communication Elements', 'Students will identify and explain the components of effective communication', 'understand', 'Written test with 80% passing score; Oral explanation demonstrating understanding', '2026-04-10 09:30:00', '2026-04-10 09:30:00'),
+(2, 57, 'MATH7-LO1', 'Mastering Basic Arithmetic', 'Students will perform operations with whole numbers, fractions, and decimals with accuracy', 'apply', 'Problem-solving assessments; Timed computation tests with 75% accuracy', '2026-04-11 10:00:00', '2026-04-11 10:00:00'),
+(3, 58, 'SCI7-LO1', 'Analyzing Life Cycles', 'Students will analyze and compare different organism life cycles and their adaptations', 'analyze', 'Venn diagram comparisons; Research presentation on lifecycle analysis', '2026-04-12 10:30:00', '2026-04-12 10:30:00');
+
 -- --------------------------------------------------------
 
 --
@@ -517,6 +662,18 @@ CREATE TABLE `learning_progress` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `learning_progress`
+--
+
+INSERT INTO `learning_progress` (`id`, `student_id`, `material_id`, `progress_percent`, `time_spent_minutes`, `completed_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 100, 25, '2026-04-10 09:30:00', '2026-04-10 08:00:00', '2026-04-10 09:30:00'),
+(2, 1, 2, 85, 45, NULL, '2026-04-10 09:35:00', '2026-04-12 10:20:00'),
+(3, 1, 3, 60, 30, NULL, '2026-04-11 08:00:00', '2026-04-12 15:00:00'),
+(4, 4, 1, 100, 20, '2026-04-12 10:00:00', '2026-04-13 08:00:00', '2026-04-13 10:00:00'),
+(5, 4, 2, 75, 35, NULL, '2026-04-13 08:30:00', '2026-04-13 10:30:00'),
+(6, 4, 3, 100, 28, '2026-04-13 14:00:00', '2026-04-13 12:00:00', '2026-04-13 14:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -532,6 +689,16 @@ CREATE TABLE `material_ratings` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `material_ratings`
+--
+
+INSERT INTO `material_ratings` (`id`, `student_id`, `material_id`, `rating`, `comment`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 5, 'Very clear and well-organized introduction. Great way to start the course!', '2026-04-10 09:35:00', '2026-04-10 09:35:00'),
+(2, 1, 2, 4, 'Good content but could use more examples. Video quality is excellent.', '2026-04-12 10:45:00', '2026-04-12 10:45:00'),
+(3, 4, 1, 5, 'Excellent material! Helped me understand the fundamentals quickly.', '2026-04-13 10:15:00', '2026-04-13 10:15:00'),
+(4, 4, 3, 4, 'Comprehensive content covering multiple aspects of the topic.', '2026-04-13 14:15:00', '2026-04-13 14:15:00');
 
 -- --------------------------------------------------------
 
@@ -549,6 +716,17 @@ CREATE TABLE `messages` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `sender_id`, `receiver_id`, `subject`, `body`, `read_at`, `created_at`, `updated_at`) VALUES
+(1, 6, 15, 'Feedback on Assignment', 'Hi Chester, I reviewed your English assignment. Great work on the essay structure! Just needs a bit more development in the conclusion. -Mr. Flores', '2026-04-10 10:00:00', '2026-04-10 09:30:00', '2026-04-10 10:00:00'),
+(2, 1, 15, 'Academic Performance Notice', 'Dear Student, You''ve been selected for the Dean''s List this semester. Congratulations on your excellent performance! -Principal', '2026-04-11 08:00:00', '2026-04-11 07:30:00', '2026-04-11 08:00:00'),
+(3, 21, 19, 'Course Materials Available', 'Hello John, I''ve uploaded this week''s materials for Computer Science. Please review them before Friday.', NULL, '2026-04-12 14:00:00', '2026-04-12 14:00:00'),
+(4, 19, 6, 'Question About Math Lesson', 'Hi Sir/Ma''am, I didn''t understand the concept of fractions in lesson 3. Could we discuss this in office hours?', '2026-04-13 09:30:00', '2026-04-13 08:15:00', '2026-04-13 09:30:00'),
+(5, 17, 1, 'Payment Verification', 'Five students'' fee payments have been verified and cleared. Please find the list attached.', '2026-04-13 11:00:00', '2026-04-13 10:30:00', '2026-04-13 11:00:00');
 
 -- --------------------------------------------------------
 
@@ -727,6 +905,14 @@ CREATE TABLE `rubrics` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `rubrics`
+--
+
+INSERT INTO `rubrics` (`id`, `material_id`, `course_id`, `name`, `criteria_json`, `created_at`, `updated_at`) VALUES
+(1, 1, 55, 'Essay Rubric', '{\"criteria\":[{\"name\":\"Organization\",\"weight\":25,\"levels\":[{\"level\":\"Excellent\",\"points\":25},{\"level\":\"Good\",\"points\":20},{\"level\":\"Fair\",\"points\":15}]},{\"name\":\"Content\",\"weight\":35,\"levels\":[{\"level\":\"Excellent\",\"points\":35},{\"level\":\"Good\",\"points\":28},{\"level\":\"Fair\",\"points\":21}]},{\"name\":\"Grammar\",\"weight\":20,\"levels\":[{\"level\":\"Excellent\",\"points\":20},{\"level\":\"Good\",\"points\":16},{\"level\":\"Fair\",\"points\":12}]}]}', '2026-04-10 10:00:00', '2026-04-10 10:00:00'),
+(2, 2, 57, 'Problem Solving Rubric', '{\"criteria\":[{\"name\":\"Correct Answer\",\"weight\":40},{\"name\":\"Methodology\",\"weight\":35},{\"name\":\"Explanation\",\"weight\":25}]}', '2026-04-11 10:30:00', '2026-04-11 10:30:00');
+
 -- --------------------------------------------------------
 
 --
@@ -743,6 +929,15 @@ CREATE TABLE `self_assessments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `self_assessments`
+--
+
+INSERT INTO `self_assessments` (`id`, `student_id`, `course_id`, `title`, `responses_json`, `score`, `created_at`, `updated_at`) VALUES
+(1, 1, 55, 'Learning Style Self-Assessment', '{\"questions\":[{\"question\":\"I learn best through:\",\"response\":\"Visual materials and diagrams\"},{\"question\":\"My strongest skill in English:\",\"response\":\"Written expression\"},{\"question\":\"Confidence level in communication:\",\"response\":\"8/10\"}]}', 85, '2026-04-10 11:00:00', '2026-04-10 11:00:00'),
+(2, 1, 57, 'Math Confidence Survey', '{\"questions\":[{\"question\":\"Confidence with arithmetic:\",\"response\":\"9/10\"},{\"question\":\"Struggle areas:\",\"response\":\"Fractions\"},{\"question\":\"Learning preference:\",\"response\":\"Practice problems\"}]}', 92, '2026-04-11 11:30:00', '2026-04-11 11:30:00'),
+(3, 4, 58, 'Science Interest Assessment', '{\"questions\":[{\"question\":\"Interest in science:\",\"response\":\"Very interested\"},{\"question\":\"Favorite topics:\",\"response\":\"Life sciences\"},{\"question\":\"Career interest:\",\"response\":\"Biologist\"}]}', 88, '2026-04-13 09:00:00', '2026-04-13 09:00:00');
 
 -- --------------------------------------------------------
 
@@ -836,6 +1031,18 @@ CREATE TABLE `student_progress_analytics` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `student_progress_analytics`
+--
+
+INSERT INTO `student_progress_analytics` (`id`, `student_id`, `course_id`, `completion_rate`, `materials_completed`, `materials_total`, `total_time_minutes`, `average_rating`, `current_grade`, `quiz_average`, `assessment_average`, `at_risk_status`, `weak_topics`, `strong_topics`, `recommendations`, `last_analyzed_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 55, 100.00, 1, 1, 25, 5.00, 91.00, 89.50, 92.50, 'on_track', NULL, 'Communication fundamentals, essay writing', 'Continue excellent work and explore advanced communication strategies', '2026-04-13 02:00:00', '2026-04-10 10:00:00', '2026-04-13 02:00:00'),
+(2, 1, 57, 85.00, 2, 3, 75, 4.50, 87.50, 85.00, 90.00, 'on_track', 'Fractions, complex operations', 'Basic arithmetic, problem-solving', 'Focus on fraction concepts and practice more on mixed numbers', '2026-04-13 02:15:00', '2026-04-11 10:00:00', '2026-04-13 02:15:00'),
+(3, 1, 58, 60.00, 1, 2, 30, 4.00, 92.50, 88.00, NULL, 'on_track', NULL, 'Life cycles, organism classification', 'Complete remaining materials and engage with assessment activities', '2026-04-13 02:30:00', '2026-04-12 10:00:00', '2026-04-13 02:30:00'),
+(4, 4, 55, 100.00, 1, 1, 20, 5.00, 85.75, 82.00, 89.50, 'on_track', NULL, 'Basic communication concepts', 'Maintain current pace and practice writing exercises regularly', '2026-04-13 10:00:00', '2026-04-13 02:00:00', '2026-04-13 10:00:00'),
+(5, 4, 57, 75.00, 2, 3, 60, 4.50, 89.25, 87.50, 91.00, 'on_track', 'Division operations', 'Addition, subtraction, multiplication', 'Review division concepts and try more practice problems', '2026-04-13 10:15:00', '2026-04-13 02:05:00', '2026-04-13 10:15:00'),
+(6, 4, 59, 100.00, 1, 1, 28, 4.50, 93.50, 91.00, NULL, 'on_track', NULL, 'Social studies concepts, critical thinking', 'Excellent progress - continue with next unit', '2026-04-13 10:30:00', '2026-04-13 02:10:00', '2026-04-13 10:30:00');
+
 -- --------------------------------------------------------
 
 --
@@ -852,6 +1059,16 @@ CREATE TABLE `study_reminders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `study_reminders`
+--
+
+INSERT INTO `study_reminders` (`id`, `student_id`, `material_id`, `title`, `remind_at`, `sent`, `created_at`, `updated_at`) VALUES
+(1, 1, 2, 'Complete Math Lesson 2', '2026-04-15 18:00:00', 0, '2026-04-13 02:00:00', '2026-04-13 02:00:00'),
+(2, 1, 3, 'Review Science Materials', '2026-04-16 19:00:00', 0, '2026-04-13 02:05:00', '2026-04-13 02:05:00'),
+(3, 4, 1, 'Review Communication Concepts', '2026-04-17 17:30:00', 0, '2026-04-13 10:00:00', '2026-04-13 10:00:00'),
+(4, 4, 2, 'Complete Math Quiz', '2026-04-18 18:00:00', 0, '2026-04-13 10:05:00', '2026-04-13 10:05:00');
 
 -- --------------------------------------------------------
 
@@ -871,6 +1088,14 @@ CREATE TABLE `transfer_requests` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `transfer_requests`
+--
+
+INSERT INTO `transfer_requests` (`id`, `student_id`, `from_school`, `to_school`, `status`, `notes`, `requested_at`, `processed_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 'San Beda High School', 'CSP High School', 'approved', 'Credits transferred: 24 units. All prerequisites met.', '2026-04-09 10:00:00', '2026-04-10 14:00:00', '2026-04-09 10:00:00', '2026-04-10 14:00:00'),
+(2, 4, 'Ateneo de Cagayan', 'CSP High School', 'pending', 'Awaiting transcript from previous school', '2026-04-12 08:30:00', NULL, '2026-04-12 08:30:00', '2026-04-12 08:30:00');
 
 -- --------------------------------------------------------
 
