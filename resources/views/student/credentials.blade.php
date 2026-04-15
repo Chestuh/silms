@@ -13,7 +13,13 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Credential type</label>
-                        <input type="text" name="credential_type" class="form-control" placeholder="e.g. Transcript, Good Moral" required>
+                        <select name="credential_type" class="form-select" required>
+                            <option value="" selected disabled>Select credential type</option>
+                            <option value="Good Moral">Good Moral</option>
+                            <option value="Form 137-A">Form 137-A</option>
+                            <option value="Transcript of Records">Transcript of Records</option>
+                            <option value="Certificate of Enrollment">Certificate of Enrollment</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit Request</button>
                 </form>

@@ -6,16 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Traits\HasCompletionStatus;
+use App\Traits\TrackableActivity;
 
 class LearningMaterial extends Model
 {
-    use HasFactory;
+    use HasFactory, HasCompletionStatus, TrackableActivity;
 
     protected $table = 'learning_materials';
 
     protected $fillable = [
         'course_id', 'title', 'description', 'format', 'file_path', 'url',
-        'difficulty_level', 'order_index', 'archived', 'approval_status', 'admin_comment',
+        'difficulty_level', 'order_index', 'archived', 'approval_status', 'admin_comment', 'completion_status'
     ];
 
     protected function casts(): array

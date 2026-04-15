@@ -42,9 +42,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($rubric->criteria_json ?? [] as $index => $criterion)
+                    @forelse($rubric->criteria_json ?? [] as $criterion)
                         <tr>
-                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $criterion['description'] ?? '—' }}</td>
                             <td>{{ $criterion['weight'] ?? '—' }}</td>
                         </tr>

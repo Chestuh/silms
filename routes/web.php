@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CompletionStatusController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
@@ -91,6 +92,8 @@ Route::middleware(['auth', 'role:instructor'])->prefix('instructor')->name('inst
     Route::get('materials/{material}/edit', [InstructorMaterialsController::class, 'edit'])->name('materials.edit');
     Route::put('materials/{material}', [InstructorMaterialsController::class, 'update'])->name('materials.update');
     Route::delete('materials/{material}', [InstructorMaterialsController::class, 'destroy'])->name('materials.destroy');
+    Route::post('materials/{material}/archive', [InstructorMaterialsController::class, 'archive'])->name('materials.archive');
+    Route::post('materials/{material}/unarchive', [InstructorMaterialsController::class, 'unarchive'])->name('materials.unarchive');
     Route::get('learning-aids', [\App\Http\Controllers\Instructor\AutoLearningAidsController::class, 'index'])->name('learning-aids.index');
     Route::get('learning-aids/create', [\App\Http\Controllers\Instructor\AutoLearningAidsController::class, 'create'])->name('learning-aids.create');
     Route::post('learning-aids', [\App\Http\Controllers\Instructor\AutoLearningAidsController::class, 'store'])->name('learning-aids.store');
@@ -111,6 +114,7 @@ Route::middleware(['auth', 'role:instructor'])->prefix('instructor')->name('inst
     Route::put('grades/course/{course}', [\App\Http\Controllers\Instructor\GradesController::class, 'update'])->name('grades.update');
     Route::get('gwa', [\App\Http\Controllers\Instructor\GwaController::class, 'index'])->name('gwa.index');
     Route::get('academic-status', [\App\Http\Controllers\Instructor\AcademicStatusController::class, 'index'])->name('academic-status.index');
+    Route::get('academic-load', [\App\Http\Controllers\Instructor\AcademicLoadController::class, 'index'])->name('academic-load.index');
     Route::get('honors', [\App\Http\Controllers\Instructor\HonorsController::class, 'index'])->name('honors.index');
     Route::get('skill-gaps', [\App\Http\Controllers\Instructor\SkillGapsController::class, 'index'])->name('skill-gaps.index');
 
@@ -185,6 +189,10 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::post('transfer-requests/{transferRequest}/reject', [\App\Http\Controllers\Admin\TransferRequestsController::class, 'reject'])->name('transfer-requests.reject');
     // Skill gaps report for admin
     Route::get('skill-gaps', [\App\Http\Controllers\Admin\SkillGapsController::class, 'index'])->name('skill-gaps.index');
+    // Academic Completion Status
+    Route::get('completion-status', [CompletionStatusController::class, 'index'])->name('completion-status.index');
+    Route::get('completion-status/student/{student}', [CompletionStatusController::class, 'student'])->name('completion-status.student');
+    Route::get('api/completion-status/student/{student}', [CompletionStatusController::class, 'apiStatus'])->name('api.completion-status.student');
 });
 
 Route::middleware(['auth', 'role:cashier'])->prefix('cashier')->name('cashier.')->group(function () {

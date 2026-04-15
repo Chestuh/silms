@@ -9,7 +9,7 @@
     <div class="card-body p-0">
         <div class="list-group list-group-flush">
             @foreach($instructors as $u)
-                <a href="{{ route('student.messages.thread', $u) }}" class="list-group-item list-group-item-action d-flex align-items-center">
+                <a href="{{ route('student.messages.thread', ['user' => $u->id]) }}" class="list-group-item list-group-item-action d-flex align-items-center">
                     <div class="chat-avatar me-3">{{ strtoupper(mb_substr($u->name ?? '?', 0, 1)) }}</div>
                     <div>
                         <strong>{{ $u->name }}</strong>

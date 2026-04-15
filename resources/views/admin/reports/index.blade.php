@@ -27,9 +27,9 @@
                 </button>
                 <a href="{{ route('admin.reports.index') }}" class="btn btn-secondary">
                     Reset
-                </a>
-                <a href="{{ route('admin.reports.export', ['start_date' => $startDate->format('Y-m-d'), 'end_date' => $endDate->format('Y-m-d'), 'format' => 'csv']) }}" class="btn btn-success">
-                    <i class="bi bi-download me-2"></i>Export CSV
+                </a> 
+                <a href="{{ route('admin.reports.export', ['start_date' => $startDate->format('Y-m-d'), 'end_date' => $endDate->format('Y-m-d'), 'format' => 'xlsx']) }}" class="btn btn-outline-success">
+                    <i class="bi bi-file-earmark-spreadsheet me-2"></i>Export XLSX
                 </a>
             </div>
         </form>

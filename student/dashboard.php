@@ -24,6 +24,16 @@ $stmt = $pdo->prepare('SELECT AVG((g.midterm_grade + g.final_grade)/2) FROM grad
 $stmt->execute([$sid]);
 $avgGrade = $stmt->fetchColumn();
 
+// Get recent courseS with enrollment status
+$stmt = $pdo->prepare('SELECT c.id, c.course_code, c.course_name, e.id as enrollment_id FROM enrollments e JOIN courses c ON e.course_id = c.id WHERE e.student_id = ? ORDER BY e.created_at DESC LIMIT 6');
+$stmt->execute([$sid]);
+$recentCourses = $stmt->fetchAll();
+
+// Get recent learning progress
+$stmt = $pdo->prepare('SELECT lm.title, lp.progress_percent, lp.updated_at FROM learning_progress lp JOIN learning_materials lm ON lp.material_id = lm.id WHERE lp.student_id = ? ORDER BY lp.updated_at DESC LIMIT 5');
+$stmt->execute([$sid]);
+$recentProgress = $stmt->fetchAll();
+
 $pageTitle = 'Student Dashboard';
 require_once __DIR__ . '/../includes/header.php';
 ?>
@@ -95,6 +105,49 @@ require_once __DIR__ . '/../includes/header.php';
             </div>
         </div>
     </div>
+</div>
+<div class="row">
+<div class="row">
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <i class="bi bi-book me-2"></i>My Courses
+            </div>
+            <div class="list-group list-group-flush">
+                <?php if (!empty($recentCourses)): ?>
+                    <?php foreach ($recentCourses as $course): ?>
+                        <a href="javascript:void(0)" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="fw-bold"><?= htmlspecialchars($course['course_code']) ?></div>
+                                <div class="small text-muted"><?= htmlspecialchars($course['course_name']) ?></div>
+                            </div>
+                            <span class="badge bg-success">Active</span>
+                        </a>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="list-group-item text-muted">No courses enrolled yet</div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <i class="bi bi-lightning-charge me-2"></i>Learning Progress
+            </div>
+            <div class="list-group list-group-flush">
+                <?php if (!empty($recentProgress)): ?>
+                    <?php foreach ($recentProgress as $prog): ?>
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="fw-bold"><?= htmlspecialchars($prog['title']) ?></div>
+                                <span class="badge bg-<?= $prog['progress_percent'] == 100 ? 'success' : ($prog['progress_percent'] >= 50 ? 'warning' : 'secondary') ?>"><?= (int)$prog['progress_percent'] ?>%</span>
+                            </div>
+                            <div class="progress" style="height: 5px;">
+                                <div class="progress-bar bg-<?= $prog['progress_percent'] == 100 ? 'success' : ($prog['progress_percent'] >= 50 ? 'warning' : 'secondary') ?>" role="progressbar" style="width: <?= (int)$prog['progress_percent'] ?>%" aria-valuenow="<?= (int)$prog['progress_percent'] ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="small text-muted mt-1">Updated: <?= date('M j, Y', strtotime($prog['updated_at'])) ?></div>
+                        </div>
 </div>
 <div class="row">
     <div class="col-lg-6 mb-4">

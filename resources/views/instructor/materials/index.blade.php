@@ -4,8 +4,16 @@
 
 @section('content')
 <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
-    <h2 class="mb-0"><i class="bi bi-folder2-open me-2"></i>Learning materials</h2>
-    <a href="{{ route('instructor.materials.create') }}" class="btn btn-success"><i class="bi bi-plus-lg me-1"></i>Add learning material</a>
+    <div>
+        <h2 class="mb-1"><i class="bi bi-folder2-open me-2"></i>{{ ($activeTab ?? 'all') === 'archived' ? 'Archived materials' : 'Learning materials' }}</h2>
+        <div class="btn-group" role="group" aria-label="Materials tab navigation">
+            <a href="{{ route('instructor.materials.index', ['tab' => 'all']) }}" class="btn btn-outline-primary {{ ($activeTab ?? 'all') === 'all' ? 'active' : '' }}">Materials</a>
+            <a href="{{ route('instructor.materials.index', ['tab' => 'archived']) }}" class="btn btn-outline-primary {{ ($activeTab ?? '') === 'archived' ? 'active' : '' }}">Archived</a>
+        </div>
+    </div>
+    @if(($activeTab ?? 'all') !== 'archived')
+        <a href="{{ route('instructor.materials.create') }}" class="btn btn-success"><i class="bi bi-plus-lg me-1"></i>Add learning material</a>
+    @endif
 </div>
 <div class="card border-0 shadow-sm">
     <div class="card-body">
@@ -23,10 +31,26 @@
                     @forelse($materials as $m)
                         <tr>
                             <td><span class="text-muted small">{{ $m->course->code ?? '—' }}</span></td>
-                            <td class="fw-medium">{{ $m->title }}</td>
+                            <td class="fw-medium">
+                                {{ $m->title }}
+                                @if($m->archived)
+                                    <span class="badge bg-secondary ms-2">Archived</span>
+                                @endif
+                            </td>
                             <td>{{ $m->format ?? '—' }}</td>
                             <td class="text-end">
                                 <a href="{{ route('instructor.materials.edit', $m) }}" class="btn btn-sm btn-outline-secondary me-1">Edit</a>
+                                @if($m->archived)
+                                    <form action="{{ route('instructor.materials.unarchive', $m) }}" method="POST" class="d-inline-block me-1" onsubmit="return confirm('Restore this learning material from archive?');">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm btn-outline-success">Restore</button>
+                                    </form>
+                                @else
+                                    <form action="{{ route('instructor.materials.archive', $m) }}" method="POST" class="d-inline-block me-1" onsubmit="return confirm('Archive this learning material?');">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm btn-outline-warning">Archive</button>
+                                    </form>
+                                @endif
                                 <form action="{{ route('instructor.materials.destroy', $m) }}" method="POST" class="d-inline-block" onsubmit="return confirm('Remove this material?');">
                                     @csrf
                                     @method('DELETE')
@@ -39,7 +63,13 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="text-muted text-center py-4">No learning materials yet. <a href="{{ route('instructor.materials.create') }}">Add one</a>.</td>
+                            <td colspan="4" class="text-muted text-center py-4">
+                                @if(($activeTab ?? 'all') === 'archived')
+                                    No archived learning materials yet. <a href="{{ route('instructor.materials.index', ['tab' => 'all']) }}">View active materials</a>.
+                                @else
+                                    No learning materials yet. <a href="{{ route('instructor.materials.create') }}">Add one</a>.
+                                @endif
+                            </td>
                         </tr>
                     @endforelse
                 </tbody>

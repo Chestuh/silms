@@ -15,7 +15,7 @@
             </div>
             <div class="chat-list list-group list-group-flush overflow-auto">
                 @forelse($conversations as $c)
-                    <a href="{{ route('instructor.messages.thread', $c['user']) }}" class="list-group-item list-group-item-action chat-list-item {{ isset($user) && $user->id === $c['user']->id ? 'active' : '' }}">
+                    <a href="{{ route('instructor.messages.thread', ['user' => $c['user']->id]) }}" class="list-group-item list-group-item-action chat-list-item {{ isset($user) && $user->id === $c['user']->id ? 'active' : '' }}">
                         <div class="d-flex align-items-center">
                             <div class="chat-avatar me-2">{{ strtoupper(mb_substr($c['user']->name ?? '?', 0, 1)) }}</div>
                             <div class="flex-grow-1 min-width-0">

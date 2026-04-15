@@ -9,6 +9,7 @@ use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\Grade;
 use App\Models\LearningMaterial;
+use App\Models\LearningProgress;
 use Database\Seeders\GradeCourseSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -126,5 +127,19 @@ class DatabaseSeeder extends Seeder
             ['enrollment_id' => $e2->id],
             ['midterm_grade' => 85, 'final_grade' => 87]
         );
+
+        // Add sample learning progress data for presentation
+        $materials = LearningMaterial::all();
+        foreach ($materials as $material) {
+            LearningProgress::firstOrCreate(
+                ['student_id' => $student->id, 'material_id' => $material->id],
+                [
+                    'progress_percent' => rand(30, 100),
+                    'time_spent_minutes' => rand(15, 180),
+                    'completed_at' => rand(0, 1) ? now()->subDays(rand(0, 7)) : null,
+                    'updated_at' => now()->subDays(rand(0, 5)),
+                ]
+            );
+        }
     }
 }

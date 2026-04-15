@@ -3,6 +3,11 @@
 @section('title', isset($material) ? 'Edit Learning Material' : 'Add Learning Material')
 
 @section('content')
+@php
+    $selectedFormat = old('format', $material->format ?? 'document');
+    $showFileInput = in_array($selectedFormat, ['document', 'pdf', 'video']);
+    $showUrlInput = in_array($selectedFormat, ['link', 'quiz']);
+@endphp
 <h2 class="mb-4"><i class="bi bi-folder-plus me-2"></i>{{ isset($material) ? 'Edit learning material' : 'Add learning material' }}</h2>
 <div class="card border-0 shadow-sm">
     <div class="card-body">
@@ -34,17 +39,17 @@
             <div class="mb-3">
                 <label class="form-label">Format</label>
                 <select id="format" name="format" class="form-select @error('format') is-invalid @enderror">
-                    <option value="document" {{ old('format', $material->format ?? 'document') === 'document' ? 'selected' : '' }}>Document</option>
-                    <option value="pdf" {{ old('format', $material->format ?? '') === 'pdf' ? 'selected' : '' }}>PDF</option>
-                    <option value="video" {{ old('format', $material->format ?? '') === 'video' ? 'selected' : '' }}>Video</option>
-                    <option value="link" {{ old('format', $material->format ?? '') === 'link' ? 'selected' : '' }}>Link</option>
-                    <option value="quiz" {{ old('format', $material->format ?? '') === 'quiz' ? 'selected' : '' }}>Quiz</option>
+                    <option value="document" {{ $selectedFormat === 'document' ? 'selected' : '' }}>Document</option>
+                    <option value="pdf" {{ $selectedFormat === 'pdf' ? 'selected' : '' }}>PDF</option>
+                    <option value="video" {{ $selectedFormat === 'video' ? 'selected' : '' }}>Video</option>
+                    <option value="link" {{ $selectedFormat === 'link' ? 'selected' : '' }}>Link</option>
+                    <option value="quiz" {{ $selectedFormat === 'quiz' ? 'selected' : '' }}>Quiz</option>
                 </select>
                 @error('format')<div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
-            <div id="file-input-group" class="mb-3 d-none">
+            <div id="file-input-group" class="mb-3 {{ $showFileInput ? '' : 'd-none' }}">
                 <label class="form-label">Choose file</label>
-                <input type="file" name="file" class="form-control @error('file') is-invalid @enderror" accept=".docx,.pdf,.mp4">
+                <input type="file" name="file" class="form-control @error('file') is-invalid @enderror" accept=".docx,.pdf,.mp4" {{ $showFileInput ? 'required' : '' }}>
                 @error('file')<div class="invalid-feedback">{{ $message }}</div>@enderror
                 @if(isset($material) && $material->file_path)
                     <div class="mt-2">
@@ -53,9 +58,9 @@
                 @endif
                 <div class="form-text">Supported file types: .docx, .pdf, .mp4</div>
             </div>
-            <div id="url-input-group" class="mb-3 d-none">
+            <div id="url-input-group" class="mb-3 {{ $showUrlInput ? '' : 'd-none' }}">
                 <label class="form-label">URL</label>
-                <input id="url-input" type="url" name="url" class="form-control @error('url') is-invalid @enderror" value="{{ old('url', $material->url ?? '') }}" placeholder="https://...">
+                <input id="url-input" type="url" name="url" class="form-control @error('url') is-invalid @enderror" value="{{ old('url', $material->url ?? '') }}" placeholder="https://..." {{ $showUrlInput ? 'required' : '' }}>
                 @error('url')<div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
             <div class="mb-3">

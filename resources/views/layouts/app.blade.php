@@ -123,6 +123,7 @@
                                 <li><a class="dropdown-item" href="{{ route('instructor.grades.index') }}">Grades</a></li>
                                 <li><a class="dropdown-item" href="{{ route('instructor.gwa.index') }}">Students GWA</a></li>
                                 <li><a class="dropdown-item" href="{{ route('instructor.academic-status.index') }}">Academic Status</a></li>
+                                <li><a class="dropdown-item" href="{{ route('instructor.academic-load.index') }}">Academic Load</a></li>
                                 <li><a class="dropdown-item" href="{{ route('instructor.honors.index') }}">Academic Honors</a></li>
                                 <li><a class="dropdown-item" href="{{ route('instructor.progress.index') }}">Progress</a></li>
                                 <li><a class="dropdown-item" href="{{ route('instructor.skill-gaps.index') }}">Skill Gaps Report</a></li>

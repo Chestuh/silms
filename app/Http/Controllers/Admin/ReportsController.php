@@ -20,6 +20,15 @@ use App\Models\Message;
 use App\Models\AcademicHonor;
 use App\Models\AdmissionRecord;
 use Illuminate\Http\Request;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Chart\Chart;
+use PhpOffice\PhpSpreadsheet\Chart\DataSeries;
+use PhpOffice\PhpSpreadsheet\Chart\DataSeriesValues;
+use PhpOffice\PhpSpreadsheet\Chart\Layout;
+use PhpOffice\PhpSpreadsheet\Chart\Legend;
+use PhpOffice\PhpSpreadsheet\Chart\PlotArea;
+use PhpOffice\PhpSpreadsheet\Chart\Title;
 
 class ReportsController extends Controller
 {
@@ -166,6 +175,38 @@ class ReportsController extends Controller
             'admission_records' => AdmissionRecord::count(),
             'fees_paid_count' => Fee::where('status', 'paid')->count(),
             'fees_paid_amount' => Fee::where('status', 'paid')->sum('amount'),
+            'fees_by_status' => Fee::selectRaw('status, count(*) as count, sum(amount) as total_amount')
+                ->groupBy('status')
+                ->get()
+                ->map(function ($fee) {
+                    return [
+                        'status' => $fee->status,
+                        'count' => $fee->count,
+                        'amount' => $fee->total_amount,
+                    ];
+                })
+                ->toArray(),
+            'students_by_status' => Student::selectRaw('status, count(*) as count')
+                ->groupBy('status')
+                ->get()
+                ->pluck('count', 'status')
+                ->toArray(),
+            'enrollments_by_course' => Course::withCount('enrollments')
+                ->orderByDesc('enrollments_count')
+                ->limit(10)
+                ->get()
+                ->map(function ($course) {
+                    return [
+                        'name' => $course->name,
+                        'count' => $course->enrollments_count,
+                    ];
+                })
+                ->toArray(),
+            'materials_by_type' => LearningMaterial::selectRaw('format, count(*) as count')
+                ->groupBy('format')
+                ->get()
+                ->pluck('count', 'format')
+                ->toArray(),
         ];
 
         $stats['completion_rate'] = $stats['progress_records'] > 0
@@ -174,6 +215,10 @@ class ReportsController extends Controller
 
         if ($format === 'csv') {
             return $this->exportCsv($stats, $startDate, $endDate);
+        }
+
+        if ($format === 'xlsx') {
+            return $this->exportXlsx($stats, $startDate, $endDate);
         }
 
         return redirect()->back()->with('error', 'Invalid export format');
@@ -261,5 +306,142 @@ class ReportsController extends Controller
         ];
 
         return response()->stream($callback, 200, $headers);
+    }
+
+    private function exportXlsx($stats, $startDate, $endDate)
+    {
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setTitle('School Reports');
+
+        $sheet->setCellValue('A1', 'School Reports and Analytics');
+        $sheet->setCellValue('A2', 'Report Generated');
+        $sheet->setCellValue('B2', now()->format('Y-m-d H:i:s'));
+        $sheet->setCellValue('A3', 'Date Range');
+        $sheet->setCellValue('B3', $startDate->format('Y-m-d') . ' to ' . $endDate->format('Y-m-d'));
+
+        $sheet->getColumnDimension('A')->setWidth(28);
+        $sheet->getColumnDimension('B')->setWidth(18);
+        $sheet->getColumnDimension('D')->setWidth(16);
+        $sheet->getColumnDimension('E')->setWidth(14);
+        $sheet->getColumnDimension('G')->setWidth(20);
+        $sheet->getColumnDimension('H')->setWidth(14);
+        $sheet->getColumnDimension('J')->setWidth(20);
+        $sheet->getColumnDimension('K')->setWidth(14);
+
+        $row = 5;
+        $sheet->setCellValue('A' . $row, 'USER MANAGEMENT');
+        $row++;
+        $sheet->setCellValue('A' . $row, 'Metric');
+        $sheet->setCellValue('B' . $row, 'Value');
+        $row++;
+        $sheet->setCellValue('A' . $row, 'Total Users');
+        $sheet->setCellValue('B' . $row++, $stats['users_total']);
+        $sheet->setCellValue('A' . $row, 'Total Students');
+        $sheet->setCellValue('B' . $row++, $stats['students_total']);
+        $sheet->setCellValue('A' . $row, 'Active Students');
+        $sheet->setCellValue('B' . $row++, $stats['students_active']);
+        $sheet->setCellValue('A' . $row, 'Total Instructors');
+        $sheet->setCellValue('B' . $row++, $stats['instructors_total']);
+
+        $sectionRow = 5;
+        $sheet->setCellValue('D' . $sectionRow, 'FEE STATUS');
+        $sheet->setCellValue('D' . ($sectionRow + 1), 'Status');
+        $sheet->setCellValue('E' . ($sectionRow + 1), 'Amount');
+        $feeRow = $sectionRow + 2;
+        if (empty($stats['fees_by_status'])) {
+            $stats['fees_by_status'] = [['status' => 'none', 'count' => 0, 'amount' => 0]];
+        }
+        foreach ($stats['fees_by_status'] as $statusData) {
+            $sheet->setCellValue('D' . $feeRow, ucfirst($statusData['status']));
+            $sheet->setCellValue('E' . $feeRow, $statusData['amount']);
+            $feeRow++;
+        }
+
+        $courseRow = 5;
+        $sheet->setCellValue('G' . $courseRow, 'TOP COURSES BY ENROLLMENT');
+        $sheet->setCellValue('G' . ($courseRow + 1), 'Course');
+        $sheet->setCellValue('H' . ($courseRow + 1), 'Enrollments');
+        $courseRow += 2;
+        if (empty($stats['enrollments_by_course'])) {
+            $stats['enrollments_by_course'] = [['name' => 'None', 'count' => 0]];
+        }
+        foreach ($stats['enrollments_by_course'] as $course) {
+            $sheet->setCellValue('G' . $courseRow, $course['name']);
+            $sheet->setCellValue('H' . $courseRow, $course['count']);
+            $courseRow++;
+        }
+
+        $studentStatusRow = 5;
+        $sheet->setCellValue('J' . $studentStatusRow, 'STUDENT STATUS');
+        $sheet->setCellValue('J' . ($studentStatusRow + 1), 'Status');
+        $sheet->setCellValue('K' . ($studentStatusRow + 1), 'Count');
+        $studentStatusRow += 2;
+        if (empty($stats['students_by_status'])) {
+            $stats['students_by_status'] = ['none' => 0];
+        }
+        foreach ($stats['students_by_status'] as $status => $count) {
+            $sheet->setCellValue('J' . $studentStatusRow, ucfirst($status));
+            $sheet->setCellValue('K' . $studentStatusRow, $count);
+            $studentStatusRow++;
+        }
+
+        $completionRow = max($row, $feeRow, $courseRow, $studentStatusRow) + 2;
+        $sheet->setCellValue('A' . $completionRow, 'COMPLETION RATE');
+        $sheet->setCellValue('A' . ($completionRow + 1), 'Complete');
+        $sheet->setCellValue('B' . ($completionRow + 1), $stats['completion_rate']);
+        $sheet->setCellValue('A' . ($completionRow + 2), 'Remaining');
+        $sheet->setCellValue('B' . ($completionRow + 2), 100 - $stats['completion_rate']);
+
+        $feeStatusCount = max(count($stats['fees_by_status']), 1);
+        $feeStatusLabels = new DataSeriesValues('String', "'{$sheet->getTitle()}'!\$D\$7:\$D\$" . ($feeRow - 1), null, $feeStatusCount);
+        $feeStatusValues = new DataSeriesValues('Number', "'{$sheet->getTitle()}'!\$E\$7:\$E\$" . ($feeRow - 1), null, $feeStatusCount);
+        $feeSeries = new DataSeries(DataSeries::TYPE_PIECHART, null, range(0, $feeStatusCount - 1), [], [$feeStatusLabels], [$feeStatusValues]);
+        $feePlotArea = new PlotArea(new Layout(), [$feeSeries]);
+        $feeChart = new Chart('fee_status', new Title('Fee Status Breakdown'), new Legend(Legend::POSITION_RIGHT, null, false), $feePlotArea, true, 0, null, null);
+        $feeChart->setTopLeftPosition('D12');
+        $feeChart->setBottomRightPosition('K24');
+        $sheet->addChart($feeChart);
+
+        $courseCount = max(count($stats['enrollments_by_course']), 1);
+        $courseLabels = new DataSeriesValues('String', "'{$sheet->getTitle()}'!\$G\$7:\$G\$" . ($courseRow - 1), null, $courseCount);
+        $courseValues = new DataSeriesValues('Number', "'{$sheet->getTitle()}'!\$H\$7:\$H\$" . ($courseRow - 1), null, $courseCount);
+        $courseSeries = new DataSeries(DataSeries::TYPE_BARCHART, DataSeries::GROUPING_CLUSTERED, range(0, $courseCount - 1), [], [$courseLabels], [$courseValues]);
+        $courseSeries->setPlotDirection(DataSeries::DIRECTION_COL);
+        $coursePlotArea = new PlotArea(new Layout(), [$courseSeries]);
+        $courseChart = new Chart('course_enrollment', new Title('Top Courses by Enrollment'), new Legend(Legend::POSITION_RIGHT, null, false), $coursePlotArea, true, 0, null, null);
+        $courseChart->setTopLeftPosition('G26');
+        $courseChart->setBottomRightPosition('N40');
+        $sheet->addChart($courseChart);
+
+        $statusCount = max(count($stats['students_by_status']), 1);
+        $statusLabels = new DataSeriesValues('String', "'{$sheet->getTitle()}'!\$J\$7:\$J\$" . ($studentStatusRow - 1), null, $statusCount);
+        $statusValues = new DataSeriesValues('Number', "'{$sheet->getTitle()}'!\$K\$7:\$K\$" . ($studentStatusRow - 1), null, $statusCount);
+        $statusSeries = new DataSeries(DataSeries::TYPE_DOUGHNUTCHART, null, range(0, $statusCount - 1), [], [$statusLabels], [$statusValues]);
+        $statusPlotArea = new PlotArea(new Layout(), [$statusSeries]);
+        $statusChart = new Chart('student_status', new Title('Student Status Distribution'), new Legend(Legend::POSITION_RIGHT, null, false), $statusPlotArea, true, 0, null, null);
+        $statusChart->setTopLeftPosition('A' . ($completionRow + 4));
+        $statusChart->setBottomRightPosition('F' . ($completionRow + 18));
+        $sheet->addChart($statusChart);
+
+        $completionLabels = new DataSeriesValues('String', "'{$sheet->getTitle()}'!\$A\$" . ($completionRow + 1) . ":\$A\$" . ($completionRow + 2), null, 2);
+        $completionValues = new DataSeriesValues('Number', "'{$sheet->getTitle()}'!\$B\$" . ($completionRow + 1) . ":\$B\$" . ($completionRow + 2), null, 2);
+        $completionSeries = new DataSeries(DataSeries::TYPE_PIECHART, null, [0, 1], [], [$completionLabels], [$completionValues]);
+        $completionPlotArea = new PlotArea(new Layout(), [$completionSeries]);
+        $completionChart = new Chart('completion_rate', new Title('Completion Rate'), new Legend(Legend::POSITION_RIGHT, null, false), $completionPlotArea, true, 0, null, null);
+        $completionChart->setTopLeftPosition('G' . ($completionRow + 4));
+        $completionChart->setBottomRightPosition('N' . ($completionRow + 18));
+        $sheet->addChart($completionChart);
+
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'school-reports-' . now()->format('Y-m-d-His') . '.xlsx';
+
+        return response()->streamDownload(function () use ($writer) {
+            $writer->setIncludeCharts(true);
+            $writer->save('php://output');
+        }, $filename, [
+            'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'Cache-Control' => 'max-age=0',
+        ]);
     }
 }

@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Traits\HasCompletionStatus;
 
 class Course extends Model
 {
-    use HasFactory;
+    use HasFactory, HasCompletionStatus;
 
-    protected $fillable = ['code', 'title', 'grade_level', 'units', 'semester', 'instructor_id'];
+    protected $fillable = ['code', 'title', 'grade_level', 'units', 'semester', 'instructor_id', 'completion_status'];
 
     public function instructor(): BelongsTo
     {

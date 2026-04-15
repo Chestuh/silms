@@ -21,6 +21,9 @@ class MessagesController extends Controller
             $otherId = $m->sender_id === $user->id ? $m->receiver_id : $m->sender_id;
             if (!isset($byOther[$otherId])) {
                 $other = $m->sender_id === $user->id ? $m->receiver : $m->sender;
+                if (!$other) {
+                    continue;
+                }
                 $byOther[$otherId] = ['user' => $other, 'last_message' => $m, 'unread' => 0];
             }
             if ($m->receiver_id === $user->id && $m->read_at === null) {

@@ -14,12 +14,22 @@ class MaterialsController extends Controller
         if (!$instructor) {
             abort(403);
         }
-        $materials = LearningMaterial::whereIn('course_id', $instructor->courses()->pluck('id'))
+
+        $activeTab = $request->query('tab', 'all');
+        $materialsQuery = LearningMaterial::whereIn('course_id', $instructor->courses()->pluck('id'))
             ->with('course:id,code,title')
             ->orderBy('course_id')
-            ->orderBy('order_index')
-            ->get();
-        return view('instructor.materials.index', compact('materials'));
+            ->orderBy('order_index');
+
+        if ($activeTab === 'archived') {
+            $materialsQuery->where('archived', true);
+        } else {
+            $materialsQuery->where('archived', false);
+        }
+
+        $materials = $materialsQuery->get();
+
+        return view('instructor.materials.index', compact('materials', 'activeTab'));
     }
 
     public function create(Request $request)
@@ -148,6 +158,24 @@ class MaterialsController extends Controller
         $material->delete();
 
         return redirect()->route('instructor.materials.index')->with('success', 'Learning material removed.');
+    }
+
+    public function archive(Request $request, LearningMaterial $material)
+    {
+        $this->authorizeMaterial($request, $material);
+
+        $material->update(['archived' => true]);
+
+        return back()->with('success', 'Learning material archived.');
+    }
+
+    public function unarchive(Request $request, LearningMaterial $material)
+    {
+        $this->authorizeMaterial($request, $material);
+
+        $material->update(['archived' => false]);
+
+        return back()->with('success', 'Learning material restored from archive.');
     }
 
     private function authorizeInstructor(Request $request)
