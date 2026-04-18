@@ -40,7 +40,7 @@ class Enrollment extends Model
      */
     public function autoCreditDepartmentCourses(): void
     {
-        $gradeLevel = $this->course->grade_level ?? null;
+        $gradeLevel = $this->course?->grade_level ?? null;
         if (is_null($gradeLevel)) {
             return;
         }
@@ -51,7 +51,7 @@ class Enrollment extends Model
         }
 
         // Determine the department from the course's instructor
-        $instructor = $this->course->instructor;
+        $instructor = $this->course?->instructor;
         $department = $instructor->department ?? null;
         if (is_null($department)) {
             return;

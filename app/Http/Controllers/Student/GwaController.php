@@ -17,15 +17,24 @@ class GwaController extends Controller
             ->whereIn('status', ['enrolled', 'completed'])
             ->orderByDesc('school_year')
             ->orderByDesc('semester')
-            ->get();
+            ->get()
+            ->filter(fn ($e) => $e->course);
 
         $totalUnits = 0;
         $weightedSum = 0;
         foreach ($grades as $e) {
             $g = $e->grade;
-            if (!$g || $g->midterm_grade === null || $g->final_grade === null) continue;
+            if (!$g || $g->midterm_grade === null || $g->final_grade === null) {
+                continue;
+            }
+            if (!$e->course || $e->course->units === null) {
+                continue;
+            }
             $avg = ($g->midterm_grade + $g->final_grade) / 2;
             $u = (float) $e->course->units;
+            if ($u <= 0) {
+                continue;
+            }
             $totalUnits += $u;
             $weightedSum += $avg * $u;
         }

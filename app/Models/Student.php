@@ -117,8 +117,14 @@ class Student extends Model
             if (!$g || $g->midterm_grade === null || $g->final_grade === null) {
                 continue;
             }
+            if (!$e->course || $e->course->units === null) {
+                continue;
+            }
             $avg = ((float) $g->midterm_grade + (float) $g->final_grade) / 2;
             $u = (float) $e->course->units;
+            if ($u <= 0) {
+                continue;
+            }
             $totalUnits += $u;
             $weightedSum += $avg * $u;
         }

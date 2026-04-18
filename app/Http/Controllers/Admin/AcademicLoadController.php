@@ -37,7 +37,7 @@ class AcademicLoadController extends Controller
 
         $overloads = [];
         foreach ($byStudent as $studentId => $items) {
-            $totalUnits = $items->sum(fn ($e) => (float) $e->course->units);
+            $totalUnits = $items->sum(fn ($e) => (float) ($e->course->units ?? 0));
             if ($totalUnits > $maxUnits) {
                 $student = $items->first()->student;
                 $overloads[] = [

@@ -14,7 +14,7 @@ class AcademicStatusController extends Controller
             abort(403);
         }
         $enrollments = $student->enrollments()->with('course')->orderByDesc('school_year')->orderBy('semester')->get();
-        $totalUnits = $enrollments->where('status', 'enrolled')->sum(fn ($e) => (float) $e->course->units);
+        $totalUnits = $enrollments->where('status', 'enrolled')->sum(fn ($e) => (float) ($e->course->units ?? 0));
         return view('student.academic-status', compact('student', 'enrollments', 'totalUnits'));
     }
 }

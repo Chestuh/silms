@@ -25,7 +25,7 @@
         <div class="card stat-card">
             <div class="card-body">
                 <h6 class="text-muted">Total time spent</h6>
-                <h4 class="mb-0">{{ $totalTime }} min</h4>
+                <h4 class="mb-0">{{ $displayTime }}</h4>
             </div>
         </div>
     </div>

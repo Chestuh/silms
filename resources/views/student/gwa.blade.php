@@ -61,9 +61,9 @@
                     ][$status] ?? 'secondary';
                 @endphp
                 <tr>
-                    <td>{{ $e->course->code }}</td>
-                    <td>{{ $e->course->title }}</td>
-                    <td>{{ $e->course->units }}</td>
+                    <td>{{ optional($e->course)->code ?? '—' }}</td>
+                    <td>{{ optional($e->course)->title ?? '—' }}</td>
+                    <td>{{ optional($e->course)->units ?? '—' }}</td>
                     <td>{{ $e->semester ?? '—' }}</td>
                     <td>{{ $e->school_year ?? '—' }}</td>
                     <td>{{ optional($g->rubric)->name ?? '—' }}</td>

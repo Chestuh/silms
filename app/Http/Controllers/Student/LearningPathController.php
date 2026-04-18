@@ -17,7 +17,11 @@ class LearningPathController extends Controller
         if (!$student) {
             abort(403);
         }
-        $enrollments = $student->enrollments()->where('status', 'enrolled')->with('course.learningMaterials')->get();
+        $enrollments = $student->enrollments()
+            ->where('status', 'enrolled')
+            ->with('course.learningMaterials')
+            ->get()
+            ->filter(fn ($e) => $e->course);
         $completedMaterialIds = $student->learningProgress()->where('progress_percent', 100)->pluck('material_id')->toArray();
         $rules = LearningPathRule::where('is_active', true)->orderBy('sort_order')->get();
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2026 at 11:45 AM
+-- Generation Time: Apr 18, 2026 at 02:40 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -44,7 +44,7 @@ CREATE TABLE `academic_honors` (
 INSERT INTO `academic_honors` (`id`, `student_id`, `honor_type`, `semester`, `school_year`, `created_at`, `updated_at`) VALUES
 (1, 1, 'Summa Cum Laude', '1st Semester', '2025-2026', '2026-04-13 02:00:00', '2026-04-13 02:00:00'),
 (2, 1, 'Best in Mathematics', '1st Semester', '2025-2026', '2026-04-13 02:05:00', '2026-04-13 02:05:00'),
-(3, 4, 'Dean''s List', '1st Semester', '2025-2026', '2026-04-13 02:10:00', '2026-04-13 02:10:00');
+(3, 4, 'Dean\'s List', '1st Semester', '2025-2026', '2026-04-13 02:10:00', '2026-04-13 02:10:00');
 
 -- --------------------------------------------------------
 
@@ -219,7 +219,9 @@ INSERT INTO `courses` (`id`, `code`, `title`, `units`, `grade_level`, `semester`
 (83, 'G10 - AP', 'Araling Panlipunan 10 (Contemporary Issues)', 3, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
 (84, 'G10 - ESP', 'Edukasyon sa Pagpapakatao 10', 2, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
 (85, 'G10 - MAPEH', 'MAPEH 10 (Music, Arts, PE, Health)', 2, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
-(86, 'G10 - TLE', 'Technology and Livelihood Education 10', 2, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14');
+(86, 'G10 - TLE', 'Technology and Livelihood Education 10', 2, '10', NULL, NULL, '2026-04-12 11:31:14', '2026-04-13 01:13:14'),
+(91, 'CS101', 'Introduction to Programming', 3, NULL, NULL, 9, '2026-04-15 14:43:59', '2026-04-15 14:43:59'),
+(92, 'CS102', 'Data Structures', 3, NULL, NULL, 9, '2026-04-15 14:43:59', '2026-04-15 14:43:59');
 
 -- --------------------------------------------------------
 
@@ -273,7 +275,10 @@ CREATE TABLE `credential_requests` (
 INSERT INTO `credential_requests` (`id`, `student_id`, `credential_type`, `status`, `letter_path`, `payment_cleared_at`, `created_at`, `updated_at`) VALUES
 (1, 1, 'Transcript of Records', 'released', '/uploads/credentials/student_1_tor_001.pdf', '2026-04-12 09:00:00', '2026-04-11 08:00:00', '2026-04-12 14:00:00'),
 (2, 1, 'Diploma Application', 'processing', '/uploads/credentials/student_1_diploma_001.pdf', '2026-04-13 10:00:00', '2026-04-13 08:00:00', '2026-04-13 10:30:00'),
-(3, 4, 'Certificate of Enrollment', 'pending', NULL, NULL, '2026-04-13 11:00:00', '2026-04-13 11:00:00');
+(3, 4, 'Certificate of Enrollment', 'pending', NULL, NULL, '2026-04-13 11:00:00', '2026-04-13 11:00:00'),
+(4, 4, 'Good Moral', 'pending', NULL, NULL, '2026-04-15 09:07:05', '2026-04-15 09:07:05'),
+(5, 4, 'Form 137-A', 'pending', NULL, NULL, '2026-04-15 09:07:07', '2026-04-15 09:07:07'),
+(6, 4, 'Transcript of Records', 'pending', NULL, NULL, '2026-04-15 09:07:11', '2026-04-15 09:07:11');
 
 -- --------------------------------------------------------
 
@@ -355,7 +360,9 @@ INSERT INTO `enrollments` (`id`, `student_id`, `course_id`, `semester`, `school_
 (3, 1, 58, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-09 11:40:00', '2026-04-09 11:40:00'),
 (4, 4, 55, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-13 01:32:00', '2026-04-13 01:32:00'),
 (5, 4, 57, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-13 01:33:00', '2026-04-13 01:33:00'),
-(6, 4, 59, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-13 01:34:00', '2026-04-13 01:34:00');
+(6, 4, 59, '1st Semester', '2025-2026', 'enrolled', NULL, '2026-04-13 01:34:00', '2026-04-13 01:34:00'),
+(20, 4, 91, '1st', '2024-2025', 'enrolled', NULL, '2026-04-15 14:43:59', '2026-04-15 14:43:59'),
+(21, 4, 92, '1st', '2024-2025', 'enrolled', NULL, '2026-04-15 14:43:59', '2026-04-15 14:43:59');
 
 -- --------------------------------------------------------
 
@@ -403,7 +410,9 @@ INSERT INTO `fees` (`id`, `student_id`, `fee_type`, `amount`, `due_date`, `statu
 (1, 1, 'Tuition', 25000.00, '2026-04-30', 'paid', 'gcash', 'GC123456789', '/uploads/proofs/student_1_fee_001.jpg', 'verified', '2026-04-10 10:30:00', '2026-04-09 08:00:00', '2026-04-10 15:00:00'),
 (2, 1, 'Miscellaneous', 5000.00, '2026-04-30', 'paid', 'bank_transfer', 'BT987654321', '/uploads/proofs/student_1_fee_002.jpg', 'verified', '2026-04-11 14:00:00', '2026-04-09 08:10:00', '2026-04-11 15:00:00'),
 (3, 4, 'Tuition', 25000.00, '2026-05-15', 'pending', NULL, NULL, NULL, 'pending', NULL, '2026-04-13 01:32:00', '2026-04-13 01:32:00'),
-(4, 4, 'Laboratory Fee', 3000.00, '2026-05-15', 'paid', 'gcash', 'GC456789123', '/uploads/proofs/student_4_fee_001.jpg', 'verified', '2026-04-13 09:00:00', '2026-04-13 01:33:00', '2026-04-13 10:00:00');
+(4, 4, 'Laboratory Fee', 3000.00, '2026-05-15', 'paid', 'gcash', 'GC456789123', '/uploads/proofs/student_4_fee_001.jpg', 'verified', '2026-04-13 09:00:00', '2026-04-13 01:33:00', '2026-04-13 10:00:00'),
+(5, 1, 'a', 123.00, '2026-02-23', 'pending', NULL, NULL, NULL, NULL, NULL, '2026-04-15 15:32:00', '2026-04-15 15:32:00'),
+(6, 4, 'a', 123.00, '2026-02-23', 'pending', NULL, NULL, NULL, NULL, NULL, '2026-04-15 15:32:00', '2026-04-15 15:32:00');
 
 -- --------------------------------------------------------
 
@@ -432,7 +441,9 @@ INSERT INTO `grades` (`id`, `enrollment_id`, `midterm_grade`, `final_grade`, `gw
 (3, 3, 90.00, 92.50, 3.7000, '2026-04-09 11:55:00', '2026-04-10 09:30:00', NULL),
 (4, 4, 82.00, 85.75, 3.3020, '2026-04-13 02:00:00', '2026-04-13 10:00:00', NULL),
 (5, 5, 88.50, 89.25, 3.5700, '2026-04-13 02:05:00', '2026-04-13 10:15:00', NULL),
-(6, 6, 91.00, 93.50, 3.7400, '2026-04-13 02:10:00', '2026-04-13 10:30:00', NULL);
+(6, 6, 91.00, 93.50, 3.7400, '2026-04-13 02:10:00', '2026-04-13 10:30:00', NULL),
+(12, 20, 88.00, 90.00, NULL, '2026-04-15 14:43:59', '2026-04-15 14:43:59', NULL),
+(13, 21, 85.00, 87.00, NULL, '2026-04-15 14:43:59', '2026-04-15 14:43:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -589,7 +600,11 @@ INSERT INTO `learning_materials` (`id`, `course_id`, `title`, `description`, `fo
 (10, 88, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 1, 'pending', NULL, '2026-04-12 11:31:14', '2026-04-13 01:15:32'),
 (11, 89, 'Welcome and Syllabus', 'Course overview and requirements', 'document', NULL, NULL, NULL, 'easy', 1, 1, 'pending', NULL, '2026-04-13 01:31:18', '2026-04-13 01:33:32'),
 (12, 89, 'Variables and Data Types', 'Video lesson on basics', 'video', NULL, NULL, NULL, 'easy', 2, 1, 'pending', NULL, '2026-04-13 01:31:18', '2026-04-13 01:33:33'),
-(13, 90, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 1, 'pending', NULL, '2026-04-13 01:31:18', '2026-04-13 01:33:33');
+(13, 90, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 1, 'pending', NULL, '2026-04-13 01:31:18', '2026-04-13 01:33:33'),
+(14, 59, 'a', 'a', 'document', '1776290350_69e00a2e1802d.docx', NULL, NULL, 'hard', 1, 0, 'pending', NULL, '2026-04-15 13:59:10', '2026-04-15 14:05:39'),
+(15, 91, 'Welcome and Syllabus', 'Course overview and requirements', 'document', NULL, NULL, NULL, 'easy', 1, 0, 'pending', NULL, '2026-04-15 14:43:59', '2026-04-15 14:43:59'),
+(16, 91, 'Variables and Data Types', 'Video lesson on basics', 'video', NULL, NULL, NULL, 'easy', 2, 0, 'pending', NULL, '2026-04-15 14:43:59', '2026-04-15 14:43:59'),
+(17, 92, 'Arrays and Lists', 'Introduction to linear structures', 'document', NULL, NULL, NULL, 'medium', 1, 0, 'pending', NULL, '2026-04-15 14:43:59', '2026-04-15 14:43:59');
 
 -- --------------------------------------------------------
 
@@ -672,7 +687,21 @@ INSERT INTO `learning_progress` (`id`, `student_id`, `material_id`, `progress_pe
 (3, 1, 3, 60, 30, NULL, '2026-04-11 08:00:00', '2026-04-12 15:00:00'),
 (4, 4, 1, 100, 20, '2026-04-12 10:00:00', '2026-04-13 08:00:00', '2026-04-13 10:00:00'),
 (5, 4, 2, 75, 35, NULL, '2026-04-13 08:30:00', '2026-04-13 10:30:00'),
-(6, 4, 3, 100, 28, '2026-04-13 14:00:00', '2026-04-13 12:00:00', '2026-04-13 14:00:00');
+(6, 4, 3, 100, 28, '2026-04-13 14:00:00', '2026-04-13 12:00:00', '2026-04-13 14:00:00'),
+(7, 4, 4, 49, 105, NULL, '2026-04-15 14:43:59', '2026-04-10 14:43:59'),
+(8, 4, 5, 53, 178, '2026-04-08 14:43:59', '2026-04-15 14:43:59', '2026-04-15 14:43:59'),
+(9, 4, 6, 95, 165, NULL, '2026-04-15 14:43:59', '2026-04-11 14:43:59'),
+(10, 4, 7, 84, 17, '2026-04-12 14:43:59', '2026-04-15 14:43:59', '2026-04-13 14:43:59'),
+(11, 4, 8, 77, 60, '2026-04-11 14:43:59', '2026-04-15 14:43:59', '2026-04-11 14:43:59'),
+(12, 4, 9, 43, 177, NULL, '2026-04-15 14:43:59', '2026-04-10 14:43:59'),
+(13, 4, 10, 44, 43, '2026-04-13 14:43:59', '2026-04-15 14:43:59', '2026-04-14 14:43:59'),
+(14, 4, 11, 92, 167, NULL, '2026-04-15 14:43:59', '2026-04-13 14:43:59'),
+(15, 4, 12, 82, 102, '2026-04-10 14:43:59', '2026-04-15 14:43:59', '2026-04-11 14:43:59'),
+(16, 4, 13, 58, 51, NULL, '2026-04-15 14:43:59', '2026-04-15 14:43:59'),
+(17, 4, 14, 51, 89, '2026-04-12 14:43:59', '2026-04-15 14:43:59', '2026-04-10 14:43:59'),
+(18, 4, 15, 51, 47, NULL, '2026-04-15 14:43:59', '2026-04-11 14:43:59'),
+(19, 4, 16, 74, 145, '2026-04-08 14:43:59', '2026-04-15 14:43:59', '2026-04-11 14:43:59'),
+(20, 4, 17, 49, 164, '2026-04-12 14:43:59', '2026-04-15 14:43:59', '2026-04-11 14:43:59');
 
 -- --------------------------------------------------------
 
@@ -723,10 +752,10 @@ CREATE TABLE `messages` (
 
 INSERT INTO `messages` (`id`, `sender_id`, `receiver_id`, `subject`, `body`, `read_at`, `created_at`, `updated_at`) VALUES
 (1, 6, 15, 'Feedback on Assignment', 'Hi Chester, I reviewed your English assignment. Great work on the essay structure! Just needs a bit more development in the conclusion. -Mr. Flores', '2026-04-10 10:00:00', '2026-04-10 09:30:00', '2026-04-10 10:00:00'),
-(2, 1, 15, 'Academic Performance Notice', 'Dear Student, You''ve been selected for the Dean''s List this semester. Congratulations on your excellent performance! -Principal', '2026-04-11 08:00:00', '2026-04-11 07:30:00', '2026-04-11 08:00:00'),
-(3, 21, 19, 'Course Materials Available', 'Hello John, I''ve uploaded this week''s materials for Computer Science. Please review them before Friday.', NULL, '2026-04-12 14:00:00', '2026-04-12 14:00:00'),
-(4, 19, 6, 'Question About Math Lesson', 'Hi Sir/Ma''am, I didn''t understand the concept of fractions in lesson 3. Could we discuss this in office hours?', '2026-04-13 09:30:00', '2026-04-13 08:15:00', '2026-04-13 09:30:00'),
-(5, 17, 1, 'Payment Verification', 'Five students'' fee payments have been verified and cleared. Please find the list attached.', '2026-04-13 11:00:00', '2026-04-13 10:30:00', '2026-04-13 11:00:00');
+(2, 1, 15, 'Academic Performance Notice', 'Dear Student, You\'ve been selected for the Dean\'s List this semester. Congratulations on your excellent performance! -Principal', '2026-04-11 08:00:00', '2026-04-11 07:30:00', '2026-04-11 08:00:00'),
+(3, 21, 19, 'Course Materials Available', 'Hello John, I\'ve uploaded this week\'s materials for Computer Science. Please review them before Friday.', '2026-04-15 08:33:32', '2026-04-12 14:00:00', '2026-04-15 08:33:32'),
+(4, 19, 6, 'Question About Math Lesson', 'Hi Sir/Ma\'am, I didn\'t understand the concept of fractions in lesson 3. Could we discuss this in office hours?', '2026-04-13 09:30:00', '2026-04-13 08:15:00', '2026-04-13 09:30:00'),
+(5, 17, 1, 'Payment Verification', 'Five students\' fee payments have been verified and cleared. Please find the list attached.', '2026-04-13 11:00:00', '2026-04-13 10:30:00', '2026-04-13 11:00:00');
 
 -- --------------------------------------------------------
 
@@ -1450,13 +1479,13 @@ ALTER TABLE `user_dashboard_preferences`
 -- AUTO_INCREMENT for table `academic_honors`
 --
 ALTER TABLE `academic_honors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `admission_records`
@@ -1468,49 +1497,49 @@ ALTER TABLE `admission_records`
 -- AUTO_INCREMENT for table `assessment_templates`
 --
 ALTER TABLE `assessment_templates`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `auto_learning_aids`
 --
 ALTER TABLE `auto_learning_aids`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `course_curriculum_alignments`
 --
 ALTER TABLE `course_curriculum_alignments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `credential_requests`
 --
 ALTER TABLE `credential_requests`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `curriculum_standards`
 --
 ALTER TABLE `curriculum_standards`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `disciplinary_records`
 --
 ALTER TABLE `disciplinary_records`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `enrollments`
 --
 ALTER TABLE `enrollments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1522,13 +1551,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `fees`
 --
 ALTER TABLE `fees`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `instructors`
@@ -1540,31 +1569,31 @@ ALTER TABLE `instructors`
 -- AUTO_INCREMENT for table `job_aids`
 --
 ALTER TABLE `job_aids`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `learning_aids`
 --
 ALTER TABLE `learning_aids`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `learning_aid_interactions`
 --
 ALTER TABLE `learning_aid_interactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `learning_materials`
 --
 ALTER TABLE `learning_materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `learning_outcomes`
 --
 ALTER TABLE `learning_outcomes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `learning_path_rules`
@@ -1576,25 +1605,25 @@ ALTER TABLE `learning_path_rules`
 -- AUTO_INCREMENT for table `learning_progress`
 --
 ALTER TABLE `learning_progress`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `material_ratings`
 --
 ALTER TABLE `material_ratings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1612,13 +1641,13 @@ ALTER TABLE `pre_registrations`
 -- AUTO_INCREMENT for table `rubrics`
 --
 ALTER TABLE `rubrics`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `self_assessments`
 --
 ALTER TABLE `self_assessments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `students`
@@ -1630,19 +1659,19 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `student_progress_analytics`
 --
 ALTER TABLE `student_progress_analytics`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `study_reminders`
 --
 ALTER TABLE `study_reminders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `transfer_requests`
 --
 ALTER TABLE `transfer_requests`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -1677,163 +1706,6 @@ ALTER TABLE `activity_log`
 --
 ALTER TABLE `admission_records`
   ADD CONSTRAINT `admission_records_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `assessment_templates`
---
-ALTER TABLE `assessment_templates`
-  ADD CONSTRAINT `assessment_templates_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `assessment_templates_instructor_id_foreign` FOREIGN KEY (`instructor_id`) REFERENCES `users` (`id`) ON DELETE SET NULL,
-  ADD CONSTRAINT `assessment_templates_learning_material_id_foreign` FOREIGN KEY (`learning_material_id`) REFERENCES `learning_materials` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `auto_learning_aids`
---
-ALTER TABLE `auto_learning_aids`
-  ADD CONSTRAINT `auto_learning_aids_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `auto_learning_aids_instructor_id_foreign` FOREIGN KEY (`instructor_id`) REFERENCES `users` (`id`) ON DELETE SET NULL,
-  ADD CONSTRAINT `auto_learning_aids_material_id_foreign` FOREIGN KEY (`material_id`) REFERENCES `learning_materials` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `course_curriculum_alignments`
---
-ALTER TABLE `course_curriculum_alignments`
-  ADD CONSTRAINT `course_curriculum_alignments_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `course_curriculum_alignments_curriculum_standard_id_foreign` FOREIGN KEY (`curriculum_standard_id`) REFERENCES `curriculum_standards` (`id`) ON DELETE SET NULL,
-  ADD CONSTRAINT `course_curriculum_alignments_learning_material_id_foreign` FOREIGN KEY (`learning_material_id`) REFERENCES `learning_materials` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `course_curriculum_alignments_learning_outcome_id_foreign` FOREIGN KEY (`learning_outcome_id`) REFERENCES `learning_outcomes` (`id`) ON DELETE SET NULL;
-
---
--- Constraints for table `credential_requests`
---
-ALTER TABLE `credential_requests`
-  ADD CONSTRAINT `credential_requests_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `disciplinary_records`
---
-ALTER TABLE `disciplinary_records`
-  ADD CONSTRAINT `disciplinary_records_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `enrollments`
---
-ALTER TABLE `enrollments`
-  ADD CONSTRAINT `enrollments_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `enrollments_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `fees`
---
-ALTER TABLE `fees`
-  ADD CONSTRAINT `fees_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `grades`
---
-ALTER TABLE `grades`
-  ADD CONSTRAINT `grades_enrollment_id_foreign` FOREIGN KEY (`enrollment_id`) REFERENCES `enrollments` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `grades_rubric_id_foreign` FOREIGN KEY (`rubric_id`) REFERENCES `rubrics` (`id`) ON DELETE SET NULL;
-
---
--- Constraints for table `instructors`
---
-ALTER TABLE `instructors`
-  ADD CONSTRAINT `instructors_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `job_aids`
---
-ALTER TABLE `job_aids`
-  ADD CONSTRAINT `job_aids_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `job_aids_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `learning_aids`
---
-ALTER TABLE `learning_aids`
-  ADD CONSTRAINT `learning_aids_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `learning_aids_material_id_foreign` FOREIGN KEY (`material_id`) REFERENCES `learning_materials` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `learning_aid_interactions`
---
-ALTER TABLE `learning_aid_interactions`
-  ADD CONSTRAINT `learning_aid_interactions_learning_aid_id_foreign` FOREIGN KEY (`learning_aid_id`) REFERENCES `learning_aids` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `learning_aid_interactions_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `learning_outcomes`
---
-ALTER TABLE `learning_outcomes`
-  ADD CONSTRAINT `learning_outcomes_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `learning_path_rules`
---
-ALTER TABLE `learning_path_rules`
-  ADD CONSTRAINT `learning_path_rules_source_course_id_foreign` FOREIGN KEY (`source_course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `learning_path_rules_source_material_id_foreign` FOREIGN KEY (`source_material_id`) REFERENCES `learning_materials` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `learning_path_rules_target_course_id_foreign` FOREIGN KEY (`target_course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `learning_path_rules_target_material_id_foreign` FOREIGN KEY (`target_material_id`) REFERENCES `learning_materials` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `learning_progress`
---
-ALTER TABLE `learning_progress`
-  ADD CONSTRAINT `learning_progress_material_id_foreign` FOREIGN KEY (`material_id`) REFERENCES `learning_materials` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `learning_progress_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `material_ratings`
---
-ALTER TABLE `material_ratings`
-  ADD CONSTRAINT `material_ratings_material_id_foreign` FOREIGN KEY (`material_id`) REFERENCES `learning_materials` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `material_ratings_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `messages`
---
-ALTER TABLE `messages`
-  ADD CONSTRAINT `messages_receiver_id_foreign` FOREIGN KEY (`receiver_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `messages_sender_id_foreign` FOREIGN KEY (`sender_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `self_assessments`
---
-ALTER TABLE `self_assessments`
-  ADD CONSTRAINT `self_assessments_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `students`
---
-ALTER TABLE `students`
-  ADD CONSTRAINT `students_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `student_progress_analytics`
---
-ALTER TABLE `student_progress_analytics`
-  ADD CONSTRAINT `student_progress_analytics_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `student_progress_analytics_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `study_reminders`
---
-ALTER TABLE `study_reminders`
-  ADD CONSTRAINT `study_reminders_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `transfer_requests`
---
-ALTER TABLE `transfer_requests`
-  ADD CONSTRAINT `transfer_requests_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `user_dashboard_preferences`
---
-ALTER TABLE `user_dashboard_preferences`
-  ADD CONSTRAINT `user_dashboard_preferences_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -42,12 +43,18 @@ class DashboardController extends Controller
         $gradesCollection = $student->enrollments()
             ->with('grade', 'course')
             ->get()
-            ->filter(fn ($e) => $e->grade && $e->grade->midterm_grade !== null && $e->grade->final_grade !== null);
+            ->filter(fn ($e) =>
+                $e->grade &&
+                $e->course &&
+                $e->grade->midterm_grade !== null &&
+                $e->grade->final_grade !== null &&
+                $e->course->units !== null
+            );
         $avgGrade = $gradesCollection->isEmpty()
             ? null
             : $gradesCollection->map(fn ($e) => ($e->grade->midterm_grade + $e->grade->final_grade) / 2)->avg();
-        $totalUnits = $gradesCollection->sum(fn ($e) => (float) $e->course->units);
-        $weightedSum = $gradesCollection->sum(fn ($e) => (($e->grade->midterm_grade + $e->grade->final_grade) / 2) * (float) $e->course->units);
+        $totalUnits = $gradesCollection->sum(fn ($e) => (float) ($e->course->units ?? 0));
+        $weightedSum = $gradesCollection->sum(fn ($e) => (($e->grade->midterm_grade + $e->grade->final_grade) / 2) * (float) ($e->course->units ?? 0));
         $gwa = $totalUnits > 0 ? round($weightedSum / $totalUnits, 2) : null;
         $studyTimeMinutes = $student->learningProgress()->sum('time_spent_minutes');
         $materialsStarted = $student->learningProgress()->count();

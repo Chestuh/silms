@@ -14,8 +14,13 @@ class ProgressController extends Controller
 
         $progress = $student->learningProgress()->with('material.course')->orderByDesc('completed_at')->orderByDesc('progress_percent')->get();
         $totalTime = $progress->sum('time_spent_minutes');
+        $hours = intdiv($totalTime, 60);
+        $minutes = $totalTime % 60;
+        $displayTime = $hours > 0
+            ? $hours . 'h' . ($minutes > 0 ? ' ' . $minutes . 'm' : '')
+            : $minutes . ' min';
         $completed = $progress->where('progress_percent', 100)->count();
 
-        return view('student.progress', compact('progress', 'totalTime', 'completed'));
+        return view('student.progress', compact('progress', 'totalTime', 'displayTime', 'completed'));
     }
 }
