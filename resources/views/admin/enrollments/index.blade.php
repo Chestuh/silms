@@ -28,9 +28,9 @@
                             <td>
                                 <a href="{{ route('admin.enrollments.show', $e) }}" class="btn btn-sm btn-outline-primary me-1">View</a>
                                 @if($e->status === 'enrolled')
-                                    <form method="POST" action="{{ route('admin.enrollments.reject', $e) }}" class="d-inline" onsubmit="return confirm('Reject this enrollment?');">
+                                    <form method="POST" action="{{ route('admin.enrollments.reject', $e) }}" class="d-inline" onsubmit="return confirm('Drop this enrollment?');">
                                         @csrf
-                                        <button type="submit" class="btn btn-sm btn-outline-danger">Reject</button>
+                                        <button type="submit" class="btn btn-sm btn-outline-danger">Drop</button>
                                     </form>
                                 @else
                                     <form method="POST" action="{{ route('admin.enrollments.approve', $e) }}" class="d-inline">

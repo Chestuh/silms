@@ -71,6 +71,18 @@
         <div class="card border-0 shadow-sm rounded-4 kpi-card h-100 p-3">
             <div class="d-flex align-items-center justify-content-between mb-3">
                 <div>
+                    <div class="small text-uppercase text-muted kpi-label">Avg students / course</div>
+                    <div class="kpi-value">{{ $kpis['average_students_per_course'] }}</div>
+                </div>
+                <span class="badge bg-primary bg-opacity-15 text-primary p-2 rounded-circle"><i class="bi bi-bar-chart-line"></i></span>
+            </div>
+            <div class="text-muted small">Average enrolled students per active course.</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-2">
+        <div class="card border-0 shadow-sm rounded-4 kpi-card h-100 p-3">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <div>
                     <div class="small text-uppercase text-muted kpi-label">Completion rate</div>
                     <div class="kpi-value">{{ $kpis['completion_rate'] ?? 0 }}%</div>
                 </div>

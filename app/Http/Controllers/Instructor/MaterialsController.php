@@ -48,38 +48,63 @@ class MaterialsController extends Controller
         if (!$instructor) {
             abort(403);
         }
+
         $validated = $request->validate([
             'course_id' => ['required', 'exists:courses,id'],
-            'title' => ['required', 'string', 'max:255'],
-            'description' => ['nullable', 'string'],
-            'format' => ['required', 'string', 'in:document,pdf,video,link,quiz'],
-            'file' => ['required_if:format,document,pdf,video', 'file', 'mimes:docx,pdf,mp4', 'max:20480'],
-            'url' => ['nullable', 'url', 'max:500', 'required_if:format,link,quiz'],
             'difficulty_level' => ['nullable', 'in:easy,medium,hard'],
+            'materials' => ['required', 'array', 'min:1'],
+            'materials.*.title' => ['required', 'string', 'max:255'],
+            'materials.*.description' => ['nullable', 'string'],
+            'materials.*.format' => ['required', 'string', 'in:document,pdf,video,link,quiz'],
+            'materials.*.file' => ['nullable', 'file', 'mimes:docx,pdf,mp4', 'max:20480'],
+            'materials.*.url' => ['nullable', 'url', 'max:500'],
+            'materials.*.release_date' => ['nullable', 'date'],
         ]);
 
-        if (!in_array((int) $validated['course_id'], $instructor->courses()->pluck('id')->toArray())) {
+        $instructorCourseIds = $instructor->courses()->pluck('id')->toArray();
+        if (!in_array((int) $validated['course_id'], $instructorCourseIds, true)) {
             abort(403);
         }
 
-        if (in_array($validated['format'], ['document', 'pdf', 'video'])) {
-            $file = $request->file('file');
-            if ($file) {
-                $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->move(public_path('uploads'), $fileName);
-                $validated['file_path'] = $fileName;
+        $difficultyLevel = $validated['difficulty_level'] ?? 'medium';
+        $maxOrderIndex = LearningMaterial::where('course_id', $validated['course_id'])->max('order_index') ?? 0;
+        $createdCount = 0;
+
+        foreach ($validated['materials'] as $index => $materialData) {
+            $format = $materialData['format'];
+            $filePath = null;
+            $url = null;
+
+            if (in_array($format, ['document', 'pdf', 'video'])) {
+                if ($request->hasFile("materials.{$index}.file")) {
+                    $file = $request->file("materials.{$index}.file");
+                    $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                    $file->move(public_path('uploads'), $fileName);
+                    $filePath = $fileName;
+                }
+            } else {
+                $url = $materialData['url'] ?? null;
             }
-            $validated['url'] = null;
-        } else {
-            $validated['file_path'] = null;
+
+            LearningMaterial::create([
+                'course_id' => $validated['course_id'],
+                'title' => $materialData['title'],
+                'description' => $materialData['description'] ?? null,
+                'format' => $format,
+                'file_path' => $filePath,
+                'url' => $url,
+                'difficulty_level' => $difficultyLevel,
+                'order_index' => ++$maxOrderIndex,
+                'release_date' => !empty($materialData['release_date']) ? $materialData['release_date'] : null,
+            ]);
+            $createdCount++;
         }
 
-        $validated['order_index'] = LearningMaterial::where('course_id', $validated['course_id'])->max('order_index') + 1;
-        $validated['difficulty_level'] = $validated['difficulty_level'] ?? 'medium';
+        $message = $createdCount === 1 
+            ? 'Learning material added.' 
+            : "{$createdCount} learning materials added.";
 
-        LearningMaterial::create($validated);
-
-        return redirect()->route('instructor.materials.index')->with('success', 'Learning material added.');
+        return redirect()->route('instructor.materials.index')->with('success', $message);
     }
 
     public function edit(Request $request, LearningMaterial $material)
@@ -102,6 +127,7 @@ class MaterialsController extends Controller
             'file' => ['nullable', 'file', 'mimes:docx,pdf,mp4', 'max:20480'],
             'url' => ['nullable', 'url', 'max:500', 'required_if:format,link,quiz'],
             'difficulty_level' => ['nullable', 'in:easy,medium,hard'],
+            'release_date' => ['nullable', 'date'],
         ]);
 
         $instructorCourseIds = $request->user()->instructor->courses()->pluck('id')->toArray();
@@ -142,6 +168,7 @@ class MaterialsController extends Controller
             'file_path' => $validated['file_path'],
             'url' => $validated['url'] ?? null,
             'difficulty_level' => $validated['difficulty_level'] ?? 'medium',
+            'release_date' => $validated['release_date'] ?? null,
         ]);
 
         return redirect()->route('instructor.materials.index')->with('success', 'Learning material updated.');

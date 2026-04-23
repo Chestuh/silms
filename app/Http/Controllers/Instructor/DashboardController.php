@@ -21,6 +21,7 @@ class DashboardController extends Controller
         $materialsCount = \App\Models\LearningMaterial::whereIn('course_id', $courseIds)->count();
         $enrollmentsCount = Enrollment::whereIn('course_id', $courseIds)->where('status', 'enrolled')->count();
         $studentsCount = Enrollment::whereIn('course_id', $courseIds)->where('status', 'enrolled')->distinct()->count('student_id');
+        $averageStudentsPerCourse = $coursesCount > 0 ? round($enrollmentsCount / $coursesCount, 1) : 0;
         $unreadMessages = $user->receivedMessages()->whereNull('read_at')->count();
         $progressCompleted = \App\Models\LearningProgress::whereHas('material', fn ($q) => $q->whereIn('course_id', $courseIds))->where('progress_percent', 100)->count();
         $progressTotal = \App\Models\LearningProgress::whereHas('material', fn ($q) => $q->whereIn('course_id', $courseIds))->count();
@@ -31,6 +32,7 @@ class DashboardController extends Controller
             'learning_materials' => $materialsCount,
             'enrolled_students' => $enrollmentsCount,
             'distinct_students' => $studentsCount,
+            'average_students_per_course' => $averageStudentsPerCourse,
             'unread_messages' => $unreadMessages,
             'completion_rate' => $completionRate,
             'progress_completed' => $progressCompleted,

@@ -17,12 +17,24 @@ class LearningMaterial extends Model
 
     protected $fillable = [
         'course_id', 'title', 'description', 'format', 'file_path', 'url',
-        'difficulty_level', 'order_index', 'archived', 'approval_status', 'admin_comment', 'completion_status'
+        'difficulty_level', 'order_index', 'archived', 'approval_status', 'admin_comment', 'completion_status',
+        'release_date'
     ];
 
     protected function casts(): array
     {
-        return ['archived' => 'boolean'];
+        return [
+            'archived' => 'boolean',
+            'release_date' => 'datetime',
+        ];
+    }
+
+    public function isReleased(): bool
+    {
+        if (!$this->release_date) {
+            return true; // No release date = always available
+        }
+        return now()->greaterThanOrEqualTo($this->release_date);
     }
 
     public function course(): BelongsTo

@@ -44,6 +44,28 @@ Route::middleware('auth')->group(function () {
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::put('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password');
+    
+    // Notification routes
+    Route::get('notifications', function () {
+        return view('notifications.index', [
+            'notifications' => auth()->user()->notifications()->paginate(20)
+        ]);
+    })->name('notifications.index');
+    
+    Route::get('notifications/count', function () {
+        return response()->json(['unread' => auth()->user()->unreadNotifications->count()]);
+    })->name('notifications.count');
+    
+    Route::post('notifications/{id}/read', function ($id) {
+        $notification = auth()->user()->notifications()->findOrFail($id);
+        $notification->markAsRead();
+        return back();
+    })->name('notifications.read');
+    
+    Route::post('notifications/mark-all-read', function () {
+        auth()->user()->unreadNotifications->markAsRead();
+        return back();
+    })->name('notifications.mark-all-read');
 });
 
 Route::middleware(['auth', 'role:student'])->prefix('student')->name('student.')->group(function () {

@@ -172,6 +172,44 @@
 
             <ul class="navbar-nav ms-auto">
                 @auth
+                    @php
+                        $unreadNotifications = auth()->user()->unreadNotifications ?? collect();
+                        $unreadCount = $unreadNotifications->count();
+                    @endphp
+                    <li class="nav-item dropdown">
+                        <a class="nav-link position-relative" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-bell fs-5"></i>
+                            @if($unreadCount > 0)
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    {{ $unreadCount > 9 ? '9+' : $unreadCount }}
+                                </span>
+                            @endif
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end notifications-dropdown" style="width: 320px; max-height: 400px; overflow-y: auto;">
+                            <li class="dropdown-header d-flex justify-content-between align-items-center">
+                                <span>Notifications</span>
+                                @if($unreadCount > 0)
+                                    <a href="{{ route('notifications.mark-all-read') }}" class="small text-decoration-none">Mark all read</a>
+                                @endif
+                            </li>
+                            @forelse($unreadNotifications->take(5) as $notification)
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-start gap-2 py-2" href="{{ route('notifications.index') }}">
+                                        <i class="bi bi-alarm text-primary mt-1"></i>
+                                        <div>
+                                            <div class="fw-semibold small">{{ $notification->data['title'] ?? 'Reminder' }}</div>
+                                            <small class="text-muted">{{ \Carbon\Carbon::parse($notification->data['remind_at'] ?? now())->format('M j, g:i A') }}</small>
+                                        </div>
+                                    </a>
+                                </li>
+                            @empty
+                                <li><span class="dropdown-item text-muted small">No new notifications</span></li>
+                            @endforelse
+                            @if($unreadCount > 5)
+                                <li><a class="dropdown-item text-center small text-primary" href="{{ route('notifications.index') }}">View all notifications</a></li>
+                            @endif
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                             <i class="bi bi-person-circle me-1"></i> {{ auth()->user()->name }}
@@ -217,6 +255,39 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('js/app.js') }}"></script>
+@auth
+<script>
+(function() {
+    const bellIcon = document.querySelector('.nav-link .bi-bell');
+    const bellLink = document.querySelector('.nav-link[href*="notifications"]');
+    if (!bellLink) return;
+    
+    function updateNotificationCount() {
+        fetch('{{ route("notifications.count") }}')
+            .then(res => res.json())
+            .then(data => {
+                const badge = document.querySelector('.nav-link .badge');
+                if (data.unread > 0) {
+                    if (badge) {
+                        badge.textContent = data.unread > 9 ? '9+' : data.unread;
+                    } else {
+                        const newBadge = document.createElement('span');
+                        newBadge.className = 'position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger';
+                        newBadge.textContent = data.unread > 9 ? '9+' : data.unread;
+                        bellLink.appendChild(newBadge);
+                    }
+                } else if (badge) {
+                    badge.remove();
+                }
+            })
+            .catch(() => {});
+    }
+    
+    // Poll every 30 seconds
+    setInterval(updateNotificationCount, 30000);
+})();
+</script>
+@endauth
 @if(request()->routeIs('home'))
 <script>
     (function(){

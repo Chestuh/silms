@@ -10,7 +10,19 @@ class StudentsController extends Controller
 {
     public function index(Request $request)
     {
-        $students = Student::with('user')->orderBy('student_number')->paginate(15);
+        $search = trim($request->query('search', ''));
+
+        $students = Student::with('user')
+            ->when($search, function ($query) use ($search) {
+                $query->where('student_number', 'like', "%{$search}%")
+                    ->orWhereHas('user', function ($query) use ($search) {
+                        $query->where('name', 'like', "%{$search}%");
+                    });
+            })
+            ->orderBy('student_number')
+            ->paginate(15)
+            ->withQueryString();
+
         return view('admin.students.index', compact('students'));
     }
 

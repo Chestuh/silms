@@ -18700,3 +18700,1058 @@ Stack trace:
 #50 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
 #51 {main}
 "} 
+[2026-04-23 14:36:08] local.ERROR: PHP Parse error: Syntax error, unexpected '=' on line 1 {"exception":"[object] (Psy\\Exception\\ParseErrorException(code: 0): PHP Parse error: Syntax error, unexpected '=' on line 1 at C:/xampp/htdocs/silms/vendor/psy/psysh/src/Exception/ParseErrorException.php:44)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/psy/psysh/src/CodeCleaner.php(488): Psy/Exception/ParseErrorException::fromParseError(Object(PhpParser/Error))
+#1 C:/xampp/htdocs/silms/vendor/psy/psysh/src/CodeCleaner.php(269): Psy/CodeCleaner->parse('<?php  = App////M...', false)
+#2 C:/xampp/htdocs/silms/vendor/psy/psysh/src/Shell.php(1059): Psy/CodeCleaner->clean(Array, false)
+#3 C:/xampp/htdocs/silms/vendor/psy/psysh/src/Shell.php(1092): Psy/Shell->addCode(' = App////Models//...', true)
+#4 C:/xampp/htdocs/silms/vendor/psy/psysh/src/Shell.php(1640): Psy/Shell->setCode(' = App////Models//...', true)
+#5 C:/xampp/htdocs/silms/vendor/laravel/tinker/src/Console/TinkerCommand.php(77): Psy/Shell->execute(' = App////Models//...')
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel/Tinker/Console/TinkerCommand->handle()
+#7 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate/Container/Container->call(Array)
+#12 C:/xampp/htdocs/silms/vendor/symfony/console/Command/Command.php(326): Illuminate/Console/Command->execute(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#13 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony/Component/Console/Command/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#14 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(1106): Illuminate/Console/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#15 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(324): Symfony/Component/Console/Application->doRunCommand(Object(Laravel/Tinker/Console/TinkerCommand), Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#16 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(175): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#18 C:/xampp/htdocs/silms/artisan(12): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#19 {main}
+"} 
+[2026-04-23 14:37:43] local.ERROR: PHP Parse error: Syntax error, unexpected T_NS_SEPARATOR on line 1 {"exception":"[object] (Psy\\Exception\\ParseErrorException(code: 0): PHP Parse error: Syntax error, unexpected T_NS_SEPARATOR on line 1 at C:/xampp/htdocs/silms/vendor/psy/psysh/src/Exception/ParseErrorException.php:44)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/psy/psysh/src/CodeCleaner.php(488): Psy/Exception/ParseErrorException::fromParseError(Object(PhpParser/Error))
+#1 C:/xampp/htdocs/silms/vendor/psy/psysh/src/CodeCleaner.php(269): Psy/CodeCleaner->parse('<?php echo (App...', false)
+#2 C:/xampp/htdocs/silms/vendor/psy/psysh/src/Shell.php(1059): Psy/CodeCleaner->clean(Array, false)
+#3 C:/xampp/htdocs/silms/vendor/psy/psysh/src/Shell.php(1092): Psy/Shell->addCode('echo (App////Mode...', true)
+#4 C:/xampp/htdocs/silms/vendor/psy/psysh/src/Shell.php(1640): Psy/Shell->setCode('echo (App////Mode...', true)
+#5 C:/xampp/htdocs/silms/vendor/laravel/tinker/src/Console/TinkerCommand.php(77): Psy/Shell->execute('echo (App////Mode...')
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel/Tinker/Console/TinkerCommand->handle()
+#7 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate/Container/Container->call(Array)
+#12 C:/xampp/htdocs/silms/vendor/symfony/console/Command/Command.php(326): Illuminate/Console/Command->execute(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#13 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony/Component/Console/Command/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#14 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(1106): Illuminate/Console/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#15 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(324): Symfony/Component/Console/Application->doRunCommand(Object(Laravel/Tinker/Console/TinkerCommand), Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#16 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(175): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#18 C:/xampp/htdocs/silms/artisan(12): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#19 {main}
+"} 
+[2026-04-23 14:38:27] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'course_code' in 'field list' (Connection: mysql, SQL: insert into `learning_materials` (`course_id`, `title`, `course_code`, `description`, `format`, `difficulty_level`, `order_index`, `updated_at`, `created_at`) values (35, Welcome and Syllabus, CS101, Course overview and requirements, document, easy, 1, 2026-04-23 14:38:27, 2026-04-23 14:38:27)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'course_code' in 'field list' (Connection: mysql, SQL: insert into `learning_materials` (`course_id`, `title`, `course_code`, `description`, `format`, `difficulty_level`, `order_index`, `updated_at`, `created_at`) values (35, Welcome and Syllabus, CS101, Course overview and requirements, document, easy, 1, 2026-04-23 14:38:27, 2026-04-23 14:38:27)) at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Connection.php:829)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(783): Illuminate/Database/Connection->runQueryCallback('insert into `le...', Array, Object(Closure))
+#1 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(34): Illuminate/Database/Connection->run('insert into `le...', Array, Object(Closure))
+#2 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php(35): Illuminate/Database/MySqlConnection->insert('insert into `le...', Array, 'id')
+#3 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3549): Illuminate/Database/Query/Processors/MySqlProcessor->processInsertGetId(Object(Illuminate/Database/Query/Builder), 'insert into `le...', Array, 'id')
+#4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1982): Illuminate/Database/Query/Builder->insertGetId(Array, 'id')
+#5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1334): Illuminate/Database/Eloquent/Builder->__call('insertGetId', Array)
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1299): Illuminate/Database/Eloquent/Model->insertAndSetId(Object(Illuminate/Database/Eloquent/Builder), Array)
+#7 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1138): Illuminate/Database/Eloquent/Model->performInsert(Object(Illuminate/Database/Eloquent/Builder))
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1025): Illuminate/Database/Eloquent/Model->save()
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Support/helpers.php(320): Illuminate/Database/Eloquent/Builder->{closure:Illuminate/Database/Eloquent/Builder::create():1024}(Object(App/Models/LearningMaterial))
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1024): tap(Object(App/Models/LearningMaterial), Object(Closure))
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(585): Illuminate/Database/Eloquent/Builder->create(Array)
+#12 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1728): Illuminate/Database/Eloquent/Builder->{closure:Illuminate/Database/Eloquent/Builder::createOrFirst():585}()
+#13 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(585): Illuminate/Database/Eloquent/Builder->withSavepointIfNeeded(Object(Closure))
+#14 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(572): Illuminate/Database/Eloquent/Builder->createOrFirst(Array, Array)
+#15 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate/Database/Eloquent/Builder->firstOrCreate(Array, Array)
+#16 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2335): Illuminate/Database/Eloquent/Model->forwardCallTo(Object(Illuminate/Database/Eloquent/Builder), 'firstOrCreate', Array)
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2347): Illuminate/Database/Eloquent/Model->__call('firstOrCreate', Array)
+#18 C:/xampp/htdocs/silms/database/seeders/DatabaseSeeder.php(132): Illuminate/Database/Eloquent/Model::__callStatic('firstOrCreate', Array)
+#19 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database/Seeders/DatabaseSeeder->run()
+#20 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#21 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#22 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#23 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#24 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate/Container/Container->call(Array, Array)
+#25 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate/Database/Seeder->{closure:Illuminate/Database/Seeder::__invoke():183}()
+#26 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(70): Illuminate/Database/Seeder->__invoke()
+#27 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(155): Illuminate/Database/Console/Seeds/SeedCommand->{closure:Illuminate/Database/Console/Seeds/SeedCommand::handle():69}()
+#28 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(69): Illuminate/Database/Eloquent/Model::unguarded(Object(Closure))
+#29 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Seeds/SeedCommand->handle()
+#30 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#31 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#32 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#33 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#34 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate/Container/Container->call(Array)
+#35 C:/xampp/htdocs/silms/vendor/symfony/console/Command/Command.php(326): Illuminate/Console/Command->execute(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#36 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony/Component/Console/Command/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#37 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(1106): Illuminate/Console/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#38 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(324): Symfony/Component/Console/Application->doRunCommand(Object(Illuminate/Database/Console/Seeds/SeedCommand), Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#39 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(175): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#40 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#41 C:/xampp/htdocs/silms/artisan(12): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#42 {main}
+
+[previous exception] [object] (PDOException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'course_code' in 'field list' at C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php:39)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(39): PDO->prepare('insert into `le...')
+#1 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(816): Illuminate/Database/MySqlConnection->{closure:Illuminate/Database/MySqlConnection::insert():34}('insert into `le...', Array)
+#2 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Connection.php(783): Illuminate/Database/Connection->runQueryCallback('insert into `le...', Array, Object(Closure))
+#3 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(34): Illuminate/Database/Connection->run('insert into `le...', Array, Object(Closure))
+#4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php(35): Illuminate/Database/MySqlConnection->insert('insert into `le...', Array, 'id')
+#5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3549): Illuminate/Database/Query/Processors/MySqlProcessor->processInsertGetId(Object(Illuminate/Database/Query/Builder), 'insert into `le...', Array, 'id')
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1982): Illuminate/Database/Query/Builder->insertGetId(Array, 'id')
+#7 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1334): Illuminate/Database/Eloquent/Builder->__call('insertGetId', Array)
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1299): Illuminate/Database/Eloquent/Model->insertAndSetId(Object(Illuminate/Database/Eloquent/Builder), Array)
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1138): Illuminate/Database/Eloquent/Model->performInsert(Object(Illuminate/Database/Eloquent/Builder))
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1025): Illuminate/Database/Eloquent/Model->save()
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Support/helpers.php(320): Illuminate/Database/Eloquent/Builder->{closure:Illuminate/Database/Eloquent/Builder::create():1024}(Object(App/Models/LearningMaterial))
+#12 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1024): tap(Object(App/Models/LearningMaterial), Object(Closure))
+#13 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(585): Illuminate/Database/Eloquent/Builder->create(Array)
+#14 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1728): Illuminate/Database/Eloquent/Builder->{closure:Illuminate/Database/Eloquent/Builder::createOrFirst():585}()
+#15 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(585): Illuminate/Database/Eloquent/Builder->withSavepointIfNeeded(Object(Closure))
+#16 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(572): Illuminate/Database/Eloquent/Builder->createOrFirst(Array, Array)
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate/Database/Eloquent/Builder->firstOrCreate(Array, Array)
+#18 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2335): Illuminate/Database/Eloquent/Model->forwardCallTo(Object(Illuminate/Database/Eloquent/Builder), 'firstOrCreate', Array)
+#19 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2347): Illuminate/Database/Eloquent/Model->__call('firstOrCreate', Array)
+#20 C:/xampp/htdocs/silms/database/seeders/DatabaseSeeder.php(132): Illuminate/Database/Eloquent/Model::__callStatic('firstOrCreate', Array)
+#21 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database/Seeders/DatabaseSeeder->run()
+#22 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#23 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#24 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#25 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#26 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate/Container/Container->call(Array, Array)
+#27 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate/Database/Seeder->{closure:Illuminate/Database/Seeder::__invoke():183}()
+#28 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(70): Illuminate/Database/Seeder->__invoke()
+#29 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(155): Illuminate/Database/Console/Seeds/SeedCommand->{closure:Illuminate/Database/Console/Seeds/SeedCommand::handle():69}()
+#30 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(69): Illuminate/Database/Eloquent/Model::unguarded(Object(Closure))
+#31 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Seeds/SeedCommand->handle()
+#32 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#33 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#34 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#35 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#36 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate/Container/Container->call(Array)
+#37 C:/xampp/htdocs/silms/vendor/symfony/console/Command/Command.php(326): Illuminate/Console/Command->execute(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#38 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony/Component/Console/Command/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#39 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(1106): Illuminate/Console/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#40 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(324): Symfony/Component/Console/Application->doRunCommand(Object(Illuminate/Database/Console/Seeds/SeedCommand), Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#41 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(175): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#42 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#43 C:/xampp/htdocs/silms/artisan(12): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#44 {main}
+"} 
+[2026-04-23 15:48:18] local.ERROR: Attempt to read property "rubric" on null {"view":{"view":"C:\\xampp\\htdocs\\silms\\resources\\views\\student\\gwa.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-1841087169 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#1113</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1841087169\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","grades":"<pre class=sf-dump id=sf-dump-1747315200 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Database\\Eloquent\\Collection</span> {<a class=sf-dump-ref>#1169</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:10</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1172</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>1</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1173</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>2</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1174</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>3</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1175</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>4</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1176</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>5</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1177</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>6</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1178</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>7</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1179</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>8</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1180</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>9</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1181</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1747315200\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","gwa":"<pre class=sf-dump id=sf-dump-336834156 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-336834156\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"userId":26,"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Attempt to read property \"rubric\" on null at C:/xampp/htdocs/silms/resources/views/student/gwa.blade.php:69)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('C://xampp//htdocs...')
+#1 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate/Filesystem/Filesystem::{closure:Illuminate/Filesystem/Filesystem::getRequire():120}()
+#2 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate/Filesystem/Filesystem->getRequire('C://xampp//htdocs...', Array)
+#3 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(72): Illuminate/View/Engines/PhpEngine->evaluatePath('C://xampp//htdocs...', Array)
+#4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(207): Illuminate/View/Engines/CompilerEngine->get('C://xampp//htdocs...', Array)
+#5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(190): Illuminate/View/View->getContents()
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(159): Illuminate/View/View->renderContents()
+#7 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate/View/View->render()
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate/Http/Response->setContent(Object(Illuminate/View/View))
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(918): Illuminate/Http/Response->__construct(Object(Illuminate/View/View), 200, Array)
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(885): Illuminate/Routing/Router::toResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate/Routing/Router->prepareResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#12 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->{closure:Illuminate/Routing/Router::runRouteWithinStack():805}(Object(Illuminate/Http/Request))
+#13 C:/xampp/htdocs/silms/app/Http/Middleware/EnsureUserHasRole.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#14 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/EnsureUserHasRole->handle(Object(Illuminate/Http/Request), Object(Closure), 'student')
+#15 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#16 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(57): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#18 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Auth/Middleware/Authenticate->handle(Object(Illuminate/Http/Request), Object(Closure))
+#19 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#20 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#21 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#22 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#23 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#24 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#25 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#26 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#27 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#28 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#29 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#30 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#31 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#32 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#33 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#34 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#35 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#36 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->{closure:Illuminate/Foundation/Http/Kernel::dispatchToRouter():197}(Object(Illuminate/Http/Request))
+#37 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#38 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#39 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#40 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#41 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#43 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#44 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#45 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#46 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#47 C:/xampp/htdocs/silms/public/index.php(18): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#48 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
+#49 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Attempt to read property \"rubric\" on null at C:/xampp/htdocs/silms/storage/framework/views/3d1610ab56a7a755bfb4802396b7e410.php:69)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError(2, 'Attempt to read...', 'C://xampp//htdocs...', 69)
+#1 C:/xampp/htdocs/silms/storage/framework/views/3d1610ab56a7a755bfb4802396b7e410.php(69): Illuminate/Foundation/Bootstrap/HandleExceptions->{closure:Illuminate/Foundation/Bootstrap/HandleExceptions::forwardsTo():254}(2, 'Attempt to read...', 'C://xampp//htdocs...', 69)
+#2 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('C://xampp//htdocs...')
+#3 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate/Filesystem/Filesystem::{closure:Illuminate/Filesystem/Filesystem::getRequire():120}()
+#4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate/Filesystem/Filesystem->getRequire('C://xampp//htdocs...', Array)
+#5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(72): Illuminate/View/Engines/PhpEngine->evaluatePath('C://xampp//htdocs...', Array)
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(207): Illuminate/View/Engines/CompilerEngine->get('C://xampp//htdocs...', Array)
+#7 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(190): Illuminate/View/View->getContents()
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(159): Illuminate/View/View->renderContents()
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate/View/View->render()
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate/Http/Response->setContent(Object(Illuminate/View/View))
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(918): Illuminate/Http/Response->__construct(Object(Illuminate/View/View), 200, Array)
+#12 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(885): Illuminate/Routing/Router::toResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#13 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate/Routing/Router->prepareResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#14 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->{closure:Illuminate/Routing/Router::runRouteWithinStack():805}(Object(Illuminate/Http/Request))
+#15 C:/xampp/htdocs/silms/app/Http/Middleware/EnsureUserHasRole.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#16 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/EnsureUserHasRole->handle(Object(Illuminate/Http/Request), Object(Closure), 'student')
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#18 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#19 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(57): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#20 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Auth/Middleware/Authenticate->handle(Object(Illuminate/Http/Request), Object(Closure))
+#21 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#22 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#23 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#24 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#25 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#26 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#27 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#28 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#29 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#30 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#31 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#32 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#33 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#34 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#35 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#36 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#37 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#38 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->{closure:Illuminate/Foundation/Http/Kernel::dispatchToRouter():197}(Object(Illuminate/Http/Request))
+#39 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#40 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#41 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#43 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#44 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#45 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#46 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#47 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#48 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#49 C:/xampp/htdocs/silms/public/index.php(18): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#50 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
+#51 {main}
+"} 
+[2026-04-23 15:48:28] local.ERROR: Attempt to read property "rubric" on null {"view":{"view":"C:\\xampp\\htdocs\\silms\\resources\\views\\student\\gwa.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-23965175 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#1113</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-23965175\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","grades":"<pre class=sf-dump id=sf-dump-1303102553 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Database\\Eloquent\\Collection</span> {<a class=sf-dump-ref>#1169</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:10</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1172</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>1</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1173</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>2</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1174</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>3</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1175</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>4</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1176</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>5</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1177</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>6</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1178</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>7</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1179</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>8</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1180</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>9</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"App\\Models\\Enrollment
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Enrollment</span></span> {<a class=sf-dump-ref>#1181</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">enrollments</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1303102553\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","gwa":"<pre class=sf-dump id=sf-dump-265496863 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-265496863\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"userId":26,"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Attempt to read property \"rubric\" on null at C:/xampp/htdocs/silms/resources/views/student/gwa.blade.php:69)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('C://xampp//htdocs...')
+#1 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate/Filesystem/Filesystem::{closure:Illuminate/Filesystem/Filesystem::getRequire():120}()
+#2 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate/Filesystem/Filesystem->getRequire('C://xampp//htdocs...', Array)
+#3 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(72): Illuminate/View/Engines/PhpEngine->evaluatePath('C://xampp//htdocs...', Array)
+#4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(207): Illuminate/View/Engines/CompilerEngine->get('C://xampp//htdocs...', Array)
+#5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(190): Illuminate/View/View->getContents()
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(159): Illuminate/View/View->renderContents()
+#7 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate/View/View->render()
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate/Http/Response->setContent(Object(Illuminate/View/View))
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(918): Illuminate/Http/Response->__construct(Object(Illuminate/View/View), 200, Array)
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(885): Illuminate/Routing/Router::toResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate/Routing/Router->prepareResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#12 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->{closure:Illuminate/Routing/Router::runRouteWithinStack():805}(Object(Illuminate/Http/Request))
+#13 C:/xampp/htdocs/silms/app/Http/Middleware/EnsureUserHasRole.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#14 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/EnsureUserHasRole->handle(Object(Illuminate/Http/Request), Object(Closure), 'student')
+#15 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#16 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(57): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#18 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Auth/Middleware/Authenticate->handle(Object(Illuminate/Http/Request), Object(Closure))
+#19 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#20 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#21 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#22 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#23 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#24 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#25 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#26 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#27 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#28 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#29 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#30 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#31 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#32 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#33 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#34 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#35 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#36 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->{closure:Illuminate/Foundation/Http/Kernel::dispatchToRouter():197}(Object(Illuminate/Http/Request))
+#37 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#38 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#39 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#40 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#41 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#43 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#44 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#45 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#46 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#47 C:/xampp/htdocs/silms/public/index.php(18): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#48 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
+#49 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Attempt to read property \"rubric\" on null at C:/xampp/htdocs/silms/storage/framework/views/3d1610ab56a7a755bfb4802396b7e410.php:69)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError(2, 'Attempt to read...', 'C://xampp//htdocs...', 69)
+#1 C:/xampp/htdocs/silms/storage/framework/views/3d1610ab56a7a755bfb4802396b7e410.php(69): Illuminate/Foundation/Bootstrap/HandleExceptions->{closure:Illuminate/Foundation/Bootstrap/HandleExceptions::forwardsTo():254}(2, 'Attempt to read...', 'C://xampp//htdocs...', 69)
+#2 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('C://xampp//htdocs...')
+#3 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate/Filesystem/Filesystem::{closure:Illuminate/Filesystem/Filesystem::getRequire():120}()
+#4 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate/Filesystem/Filesystem->getRequire('C://xampp//htdocs...', Array)
+#5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(72): Illuminate/View/Engines/PhpEngine->evaluatePath('C://xampp//htdocs...', Array)
+#6 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(207): Illuminate/View/Engines/CompilerEngine->get('C://xampp//htdocs...', Array)
+#7 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(190): Illuminate/View/View->getContents()
+#8 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/View.php(159): Illuminate/View/View->renderContents()
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate/View/View->render()
+#10 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate/Http/Response->setContent(Object(Illuminate/View/View))
+#11 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(918): Illuminate/Http/Response->__construct(Object(Illuminate/View/View), 200, Array)
+#12 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(885): Illuminate/Routing/Router::toResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#13 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate/Routing/Router->prepareResponse(Object(Illuminate/Http/Request), Object(Illuminate/View/View))
+#14 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Routing/Router->{closure:Illuminate/Routing/Router::runRouteWithinStack():805}(Object(Illuminate/Http/Request))
+#15 C:/xampp/htdocs/silms/app/Http/Middleware/EnsureUserHasRole.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#16 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App/Http/Middleware/EnsureUserHasRole->handle(Object(Illuminate/Http/Request), Object(Closure), 'student')
+#17 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#18 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#19 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(57): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#20 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Auth/Middleware/Authenticate->handle(Object(Illuminate/Http/Request), Object(Closure))
+#21 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#22 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#23 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#24 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#25 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#26 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#27 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#28 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#29 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#30 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#31 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#32 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#33 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#34 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#35 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#36 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#37 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#38 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate/Foundation/Http/Kernel->{closure:Illuminate/Foundation/Http/Kernel::dispatchToRouter():197}(Object(Illuminate/Http/Request))
+#39 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():142}(Object(Illuminate/Http/Request))
+#40 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#41 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#43 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Foundation/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#44 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#45 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#46 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():158}:159}(Object(Illuminate/Http/Request))
+#47 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#48 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#49 C:/xampp/htdocs/silms/public/index.php(18): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#50 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('C://xampp//htdocs...')
+#51 {main}
+"} 
+[2026-04-23 16:44:58] local.ERROR: The "--filter" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--filter\" option does not exist. at C:/xampp/htdocs/silms/vendor/symfony/console/Input/ArgvInput.php:223)
+[stacktrace]
+#0 C:/xampp/htdocs/silms/vendor/symfony/console/Input/ArgvInput.php(150): Symfony/Component/Console/Input/ArgvInput->addLongOption('filter', 'release_date')
+#1 C:/xampp/htdocs/silms/vendor/symfony/console/Input/ArgvInput.php(85): Symfony/Component/Console/Input/ArgvInput->parseLongOption('--filter=releas...')
+#2 C:/xampp/htdocs/silms/vendor/symfony/console/Input/ArgvInput.php(74): Symfony/Component/Console/Input/ArgvInput->parseToken('--filter=releas...', true)
+#3 C:/xampp/htdocs/silms/vendor/symfony/console/Input/Input.php(56): Symfony/Component/Console/Input/ArgvInput->parse()
+#4 C:/xampp/htdocs/silms/vendor/symfony/console/Command/Command.php(285): Symfony/Component/Console/Input/Input->bind(Object(Symfony/Component/Console/Input/InputDefinition))
+#5 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony/Component/Console/Command/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#6 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(1106): Illuminate/Console/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#7 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(324): Symfony/Component/Console/Application->doRunCommand(Object(Illuminate/Database/Console/Migrations/StatusCommand), Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#8 C:/xampp/htdocs/silms/vendor/symfony/console/Application.php(175): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#9 C:/xampp/htdocs/silms/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#10 C:/xampp/htdocs/silms/artisan(12): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#11 {main}
+"} 

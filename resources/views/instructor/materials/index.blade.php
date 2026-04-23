@@ -23,6 +23,7 @@
                     <tr>
                         <th>Course</th>
                         <th>Title</th>
+                        <th>Release Date</th>
                         <th>Format</th>
                         <th class="text-end">Actions</th>
                     </tr>
@@ -35,6 +36,21 @@
                                 {{ $m->title }}
                                 @if($m->archived)
                                     <span class="badge bg-secondary ms-2">Archived</span>
+                                @endif
+                                @if($m->release_date && !$m->isReleased())
+                                    <span class="badge bg-warning text-dark ms-2">Scheduled</span>
+                                @endif
+                            </td>
+                            <td>
+                                @if($m->release_date)
+                                    <span class="{{ !$m->isReleased() ? 'text-muted' : '' }}">
+                                        {{ $m->release_date->format('M d, Y g:i A') }}
+                                    </span>
+                                    @if(!$m->isReleased())
+                                        <br><small class="text-muted">Not yet released</small>
+                                    @endif
+                                @else
+                                    <span class="text-muted">Immediate</span>
                                 @endif
                             </td>
                             <td>{{ $m->format ?? '—' }}</td>
@@ -63,7 +79,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="text-muted text-center py-4">
+                            <td colspan="5" class="text-muted text-center py-4">
                                 @if(($activeTab ?? 'all') === 'archived')
                                     No archived learning materials yet. <a href="{{ route('instructor.materials.index', ['tab' => 'all']) }}">View active materials</a>.
                                 @else

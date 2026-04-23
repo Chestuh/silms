@@ -18,6 +18,9 @@ class LearningController extends Controller
             ->where(function ($q) {
                 $q->whereNull('approval_status')->orWhere('approval_status', 'approved');
             })
+            ->where(function ($q) {
+                $q->whereNull('release_date')->orWhere('release_date', '<=', now()->startOfSecond());
+            })
             ->orderBy('order_index')
             ->orderBy('id')
             ->get()
@@ -40,6 +43,11 @@ class LearningController extends Controller
         $student = $request->user()->student;
         if (!$student) abort(403);
         if ($material->archived) abort(404);
+        
+        // Check if material is released
+        if ($material->release_date && !$material->isReleased()) {
+            abort(403, 'This material is not yet available. It will be released on ' . $material->release_date->format('M d, Y g:i A'));
+        }
 
         $student = $request->user()->student;
         $progress = $student ? $student->learningProgress()->where('material_id', $material->id)->first() : null;

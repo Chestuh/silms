@@ -66,7 +66,7 @@
                     <td>{{ optional($e->course)->units ?? '—' }}</td>
                     <td>{{ $e->semester ?? '—' }}</td>
                     <td>{{ $e->school_year ?? '—' }}</td>
-                    <td>{{ optional($g->rubric)->name ?? '—' }}</td>
+                    <td>{{ optional(optional($g)->rubric)->name ?? '—' }}</td>
                     <td>{{ $g && $g->midterm_grade !== null ? number_format($g->midterm_grade, 0) : '—' }}</td>
                     <td>{{ $g && $g->final_grade !== null ? number_format($g->final_grade, 0) : '—' }}</td>
                     <td>{{ $avg !== null ? number_format($avg, 1) : '—' }}</td>
