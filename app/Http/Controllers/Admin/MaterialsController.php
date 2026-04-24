@@ -11,21 +11,37 @@ class MaterialsController extends Controller
     public function index(Request $request)
     {
         $activeTab = $request->query('tab', 'all');
+        $search = $request->query('search', '');
+
+        $materialsQuery = LearningMaterial::with('course.instructor.user');
+
+        // Apply search filter
+        if ($search) {
+            $materialsQuery->where(function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                  ->orWhere('description', 'like', "%{$search}%")
+                  ->orWhereHas('course', function ($courseQuery) use ($search) {
+                      $courseQuery->where('code', 'like', "%{$search}%")
+                          ->orWhere('title', 'like', "%{$search}%");
+                  })
+                  ->orWhereHas('course.instructor.user', function ($userQuery) use ($search) {
+                      $userQuery->where('name', 'like', "%{$search}%");
+                  });
+            });
+        }
 
         if ($activeTab === 'archived') {
-            $materials = LearningMaterial::with('course.instructor.user')
-                ->where('archived', true)
+            $materials = $materialsQuery->where('archived', true)
                 ->orderByDesc('updated_at')
-                ->paginate(15);
+                ->paginate(15)->withQueryString();
         } else {
-            $materials = LearningMaterial::with('course.instructor.user')
-                ->where('archived', false)
+            $materials = $materialsQuery->where('archived', false)
                 ->where(function($q) {
                     $q->whereNull('approval_status')
                       ->orWhere('approval_status', '!=', 'rejected');
                 })
                 ->orderByDesc('created_at')
-                ->paginate(15);
+                ->paginate(15)->withQueryString();
         }
 
         // also load recently rejected materials for quick access
@@ -34,7 +50,7 @@ class MaterialsController extends Controller
             ->orderByDesc('updated_at')
             ->paginate(10, ['*'], 'rejected_page');
 
-        return view('admin.materials.index', compact('materials', 'rejectedMaterials', 'activeTab'));
+        return view('admin.materials.index', compact('materials', 'rejectedMaterials', 'activeTab', 'search'));
     }
 
     public function approve(LearningMaterial $material)

@@ -104,22 +104,25 @@ class PreRegistrationsController extends Controller
             'status' => 'active',
         ]);
 
-        // Auto-enroll Grade 7 students in all Grade 7 courses
-        if ($preRegistration->applicant_category === 'grade7') {
+        // Auto-enroll students in all courses for their grade level
+        $gradeLevel = $preRegistration->year_level;
+        if ($gradeLevel) {
             $month = now()->month;
             $year = now()->year;
             $semester = $month <= 6 ? '1st Semester' : '2nd Semester';
             $schoolYear = $month <= 6 ? ($year - 1) . '-' . $year : $year . '-' . ($year + 1);
 
-            $grade7Courses = Course::where('grade_level', '7')->get();
-            foreach ($grade7Courses as $course) {
-                Enrollment::create([
-                    'student_id' => $student->id,
-                    'course_id' => $course->id,
-                    'semester' => $semester,
-                    'school_year' => $schoolYear,
-                    'status' => 'enrolled',
-                ]);
+            $courses = Course::where('grade_level', (string) $gradeLevel)->get();
+            foreach ($courses as $course) {
+                Enrollment::firstOrCreate(
+                    [
+                        'student_id' => $student->id,
+                        'course_id' => $course->id,
+                        'semester' => $semester,
+                        'school_year' => $schoolYear,
+                    ],
+                    ['status' => 'enrolled']
+                );
             }
         }
 

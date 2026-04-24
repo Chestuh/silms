@@ -64,17 +64,8 @@ try {
         $student_id = $pdo->lastInsertId();
         
         // Auto-credit courses for the student's grade level
-        // Determine grade level from applicant_category
-        $grade_level = null;
-        if (!empty($reg['applicant_category'])) {
-            if ($reg['applicant_category'] === 'grade7') {
-                $grade_level = '7';
-            } elseif ($reg['applicant_category'] === 'grade11') {
-                $grade_level = '11';
-            } elseif ($reg['applicant_category'] === 'grade12') {
-                $grade_level = '12';
-            }
-        }
+        // Use the year_level from the pre_registration record
+        $grade_level = !empty($reg['year_level']) ? (string) $reg['year_level'] : null;
         
         // If a grade level is determined, enroll in all courses for that grade
         if ($grade_level) {

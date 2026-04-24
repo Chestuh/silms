@@ -123,6 +123,60 @@ class GradeCourseSeeder extends Seeder
             );
         }
 
+        // ============================================================
+        // GRADE 11 COURSES - 1st Semester
+        // ============================================================
+        $grade11Courses = [
+            ['code' => 'G11 - OC', 'title' => 'Oral Communication in Context', 'units' => 3],
+            ['code' => 'G11 - RW', 'title' => 'Reading and Writing', 'units' => 3],
+            ['code' => 'G11 - 21CL', 'title' => '21st Century Literature from the Philippines and the World', 'units' => 3],
+            ['code' => 'G11 - GM', 'title' => 'General Mathematics', 'units' => 3],
+            ['code' => 'G11 - SP', 'title' => 'Statistics and Probability', 'units' => 3],
+            ['code' => 'G11 - ELS', 'title' => 'Earth and Life Science', 'units' => 3],
+            ['code' => 'G11 - PEH', 'title' => 'Physical Education and Health 11', 'units' => 2],
+            ['code' => 'G11 - ESP', 'title' => 'Edukasyon sa Pagpapakatao 11', 'units' => 3],
+        ];
+
+        foreach ($grade11Courses as $course) {
+            Course::firstOrCreate(
+                ['code' => $course['code']],
+                [
+                    'title' => $course['title'],
+                    'units' => $course['units'],
+                    'grade_level' => '11',
+                    'semester' => '1st Semester',
+                    'instructor_id' => $instructorId,
+                ]
+            );
+        }
+
+        // ============================================================
+        // GRADE 12 COURSES - 1st Semester
+        // ============================================================
+        $grade12Courses = [
+            ['code' => 'G12 - TW', 'title' => 'Technical Writing and Business Writing', 'units' => 3],
+            ['code' => 'G12 - FIL', 'title' => 'Filipino 12', 'units' => 3],
+            ['code' => 'G12 - ENG', 'title' => 'English 12', 'units' => 3],
+            ['code' => 'G12 - CALC', 'title' => 'Basic Calculus', 'units' => 3],
+            ['code' => 'G12 - BIO', 'title' => 'Biology', 'units' => 3],
+            ['code' => 'G12 - PHY', 'title' => 'Physics', 'units' => 3],
+            ['code' => 'G12 - PEH', 'title' => 'Physical Education and Health 12', 'units' => 2],
+            ['code' => 'G12 - ESP', 'title' => 'Edukasyon sa Pagpapakatao 12', 'units' => 3],
+        ];
+
+        foreach ($grade12Courses as $course) {
+            Course::firstOrCreate(
+                ['code' => $course['code']],
+                [
+                    'title' => $course['title'],
+                    'units' => $course['units'],
+                    'grade_level' => '12',
+                    'semester' => '1st Semester',
+                    'instructor_id' => $instructorId,
+                ]
+            );
+        }
+
         echo "Grade courses seeded successfully!\n";
     }
 }

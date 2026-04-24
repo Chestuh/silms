@@ -45,26 +45,15 @@ class Enrollment extends Model
             return;
         }
 
-        // Only auto-credit when the enrollment is for Grade 7
-        if ((string) $gradeLevel !== '7') {
-            return;
-        }
-
-        // Determine the department from the course's instructor
-        $instructor = $this->course?->instructor;
-        $department = $instructor->department ?? null;
-        if (is_null($department)) {
-            return;
-        }
-
-        // Get all Grade 7 courses taught by instructors in the same department
-        $courses = Course::where('grade_level', '7')
-            ->whereHas('instructor', function ($q) use ($department) {
-                $q->where('department', $department);
-            })
-            ->get();
+        // Auto-credit all courses for the same grade level
+        $courses = Course::where('grade_level', (string) $gradeLevel)->get();
 
         foreach ($courses as $course) {
+            // Skip if it's the same course we're already enrolled in
+            if ($course->id === $this->course_id) {
+                continue;
+            }
+
             Enrollment::firstOrCreate(
                 [
                     'student_id' => $this->student_id,

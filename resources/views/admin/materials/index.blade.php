@@ -18,6 +18,27 @@
     </li>
 </ul>
 
+<!-- Search Filter -->
+<form method="GET" class="row gx-2 gy-2 align-items-center mb-3">
+    <input type="hidden" name="tab" value="{{ $activeTab ?? 'all' }}">
+    <div class="col-auto">
+        <label for="search" class="form-label visually-hidden">Search</label>
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" 
+                placeholder="Search materials, course, or instructor..." 
+                value="{{ $search ?? '' }}">
+            <button type="submit" class="btn btn-outline-secondary">
+                <i class="bi bi-search"></i> Search
+            </button>
+            @if($search ?? false)
+                <a href="{{ route('admin.materials.index', ['tab' => $activeTab ?? 'all']) }}" class="btn btn-outline-secondary">
+                    <i class="bi bi-x-lg"></i> Clear
+                </a>
+            @endif
+        </div>
+    </div>
+</form>
+
 @if(($activeTab ?? 'all') === 'all')
 <div class="card border-0 shadow-sm">
     <div class="card-body p-0">
@@ -69,7 +90,7 @@
         </div>
     </div>
         @if($materials->hasPages())
-            <div class="card-footer">{{ $materials->appends(['tab' => 'all'])->links() }}</div>
+            <div class="card-footer">{{ $materials->appends(['tab' => 'all', 'search' => $search ?? ''])->links() }}</div>
         @endif
     </div>
     <p class="small text-muted mt-2 mb-0"><a href="{{ route('admin.dashboard') }}">&larr; Back to dashboard</a></p>
@@ -112,7 +133,7 @@
         </div>
     </div>
         @if($materials->hasPages())
-            <div class="card-footer">{{ $materials->appends(['tab' => 'archived'])->links() }}</div>
+            <div class="card-footer">{{ $materials->appends(['tab' => 'archived', 'search' => $search ?? ''])->links() }}</div>
         @endif
     </div>
     <p class="small text-muted mt-2 mb-0"><a href="{{ route('admin.dashboard') }}">&larr; Back to dashboard</a></p>
@@ -153,7 +174,7 @@
                 </div>
             </div>
             @if($rejectedMaterials->hasPages())
-                <div class="card-footer">{{ $rejectedMaterials->appends(['tab' => 'rejected'])->links() }}</div>
+                <div class="card-footer">{{ $rejectedMaterials->appends(['tab' => 'rejected', 'search' => $search ?? ''])->links() }}</div>
             @endif
         </div>
     </div>

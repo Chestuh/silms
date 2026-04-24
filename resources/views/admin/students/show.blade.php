@@ -15,7 +15,7 @@
                     <dt class="col-sm-4 text-muted">Student No.</dt><dd class="col-sm-8">{{ $student->student_number }}</dd>
                     <dt class="col-sm-4 text-muted">Name</dt><dd class="col-sm-8">{{ $student->user->name ?? '—' }}</dd>
                     <dt class="col-sm-4 text-muted">Email</dt><dd class="col-sm-8">{{ $student->user->email ?? '—' }}</dd>
-                    <dt class="col-sm-4 text-muted">Grade</dt><dd class="col-sm-8">Grade {{ (int)($student->year_level ?? 0) + 6 }}</dd>
+                    <dt class="col-sm-4 text-muted">Grade</dt><dd class="col-sm-8">Grade {{ $student->year_level ?? '—' }}</dd>
                     <dt class="col-sm-4 text-muted">Status</dt><dd class="col-sm-8"><span class="badge bg-{{ $student->status === 'active' ? 'success' : 'secondary' }}">{{ ucfirst($student->status) }}</span></dd>
                     <dt class="col-sm-4 text-muted">Academic status</dt><dd class="col-sm-8"><span class="badge bg-{{ $academicStatus === 'failed' ? 'danger' : ($academicStatus === 'inc' ? 'info' : ($academicStatus === 'drop' ? 'secondary' : 'success')) }}">{{ strtoupper($academicStatus) }}</span></dd>
                     <dt class="col-sm-4 text-muted">GWA</dt><dd class="col-sm-8">{{ $gwa !== null ? number_format($gwa, 2) : '—' }}</dd>

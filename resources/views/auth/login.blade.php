@@ -133,14 +133,14 @@
                 </button>
             </form>
 
-            <p class="mt-4 text-center small-text">
+            <!-- <p class="mt-4 text-center small-text">
                 Demo Accounts:<br><br>
                 <b>student@csp.edu</b><br>
                 <b>instructor@csp.edu</b><br>
                 <b>admin@csp.edu</b><br>
                 <b>cashier@csp.edu</b><br>
                 password: <kbd>password</kbd>
-            </p>
+            </p> -->
         </div>
 
     </div>
